@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+:root {
+  --primary: #d9be5c;
+  --max-mobile-width: 640px;
+
+  --background: #fff;
+  --foreground: #000;
+  --divider: #dcdcdc;
+  --overlay: #888;
+}
+
+
+/*
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000;
+    --foreground: #fff;
+    --divider: #333;
+  }
+}*/
+.bg-background {
+  background-color: var(--background);
+}
+
+
+body {
+  font-size: 14px;
+  --bs-border-color: var(--text-gray-300);
+  line-height: 1.3;
+  background: var(--background);
+  color: var(--foreground);
+
+}
+
+html, body {
+  font-family: "Inter", sans-serif;
+
+}
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline
+}
+
+.btn_ {
+    --btn-background: theme("colors.gray.200");
+    --btn-hover-bg: theme("colors.gray.100");
+    --btn-color: #222;
+
+    background: var(--btn-background);
+    color: var(--btn-color);
+
+    @apply px-4 py-3 rounded-xl inline-flex items-center justify-center transition-all cursor-pointer;
+
+    &.btn-icon-between{
+      @apply !justify-between;
+    }
+    &.btn_primary {
+        --btn-background: theme("colors.primary.600");
+        --btn-color: theme("colors.white");
+    }
+    &.btn_transparent {
+    --btn-background: transparent;
+    --btn-color: theme("colors.gray.800");
+
+        &:hover {
+          background: var(--btn-hover-bg);
+        }
+    }
+
+    &.btn_bho {
+        @apply text-primary-600 border-2 bg-transparent border-primary-600 border-solid rounded-full;
+    }
+    &.btn-text-right{
+      @apply text-right justify-end;
+    }
+    &.btn-text-left{
+      @apply text-left justify-start;
+    }
+    &.btn_full{
+      @apply w-full;
+    }
+    &.btn_right_chevron {
+      &:after{
+        flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+        margin-left: auto;
+        content: "";
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-size: 1.25rem;
+        transition: transform 0.2s ease-in-out;
+        @apply rotate-180;
+      }
+    }
+    &.collapsed{
+      &.btn_right_chevron {
+        &:after{
+          @apply rotate-0;
+        }
+      }
+    }
+}
+
+.btn-check:checked + .btn_ {
+    @apply bg-primary-600 text-white border-transparent;
+}
+
+.collapse {
+  visibility: unset !important;
+}
+[data-show=false]{
+  display: none;
+}
+header{
+  .h-menus{
+    @apply max-w-6xl mx-auto;
+    .h-menu-item{
+      @apply border-b-2 border-solid transition transition-colors px-2 font-medium  border-transparent px-2 py-2 inline-block;
+      &:hover{
+        @apply border-primary-500 text-primary-500;
+      }
+    }
+  }
+}
+.main{
+  @apply mt-4 flex flex-col gap-4;
+  .m-stories{
+    @apply flex gap-4;
+    .m-stories-item{
+      @apply inline-flex flex-col text-m gap-1 items-center justify-center transition transition-colors font-medium;
+      img{
+        @apply w-14 h-14 rounded-full;
+      }
+      span{
+      }
+      &:hover{
+        @apply text-primary-500;
+      }
+    }
+  }
+  .m-shop-cart-list{
+    @apply grid grid-cols-3 gap-3;
+    .mscl-item{
+      @apply rounded-xl overflow-hidden inline-flex flex-col;
+      .mscl-item-text{
+        @apply flex bg-gray-800 text-white px-3 py-2 justify-between items-center transition transition-colors;
+        p{
+          @apply font-medium text-m flex-1 line-clamp-1;
+        }
+        span{
+          @apply text-xs invisible;
+        }
+      }
+      &:hover{
+        .mscl-item-text{
+          @apply bg-primary-500;
+          span{
+            @apply visible;
+          }
+        }
+      }
+    }
+  }
+  .ms-section{
+    @apply bg-primary-500/10 rounded-xl p-3;
+    .mss-header{
+      @apply flex items-center justify-between pb-3;
+      h1{
+        @apply text-xl font-semibold;
+      }
+      a{
+        @apply text-sm font-medium;
+        &:hover{
+          @apply underline;
+        }
+      }
+    }
+  }
+  .m-shop-product-list{
+    @apply grid grid-cols-4 gap-3;
+    .mspl-item{
+      @apply bg-white overflow-hidden border border-solid border-gray-100  rounded-xl flex flex-col;
+      .mspli-image{
+        @apply h-full w-full;
+        max-height: 200px;
+        img{
+          @apply object-contain w-full h-full;
+        }
+      }
+      .mspli-main{
+        @apply flex flex-col px-3 py-3 gap-1;
+        .mspli-title{
+          height: 40px;
+          @apply line-clamp-2 text-sm;
+          b{
+            @apply uppercase;
+          }
+        }
+        .mspli-price{
+          height: 20px;
+          @apply text-primary-500 font-semibold text-m;
+        }
+        .mspli-lowest-price{
+          height: 15px;
+          span{
+            @apply flex line-clamp-1 text-xs gap-2 text-red-600 font-medium;
+          }
+        }
+      }
+    }
+
+  }
+}
