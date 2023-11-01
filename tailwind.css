@@ -177,13 +177,31 @@ video {
   display: none;
 }
 header .h-menus {
-  @apply max-w-6xl mx-auto;
+  @apply max-w-6xl mx-auto relative;
 }
 header .h-menus .h-menu-item {
-  @apply border-b-2 border-solid transition transition-colors px-2 font-medium border-transparent px-2 py-2 inline-block;
+  @apply border-b-2 cursor-default border-solid transition transition-colors px-2 border-transparent px-2 py-2 inline-block;
+}
+header .h-menus .h-menu-item .hm-title {
+  @apply font-medium;
+}
+header .h-menus .h-menu-item .hm-hover-menu {
+  @apply absolute top-full left-0 max-w-6xl w-full p-3 rounded-b-xl bg-white grid grid-cols-4 shadow;
+}
+header .h-menus .h-menu-item .hm-hover-menu h3 {
+  @apply text-sm font-medium text-primary-500;
+}
+header .h-menus .h-menu-item .hm-hover-menu a {
+  @apply text-xs;
+}
+header .h-menus .h-menu-item .hm-hover-menu a:hover {
+  @apply underline;
 }
 header .h-menus .h-menu-item:hover {
-  @apply border-primary-500 text-primary-500;
+  @apply border-primary-500;
+}
+header .h-menus .h-menu-item:hover .hm-title {
+  @apply text-primary-500;
 }
 .main {
   @apply mt-4 flex flex-col gap-4;

@@ -8,7 +8,6 @@
 :root {
   --primary: #d9be5c;
   --max-mobile-width: 640px;
-
   --background: #fff;
   --foreground: #000;
   --divider: #dcdcdc;
@@ -124,11 +123,30 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
 }
 header{
   .h-menus{
-    @apply max-w-6xl mx-auto;
+    @apply max-w-6xl mx-auto relative;
     .h-menu-item{
-      @apply border-b-2 border-solid transition transition-colors px-2 font-medium  border-transparent px-2 py-2 inline-block;
+      @apply border-b-2 cursor-default border-solid transition transition-colors px-2  border-transparent px-2 py-2 inline-block;
+      .hm-title{
+        @apply font-medium;
+      }
+      .hm-hover-menu{
+        @apply absolute top-full left-0 max-w-6xl w-full p-3 rounded-b-xl bg-white grid grid-cols-4 shadow;
+        h3{
+          @apply text-sm font-medium text-primary-500;
+        }
+        a{
+          @apply text-xs;
+          &:hover{
+            @apply underline;
+          }
+        }
+      }
       &:hover{
-        @apply border-primary-500 text-primary-500;
+        @apply border-primary-500;
+        .hm-title{
+          @apply text-primary-500;
+        }
+
       }
     }
   }
