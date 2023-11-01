@@ -207,6 +207,9 @@ video {
 .product-rect-content .prc-price button {
   @apply hidden;
 }
+.product-rect-content:hover {
+  @apply shadow-sm;
+}
 .product-rect-content:hover .prc-price span {
   @apply hidden;
 }
@@ -255,6 +258,42 @@ header .h-menus .h-menu-item:hover .hm-hover-menu {
   opacity: 1;
   transition: visibility 0s linear 0s, opacity 100ms;
   @apply visible;
+}
+.herousel-content {
+  @apply bg-gradient-to-r from-primary-600 to-primary-900 py-8;
+}
+.herousel-content .hc-wrapper {
+  @apply max-w-6xl mx-auto;
+}
+.herousel-content .hc-wrapper .hc-list-menu {
+  @apply flex items-center justify-center gap-2 w-full;
+}
+.herousel-content .hc-wrapper .hc-list-menu li {
+  @apply px-5 py-2 rounded-full cursor-pointer;
+}
+.herousel-content .hc-wrapper .hc-list-menu li span {
+  @apply text-white;
+}
+.herousel-content .hc-wrapper .hc-list-menu li:hover {
+  @apply bg-white/10;
+}
+.herousel-content .hc-wrapper .hc-list-menu li.active {
+  @apply bg-white;
+}
+.herousel-content .hc-wrapper .hc-list-menu li.active span {
+  @apply text-gray-900;
+}
+.herousel-content .hc-wrapper .hcw-content {
+  @apply grid grid-cols-3 mt-4 rounded-2xl overflow-hidden bg-white;
+}
+.herousel-content .hc-wrapper .hcw-content .hcwc-title {
+  @apply bg-white flex px-12 justify-center flex-col;
+}
+.herousel-content .hc-wrapper .hcw-content .hcwc-image {
+  @apply col-span-2 w-full p-2;
+}
+.herousel-content .hc-wrapper .hcw-content .hcwc-image img {
+  @apply object-cover w-full h-full rounded-xl;
 }
 .main {
   @apply mt-4 flex flex-col gap-4;

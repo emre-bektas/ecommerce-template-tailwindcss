@@ -152,6 +152,7 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
     }
   }
   &:hover{
+    @apply shadow-sm;
     .prc-price{
       span {
         @apply hidden;
@@ -205,6 +206,43 @@ header{
           @apply visible;
         }
 
+      }
+    }
+  }
+}
+
+.herousel-content{
+  @apply bg-gradient-to-r from-primary-600 to-primary-900 py-8;
+  .hc-wrapper{
+    @apply max-w-6xl mx-auto;
+    .hc-list-menu{
+      @apply flex items-center justify-center gap-2 w-full;
+      li{
+        @apply px-5 py-2 rounded-full cursor-pointer;
+        span{
+          @apply text-white;
+        }
+        &:hover{
+          @apply bg-white/10;
+        }
+        &.active{
+          @apply bg-white;
+          span{
+            @apply text-gray-900;
+          }
+        }
+      }
+    }
+    .hcw-content{
+      @apply grid grid-cols-3 mt-4 rounded-2xl overflow-hidden bg-white;
+      .hcwc-title{
+        @apply  bg-white flex px-12 justify-center flex-col;
+      }
+      .hcwc-image{
+        @apply col-span-2 w-full p-2;
+        img{
+          @apply object-cover w-full h-full rounded-xl;
+        }
       }
     }
   }
