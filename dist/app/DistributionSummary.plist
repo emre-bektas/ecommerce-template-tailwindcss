@@ -9,18 +9,16 @@
 			<array>
 				<string>arm64</string>
 			</array>
-			<key>bitcode</key>
-			<false/>
 			<key>buildNumber</key>
-			<string>5</string>
+			<string>1</string>
 			<key>certificate</key>
 			<dict>
 				<key>SHA1</key>
-				<string>CB0607B300DABC22485ABBEB16F395F28D01C4D2</string>
+				<string>5ADA859F7D5CF916564CF09C58A082053F338108</string>
 				<key>dateExpires</key>
-				<string>27.02.2024</string>
+				<string>31.10.2024</string>
 				<key>type</key>
-				<string>Cloud Managed Apple Distribution</string>
+				<string>Apple Distribution</string>
 			</dict>
 			<key>embeddedBinaries</key>
 			<array>
@@ -29,23 +27,19 @@
 					<array>
 						<string>arm64</string>
 					</array>
-					<key>bitcode</key>
-					<false/>
 					<key>buildNumber</key>
 					<string>0.12.0</string>
 					<key>certificate</key>
 					<dict>
 						<key>SHA1</key>
-						<string>CB0607B300DABC22485ABBEB16F395F28D01C4D2</string>
+						<string>5ADA859F7D5CF916564CF09C58A082053F338108</string>
 						<key>dateExpires</key>
-						<string>27.02.2024</string>
+						<string>31.10.2024</string>
 						<key>type</key>
-						<string>Cloud Managed Apple Distribution</string>
+						<string>Apple Distribution</string>
 					</dict>
 					<key>name</key>
 					<string>hermes.framework</string>
-					<key>symbols</key>
-					<true/>
 					<key>team</key>
 					<dict>
 						<key>id</key>
@@ -61,8 +55,6 @@
 			<dict>
 				<key>application-identifier</key>
 				<string>VUU3796FX8.org.deneyimsoftmpg.com</string>
-				<key>beta-reports-active</key>
-				<true/>
 				<key>com.apple.developer.team-identifier</key>
 				<string>VUU3796FX8</string>
 				<key>get-task-allow</key>
@@ -73,14 +65,12 @@
 			<key>profile</key>
 			<dict>
 				<key>UUID</key>
-				<string>17ba0336-e40f-40b5-932c-46f61ea204d9</string>
+				<string>5eb8b914-8e56-4048-accb-5dd402c1d40d</string>
 				<key>dateExpires</key>
-				<string>23.10.2024</string>
+				<string>31.10.2024</string>
 				<key>name</key>
-				<string>iOS Team Store Provisioning Profile: org.deneyimsoftmpg.com</string>
+				<string>mpgcare-adhoc</string>
 			</dict>
-			<key>symbols</key>
-			<true/>
 			<key>team</key>
 			<dict>
 				<key>id</key>

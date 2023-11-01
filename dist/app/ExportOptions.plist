@@ -2,19 +2,35 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>compileBitcode</key>
+	<true/>
 	<key>destination</key>
 	<string>export</string>
-	<key>manageAppVersionAndBuildNumber</key>
-	<true/>
+	<key>manifest</key>
+	<dict>
+		<key>appURL</key>
+		<string>https://e-commerce-html-1234.netlify.app/app/mpgcareNative.ipa</string>
+		<key>displayImageURL</key>
+		<string>https://e-commerce-html-1234.netlify.app/app/57.png</string>
+		<key>fullSizeImageURL</key>
+		<string>https://e-commerce-html-1234.netlify.app/app/512.png</string>
+	</dict>
 	<key>method</key>
-	<string>app-store</string>
+	<string>ad-hoc</string>
+	<key>provisioningProfiles</key>
+	<dict>
+		<key>org.deneyimsoftmpg.com</key>
+		<string>mpgcare-adhoc</string>
+	</dict>
+	<key>signingCertificate</key>
+	<string>Apple Distribution</string>
 	<key>signingStyle</key>
-	<string>automatic</string>
+	<string>manual</string>
 	<key>stripSwiftSymbols</key>
 	<true/>
 	<key>teamID</key>
 	<string>VUU3796FX8</string>
-	<key>uploadSymbols</key>
-	<true/>
+	<key>thinning</key>
+	<string>&lt;none&gt;</string>
 </dict>
 </plist>
