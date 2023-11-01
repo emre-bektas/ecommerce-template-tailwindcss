@@ -121,6 +121,48 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
 [data-show=false]{
   display: none;
 }
+.product-rect-content{
+  max-height: 400px;
+  @apply bg-white border border-solid border-gray-100 px-4 pt-6 pb-0 rounded-xl flex flex-col items-center justify-center w-full h-full gap-1;
+  &.procut-rect-image{
+    @apply !p-0 overflow-hidden;
+    img{
+      @apply w-full h-full object-cover;
+    }
+  }
+  .prc-title{
+    @apply  text-sm text-center;
+    span{
+      @apply line-clamp-2;
+    }
+  }
+  .prc-image{
+    @apply aspect-square my-4;
+    img{
+      @apply w-full h-full object-contain;
+    }
+  }
+  .prc-price{
+    @apply flex items-center justify-center pb-6 h-14;
+    span{
+      @apply text-xl text-primary-600 font-semibold;
+    }
+    button{
+      @apply hidden;
+    }
+  }
+  &:hover{
+    .prc-price{
+      span {
+        @apply hidden;
+      }
+      button{
+        @apply block;
+      }
+    }
+  }
+}
+
 header{
   .h-menus{
     @apply max-w-6xl mx-auto relative;
@@ -130,14 +172,25 @@ header{
         @apply font-medium;
       }
       .hm-hover-menu{
-        @apply absolute top-full left-0 max-w-6xl w-full p-3 rounded-b-xl bg-white grid grid-cols-4 shadow;
+        opacity: 0;
+        transition: visibility 0s linear 300ms, opacity 300ms;
+        @apply invisible absolute top-full left-0 max-w-6xl w-full p-3 rounded-b-xl bg-white grid grid-cols-5 shadow;
         h3{
-          @apply text-sm font-medium text-primary-500;
+          @apply font-medium text-primary-500;
         }
         a{
-          @apply text-xs;
+          @apply text-sm inline-block;
           &:hover{
             @apply underline;
+          }
+        }
+        .hmh-image-menus{
+          @apply col-span-2;
+          .hmhim-content{
+            @apply grid grid-cols-2 gap-1 mt-2 items-center justify-center;
+            img{
+              @apply rounded-xl object-contain w-full overflow-hidden;
+            }
           }
         }
       }
@@ -145,6 +198,11 @@ header{
         @apply border-primary-500;
         .hm-title{
           @apply text-primary-500;
+        }
+        .hm-hover-menu{
+          opacity: 1;
+          transition: visibility 0s linear 0s, opacity 100ms;
+          @apply visible;
         }
 
       }
@@ -190,6 +248,7 @@ header{
       }
     }
   }
+
   .ms-section{
     @apply bg-primary-500/10 rounded-xl p-3;
     .mss-header{
@@ -205,15 +264,29 @@ header{
       }
     }
   }
+  .ms1-section{
+    .mss-header{
+      @apply flex items-end gap-2 pb-3;
+      h1{
+        @apply text-2xl font-semibold;
+      }
+      a{
+      @apply text-sm font-medium text-primary-600;
+        &:hover{
+          @apply underline;
+        }
+      }
+    }
+  }
   .m-shop-product-list{
     @apply grid grid-cols-4 gap-3;
     .mspl-item{
       @apply bg-white overflow-hidden border border-solid border-gray-100  rounded-xl flex flex-col;
       .mspli-image{
-        @apply h-full w-full;
+        @apply h-full w-full ;
         max-height: 200px;
         img{
-          @apply object-contain w-full h-full;
+          @apply object-contain w-full h-full pt-3;
         }
       }
       .mspli-main{

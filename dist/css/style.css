@@ -617,6 +617,10 @@ video {
   z-index: 10;
 }
 
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -962,7 +966,7 @@ video {
 
 .text-primary-500 {
   --tw-text-opacity: 1;
-  color: rgb(33 192 125 / var(--tw-text-opacity));
+  color: rgb(62 208 37 / var(--tw-text-opacity));
 }
 
 .text-rose-800 {
@@ -1137,7 +1141,7 @@ video {
 }
 
 .btn_.btn_primary {
-  --btn-background: #118a5a;
+  --btn-background: #2dbb25;
   --btn-color: #fff;
 }
 
@@ -1155,10 +1159,10 @@ video {
   border-width: 2px;
   border-style: solid;
   --tw-border-opacity: 1;
-  border-color: rgb(17 138 90 / var(--tw-border-opacity));
+  border-color: rgb(45 187 37 / var(--tw-border-opacity));
   background-color: transparent;
   --tw-text-opacity: 1;
-  color: rgb(17 138 90 / var(--tw-text-opacity));
+  color: rgb(45 187 37 / var(--tw-text-opacity));
 }
 
 .btn_.btn-text-right {
@@ -1197,7 +1201,7 @@ video {
 .btn-check:checked + .btn_ {
   border-color: transparent;
   --tw-bg-opacity: 1;
-  background-color: rgb(17 138 90 / var(--tw-bg-opacity));
+  background-color: rgb(45 187 37 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -1208,6 +1212,94 @@ video {
 
 [data-show=false] {
   display: none;
+}
+
+.product-rect-content {
+  max-height: 400px;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  border-radius: 0.75rem;
+  border-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(243 244 246 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 0px;
+}
+
+.product-rect-content.procut-rect-image {
+  overflow: hidden;
+  padding: 0px !important;
+}
+
+.product-rect-content.procut-rect-image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.product-rect-content .prc-title {
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.product-rect-content .prc-title span {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.product-rect-content .prc-image {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  aspect-ratio: 1 / 1;
+}
+
+.product-rect-content .prc-image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.product-rect-content .prc-price {
+  display: flex;
+  height: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1.5rem;
+}
+
+.product-rect-content .prc-price span {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgb(45 187 37 / var(--tw-text-opacity));
+}
+
+.product-rect-content .prc-price button {
+  display: none;
+}
+
+.product-rect-content:hover .prc-price span {
+  display: none;
+}
+
+.product-rect-content:hover .prc-price button {
+  display: block;
 }
 
 header .h-menus {
@@ -1240,13 +1332,16 @@ header .h-menus .h-menu-item .hm-title {
 }
 
 header .h-menus .h-menu-item .hm-hover-menu {
+  opacity: 0;
+  transition: visibility 0s linear 300ms, opacity 300ms;
+  visibility: hidden;
   position: absolute;
   top: 100%;
   left: 0px;
   display: grid;
   width: 100%;
   max-width: 72rem;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   border-bottom-right-radius: 0.75rem;
   border-bottom-left-radius: 0.75rem;
   --tw-bg-opacity: 1;
@@ -1258,30 +1353,56 @@ header .h-menus .h-menu-item .hm-hover-menu {
 }
 
 header .h-menus .h-menu-item .hm-hover-menu h3 {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
   font-weight: 500;
   --tw-text-opacity: 1;
-  color: rgb(33 192 125 / var(--tw-text-opacity));
+  color: rgb(62 208 37 / var(--tw-text-opacity));
 }
 
 header .h-menus .h-menu-item .hm-hover-menu a {
-  font-size: 0.75rem;
-  line-height: 1rem;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 header .h-menus .h-menu-item .hm-hover-menu a:hover {
   text-decoration-line: underline;
 }
 
+header .h-menus .h-menu-item .hm-hover-menu .hmh-image-menus {
+  grid-column: span 2 / span 2;
+}
+
+header .h-menus .h-menu-item .hm-hover-menu .hmh-image-menus .hmhim-content {
+  margin-top: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+header .h-menus .h-menu-item .hm-hover-menu .hmh-image-menus .hmhim-content img {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 header .h-menus .h-menu-item:hover {
   --tw-border-opacity: 1;
-  border-color: rgb(33 192 125 / var(--tw-border-opacity));
+  border-color: rgb(62 208 37 / var(--tw-border-opacity));
 }
 
 header .h-menus .h-menu-item:hover .hm-title {
   --tw-text-opacity: 1;
-  color: rgb(33 192 125 / var(--tw-text-opacity));
+  color: rgb(62 208 37 / var(--tw-text-opacity));
+}
+
+header .h-menus .h-menu-item:hover .hm-hover-menu {
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 100ms;
+  visibility: visible;
 }
 
 .main {
@@ -1321,7 +1442,7 @@ header .h-menus .h-menu-item:hover .hm-title {
 
 .main .m-stories .m-stories-item:hover {
   --tw-text-opacity: 1;
-  color: rgb(33 192 125 / var(--tw-text-opacity));
+  color: rgb(62 208 37 / var(--tw-text-opacity));
 }
 
 .main .m-shop-cart-list {
@@ -1376,7 +1497,7 @@ header .h-menus .h-menu-item:hover .hm-title {
 
 .main .m-shop-cart-list .mscl-item:hover .mscl-item-text {
   --tw-bg-opacity: 1;
-  background-color: rgb(33 192 125 / var(--tw-bg-opacity));
+  background-color: rgb(62 208 37 / var(--tw-bg-opacity));
 }
 
 .main .m-shop-cart-list .mscl-item:hover .mscl-item-text span {
@@ -1385,7 +1506,7 @@ header .h-menus .h-menu-item:hover .hm-title {
 
 .main .ms-section {
   border-radius: 0.75rem;
-  background-color: rgb(33 192 125 / 0.1);
+  background-color: rgb(62 208 37 / 0.1);
   padding: 0.75rem;
 }
 
@@ -1409,6 +1530,31 @@ header .h-menus .h-menu-item:hover .hm-title {
 }
 
 .main .ms-section .mss-header a:hover {
+  text-decoration-line: underline;
+}
+
+.main .ms1-section .mss-header {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  padding-bottom: 0.75rem;
+}
+
+.main .ms1-section .mss-header h1 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+.main .ms1-section .mss-header a {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(45 187 37 / var(--tw-text-opacity));
+}
+
+.main .ms1-section .mss-header a:hover {
   text-decoration-line: underline;
 }
 
@@ -1442,6 +1588,7 @@ header .h-menus .h-menu-item:hover .hm-title {
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+  padding-top: 0.75rem;
 }
 
 .main .m-shop-product-list .mspl-item .mspli-main {
@@ -1474,7 +1621,7 @@ header .h-menus .h-menu-item:hover .hm-title {
   line-height: 1.3rem;
   font-weight: 600;
   --tw-text-opacity: 1;
-  color: rgb(33 192 125 / var(--tw-text-opacity));
+  color: rgb(62 208 37 / var(--tw-text-opacity));
 }
 
 .main .m-shop-product-list .mspl-item .mspli-main .mspli-lowest-price {
@@ -1497,7 +1644,7 @@ header .h-menus .h-menu-item:hover .hm-title {
 
 .hover\:text-primary-500:hover {
   --tw-text-opacity: 1;
-  color: rgb(33 192 125 / var(--tw-text-opacity));
+  color: rgb(62 208 37 / var(--tw-text-opacity));
 }
 
 .hover\:underline:hover {
@@ -1506,12 +1653,12 @@ header .h-menus .h-menu-item:hover .hm-title {
 
 .focus-visible\:border-primary-500:focus-visible {
   --tw-border-opacity: 1;
-  border-color: rgb(33 192 125 / var(--tw-border-opacity));
+  border-color: rgb(62 208 37 / var(--tw-border-opacity));
 }
 
 .focus-visible\:ring-primary-500:focus-visible {
   --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(33 192 125 / var(--tw-ring-opacity));
+  --tw-ring-color: rgb(62 208 37 / var(--tw-ring-opacity));
 }
 
 :is(.dark .dark\:text-gray-400) {

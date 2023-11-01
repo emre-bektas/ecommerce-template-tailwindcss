@@ -176,6 +176,43 @@ video {
 [data-show=false] {
   display: none;
 }
+.product-rect-content {
+  max-height: 400px;
+  @apply bg-white border border-solid border-gray-100 px-4 pt-6 pb-0 rounded-xl flex flex-col items-center justify-center w-full h-full gap-1;
+}
+.product-rect-content.procut-rect-image {
+  @apply !p-0 overflow-hidden;
+}
+.product-rect-content.procut-rect-image img {
+  @apply w-full h-full object-cover;
+}
+.product-rect-content .prc-title {
+  @apply text-sm text-center;
+}
+.product-rect-content .prc-title span {
+  @apply line-clamp-2;
+}
+.product-rect-content .prc-image {
+  @apply aspect-square my-4;
+}
+.product-rect-content .prc-image img {
+  @apply w-full h-full object-contain;
+}
+.product-rect-content .prc-price {
+  @apply flex items-center justify-center pb-6 h-14;
+}
+.product-rect-content .prc-price span {
+  @apply text-xl text-primary-600 font-semibold;
+}
+.product-rect-content .prc-price button {
+  @apply hidden;
+}
+.product-rect-content:hover .prc-price span {
+  @apply hidden;
+}
+.product-rect-content:hover .prc-price button {
+  @apply block;
+}
 header .h-menus {
   @apply max-w-6xl mx-auto relative;
 }
@@ -186,22 +223,38 @@ header .h-menus .h-menu-item .hm-title {
   @apply font-medium;
 }
 header .h-menus .h-menu-item .hm-hover-menu {
-  @apply absolute top-full left-0 max-w-6xl w-full p-3 rounded-b-xl bg-white grid grid-cols-4 shadow;
+  opacity: 0;
+  transition: visibility 0s linear 300ms, opacity 300ms;
+  @apply invisible absolute top-full left-0 max-w-6xl w-full p-3 rounded-b-xl bg-white grid grid-cols-5 shadow;
 }
 header .h-menus .h-menu-item .hm-hover-menu h3 {
-  @apply text-sm font-medium text-primary-500;
+  @apply font-medium text-primary-500;
 }
 header .h-menus .h-menu-item .hm-hover-menu a {
-  @apply text-xs;
+  @apply text-sm inline-block;
 }
 header .h-menus .h-menu-item .hm-hover-menu a:hover {
   @apply underline;
+}
+header .h-menus .h-menu-item .hm-hover-menu .hmh-image-menus {
+  @apply col-span-2;
+}
+header .h-menus .h-menu-item .hm-hover-menu .hmh-image-menus .hmhim-content {
+  @apply grid grid-cols-2 gap-1 mt-2 items-center justify-center;
+}
+header .h-menus .h-menu-item .hm-hover-menu .hmh-image-menus .hmhim-content img {
+  @apply rounded-xl object-contain w-full overflow-hidden;
 }
 header .h-menus .h-menu-item:hover {
   @apply border-primary-500;
 }
 header .h-menus .h-menu-item:hover .hm-title {
   @apply text-primary-500;
+}
+header .h-menus .h-menu-item:hover .hm-hover-menu {
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 100ms;
+  @apply visible;
 }
 .main {
   @apply mt-4 flex flex-col gap-4;
@@ -254,6 +307,18 @@ header .h-menus .h-menu-item:hover .hm-title {
 .main .ms-section .mss-header a:hover {
   @apply underline;
 }
+.main .ms1-section .mss-header {
+  @apply flex items-end gap-2 pb-3;
+}
+.main .ms1-section .mss-header h1 {
+  @apply text-2xl font-semibold;
+}
+.main .ms1-section .mss-header a {
+  @apply text-sm font-medium text-primary-600;
+}
+.main .ms1-section .mss-header a:hover {
+  @apply underline;
+}
 .main .m-shop-product-list {
   @apply grid grid-cols-4 gap-3;
 }
@@ -265,7 +330,7 @@ header .h-menus .h-menu-item:hover .hm-title {
   max-height: 200px;
 }
 .main .m-shop-product-list .mspl-item .mspli-image img {
-  @apply object-contain w-full h-full;
+  @apply object-contain w-full h-full pt-3;
 }
 .main .m-shop-product-list .mspl-item .mspli-main {
   @apply flex flex-col px-3 py-3 gap-1;
