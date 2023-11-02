@@ -118,6 +118,44 @@ video {
   font-size: 100%;
   vertical-align: baseline;
 }
+.tabs_ {
+  @apply border rounded-xl overflow-hidden border-solid border-gray-200 dark:text-gray-400 dark:border-gray-700;
+}
+.tabs_ .tabs_list {
+  @apply flex flex-wrap -mb-px text-center text-sm font-medium text-gray-500;
+}
+.tabs_ .tabs_list .tabs_list_item {
+  @apply mr-2;
+}
+.tabs_ .tabs_list .tabs_list_item .tabs_list_item_text {
+  @apply inline-block cursor-pointer px-4 py-3 border-b-2 border-transparent rounded-t-lg border-solid hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300;
+}
+.tabs_ .tabs_list .tabs_list_item.active .tabs_list_item_text {
+  @apply text-blue-600 border-gray-100;
+}
+.tabs_ .tabs_content {
+  @apply p-4;
+}
+.alert_ {
+  --btn-background: theme("colors.gray.100");
+  --btn-hover-bg: theme("colors.gray.100");
+  --btn-color: #222;
+  background: var(--btn-background);
+  color: var(--btn-color);
+  @apply px-4 py-3 rounded-xl transition-all flex gap-2 items-center;
+}
+.alert_ .alert_text {
+  @apply text-sm;
+}
+.alert_ .alert_icon {
+  --ggs: 0.8;
+}
+.alert_.alert_xs {
+  @apply px-3 py-2;
+}
+.alert_.alert_xs .alert_text {
+  @apply text-xs;
+}
 .btn_ {
   --btn-background: theme("colors.gray.200");
   --btn-hover-bg: theme("colors.gray.100");
@@ -390,5 +428,110 @@ header .h-menus .h-menu-item:hover .hm-hover-menu {
 }
 .main .m-shop-product-list .mspl-item .mspli-main .mspli-lowest-price span {
   @apply flex line-clamp-1 text-xs gap-2 text-red-600 font-medium;
+}
+.product-page .pp-info-content {
+  @apply grid grid-cols-2;
+}
+.product-page .pp-info-content .ppi-images .ppi-image {
+  height: 600px;
+  @apply p-2 border border-solid border-gray-100 rounded-xl overflow-hidden;
+}
+.product-page .pp-info-content .ppi-images .ppi-image img {
+  @apply h-full w-full object-contain;
+}
+.product-page .pp-info-content .ppi-images .ppi-small-images {
+  @apply flex gap-2 justify-center;
+}
+.product-page .pp-info-content .ppi-images .ppi-small-images li {
+  @apply w-16 aspect-square border-2 cursor-pointer border-solid border-gray-100 rounded-xl overflow-hidden;
+}
+.product-page .pp-info-content .ppi-images .ppi-small-images li.active {
+  @apply border-primary-400;
+}
+.product-page .pp-info-content .ppi-images .ppi-small-images li img {
+  @apply w-full h-full object-contain;
+}
+.product-page .pp-info-content .ppi-infos {
+  @apply flex flex-col gap-3 px-4;
+}
+.product-page .pp-info-content .ppi-infos .ppi-title {
+  @apply text-xl tracking-tight text-gray-600 font-medium;
+}
+.product-page .pp-info-content .ppi-infos .ppi-price-rating {
+  @apply flex justify-between;
+}
+.product-page .pp-info-content .ppi-infos .ppi-price-rating .ppipr-price {
+  @apply text-3xl text-primary-500 font-semibold tracking-tight;
+}
+.product-page .pp-info-content .ppi-infos .ppi-price-rating .ppipr-price small {
+  @apply text-xl;
+}
+.product-page .pp-info-content .ppi-infos .ppi-price-rating .ppipr-stars {
+  @apply flex flex-col items-end gap-1;
+}
+.product-page .pp-info-content .ppi-infos .ppi-price-rating .ppipr-stars a {
+  @apply text-xs font-medium text-gray-400 hover:text-blue-500;
+}
+.product-page .pp-info-content .ppi-infos .ppi-df-title {
+  @apply text-sm font-semibold text-gray-600;
+}
+.product-page .pp-info-content .ppi-infos .ppi-filter-colors .ppi-fc-list {
+  @apply flex gap-2 mt-2;
+}
+.product-page .pp-info-content .ppi-infos .ppi-filter-colors .ppi-fc-list li {
+  aspect-ratio: 9/16;
+  @apply w-12 bg-white cursor-pointer flex border-2 border-solid border-gray-100 items-center justify-center rounded-xl overflow-hidden;
+}
+.product-page .pp-info-content .ppi-infos .ppi-filter-colors .ppi-fc-list li.active {
+  @apply border-primary-500;
+}
+.product-page .pp-info-content .ppi-infos .ppi-basket-favorite {
+  @apply flex gap-3;
+}
+.d-breadcrumb {
+  @apply flex;
+}
+.d-breadcrumb .dbc-list {
+  @apply inline-flex items-center;
+}
+.d-breadcrumb .dbc-list .dbc-item {
+  @apply inline-flex items-center;
+}
+.d-breadcrumb .dbc-list .dbc-item[aria-current='page'] .dbc-item-text {
+  @apply font-semibold;
+}
+.d-breadcrumb .dbc-list .dbc-item .dbc-item-content {
+  @apply flex items-center;
+}
+.d-breadcrumb .dbc-list .dbc-item .dbc-item-content i {
+  @apply text-gray-500;
+}
+.d-breadcrumb .dbc-list .dbc-item a {
+  @apply hover:text-blue-600;
+}
+.d-breadcrumb .dbc-list .dbc-item .dbc-item-text {
+  @apply inline-flex items-center text-s font-medium text-gray-600;
+}
+.rating {
+  direction: rtl;
+  font-size: 0.5em;
+  text-align: left;
+}
+.rating .star {
+  background-image: url('data:image/svg+xml, <svg fill="gray" viewBox="0 0 22 20" xmlns="http://www.w3.org/2000/svg"><path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/></svg>');
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.rating .star:hover {
+  background-image: url('data:image/svg+xml, <svg fill="goldenrod" viewBox="0 0 22 20" xmlns="http://www.w3.org/2000/svg"><path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/></svg>');
+}
+.rating .star:hover,
+.rating .star:hover ~ .star,
+.rating .star.selected,
+.rating .star.selected ~ .star {
+  background-image: url('data:image/svg+xml, <svg fill="goldenrod" viewBox="0 0 22 20" xmlns="http://www.w3.org/2000/svg"><path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/></svg>');
 }
 /*# sourceMappingURL=tailwind.css.map */
