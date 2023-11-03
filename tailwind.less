@@ -12,6 +12,7 @@
   --foreground: #000;
   --divider: #dcdcdc;
   --overlay: #888;
+  --header-height:112px;
 }
 
 
@@ -95,7 +96,37 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
 
 
 }
+.dropdown_{
+  @apply relative;
+  .dropdown_trigger{
+    @apply inline-block;
+    &.dt-active{
+      .btn_{
+        --btn-background: theme("colors.gray.100");
+        &.btn_right_chevron {
+          &:after{
+          @apply rotate-180;
+          }
+        }
+      }
+    }
+  }
+  .dropdown_content{
+    @apply absolute hidden top-full left-0  z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44;
+    .dc_items_list{
+      @apply py-2 text-sm text-gray-700 ;
+      .dc_item{
+        a{
+          @apply block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white;
+        }
+      }
 
+    }
+  }
+  .dc-active{
+    @apply block;
+  }
+}
 .btn_ {
     --btn-background: theme("colors.gray.200");
     --btn-hover-bg: theme("colors.gray.100");
@@ -105,9 +136,31 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
     color: var(--btn-color);
 
     @apply px-4 py-3 rounded-xl inline-flex items-center justify-center transition-all cursor-pointer;
-
+    &.btn_icon{
+      @apply aspect-square;
+    }
     &.btn-icon-between{
       @apply !justify-between;
+    }
+    &.btn_sm{
+      @apply px-3 py-2 text-sm;
+      &.btn_right_chevron{
+        &:after{
+          width: 16px;
+          height: 16px;
+          background-size: 1rem;
+        }
+      }
+    }
+    &.btn_xs{
+    @apply px-2 py-1 text-s;
+      &.btn_right_chevron{
+        &:after{
+          width: 16px;
+          height: 16px;
+          background-size: 1rem;
+        }
+      }
     }
     &.btn_primary {
         --btn-background: theme("colors.primary.600");
@@ -145,7 +198,7 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
         background-repeat: no-repeat;
         background-size: 1.25rem;
         transition: transform 0.2s ease-in-out;
-        @apply rotate-180;
+        @apply ml-1;
       }
     }
     &.collapsed{
@@ -155,6 +208,90 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
         }
       }
     }
+}
+.input_{
+  @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus-visible:outline-primary-500 focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5;
+  &.input_sm{
+    @apply px-3 py-2 text-s;
+  }
+  &.input_xs{
+  @apply px-2 py-1 text-xs rounded-lg;
+  }
+}
+.check_input_{
+  @apply flex items-center px-2 py-1 cursor-pointer rounded hover:bg-gray-100 dark:hover:bg-gray-600;
+  input{
+    @appy w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500;
+  }
+  label{
+    @apply w-full ml-2 text-s font-medium text-gray-900 rounded dark:text-gray-300 cursor-pointer;
+  }
+}
+
+.check_switch_{
+  --button-width: 3.5em;
+  --button-height: 2em;
+  --toggle-diameter: 1.5em;
+  --button-toggle-offset: calc((var(--button-height) - var(--toggle-diameter)) / 2);
+  --toggle-shadow-offset: 10px;
+  --toggle-wider: 3em;
+  --color-grey: #cccccc;
+  --color-primary: theme("colors.primary.500");;
+  @apply cursor-pointer;
+  input[type='checkbox']{
+    @apply sr-only;
+    &:checked + .cs_slider{
+      background-color: var(--color-primary);
+      &:after{
+        transform: translateX(calc(var(--button-width) - var(--toggle-diameter) - var(--button-toggle-offset)));
+        box-shadow: calc(var(--toggle-shadow-offset) * -1) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+      }
+    }
+    &:checked:active + .cs_slider{
+      &:after{
+        transform: translateX(calc(var(--button-width) - var(--toggle-wider) - var(--button-toggle-offset)));
+      }
+    }
+    &:active + .cs_slider{
+      &:after{
+        width: var(--toggle-wider);
+      }
+    }
+  }
+  .cs_slider{
+    display: inline-block;
+    width: var(--button-width);
+    height: var(--button-height);
+    background-color: var(--color-grey);
+    border-radius: calc(var(--button-height) / 2);
+    position: relative;
+    transition: 0.3s all ease-in-out;
+    &:after{
+      content: "";
+      display: inline-block;
+      width: var(--toggle-diameter);
+      height: var(--toggle-diameter);
+      background-color: #fff;
+      border-radius: calc(var(--toggle-diameter) / 2);
+      position: absolute;
+      top: var(--button-toggle-offset);
+      transform: translateX(var(--button-toggle-offset));
+      box-shadow: var(--toggle-shadow-offset) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+      transition: 0.3s all ease-in-out;
+    }
+  }
+  &.check_switch_filter{
+    @apply flex justify-between items-center;
+    .cs_title{
+      @apply text-sm font-medium;
+    }
+  }
+  &.check_switch_sm{
+    --button-width: 2.5em;
+    --button-height: 1.5em;
+    --toggle-diameter: 1em;
+    --toggle-wider: 2em;
+  }
 }
 
 .btn-check:checked + .btn_ {
@@ -397,6 +534,46 @@ header{
 
   }
 }
+.category-page{
+  @apply flex gap-4 relative;
+  .cp-filter{
+    width: 220px;
+    height: calc(100vh - var(--header-height))!important;
+    top: var(--header-height);
+    @apply sticky;
+    .cpf-content{
+      @apply border border-solid border-gray-100 h-full flex flex-col overflow-y-auto rounded-xl;
+      .cpf-title{
+        @apply px-3 py-3 border-b border-solid border-gray-100;
+        span{
+          @apply text-s text-gray-600;
+        }
+      }
+      .cpf-filters{
+        .cpf-item{
+          @apply border-b border-solid border-gray-100 py-2 px-3 ;
+          .cpfi-title{
+            @apply text-s font-medium text-gray-700 inline-block mb-2;
+          }
+          .cpf-price-range{
+            @apply flex gap-2 items-center;
+          }
+          .cpf-filter-item-lists{
+            max-height: 300px;
+            @apply overflow-y-auto ;
+            .cpffi-item{
+
+            }
+          }
+        }
+      }
+
+    }
+  }
+  .cp-content{
+    @apply flex-1;
+  }
+}
 .product-page{
   .pp-info-content{
     @apply grid grid-cols-2;
@@ -497,6 +674,13 @@ header{
   direction: rtl;
   font-size: .5em;
   text-align: left;
+  &.rating_sm{
+    font-size: .2em;
+    .star{
+      width: 16px;
+      height: 16px;
+    }
+  }
   .star {
     background-image: url('data:image/svg+xml, <svg fill="gray" viewBox="0 0 22 20" xmlns="http://www.w3.org/2000/svg"><path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/></svg>');
     background-repeat: no-repeat;
@@ -504,7 +688,6 @@ header{
     width: 20px;
     height: 20px;
     cursor: pointer;
-
     &:hover{
       background-image: url('data:image/svg+xml, <svg fill="goldenrod" viewBox="0 0 22 20" xmlns="http://www.w3.org/2000/svg"><path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/></svg>');
     }

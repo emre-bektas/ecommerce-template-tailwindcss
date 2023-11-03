@@ -10,6 +10,16 @@ $(document).ready(function () {
         })
 
 
+    $(".dropdown_ .dropdown_trigger").click(function (){
+        const dropEl = $(this).closest(".dropdown_")
+        $(this).toggleClass("dt-active");
+
+        dropEl.find(".dropdown_content").toggleClass("dc-active");
+
+        console.log(dropEl);
+    })
+
+
 });
 
 
