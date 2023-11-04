@@ -1,0 +1,44 @@
+@@include('../static/header.html')
+<div class="max-w-6xl mx-auto main">
+    <div class="basket-page">
+        <div class="bp-content">
+            <h1 class="text-xl font-medium">Sepetim <span class="text-sm text-gray-400">(3 Ürün)</span></h1>
+            <ul class="bpc-product-list mt-3">
+                @@include('../components/menus/basket-product-item/index.html')
+                @@include('../components/menus/basket-product-item/index.html')
+            </ul>
+            <section class="ms1-section mt-4">
+                <div class="mss-header">
+                    <h1>Son gezdiğin ürünler</h1>
+                </div>
+                <div class="m-shop-product-list">
+                    @@include('../components/menus/shop-product-cart-2/index.html')
+                    @@include('../components/menus/shop-product-cart-2/index.html')
+                    @@include('../components/menus/shop-product-cart-2/index.html')
+                    @@include('../components/menus/shop-product-cart-2/index.html')
+                </div>
+            </section>
+        </div>
+        <div class="bp-summary">
+            <div class="bps_content">
+                <button class="btn_ btn_primary btn_full">Sepeti Onayla</button>
+                <ul class="bp_summary_bill">
+                    <li>
+                        <span class="bps_title">Ürünler</span>
+                        <span class="bps_value">300,00 TL</span>
+                    </li>
+                    <li>
+                        <span class="bps_title">Kargo</span>
+                        <span class="bps_value">29,99 TL</span>
+                    </li>
+                    <li class="bps_total">
+                        <span class="bps_title">Toplam</span>
+                        <span class="bps_value">329,99 TL</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@@include('../static/footer.html')

@@ -727,6 +727,10 @@ video {
   height: 64px;
 }
 
+.\!w-16 {
+  width: 4rem !important;
+}
+
 .w-8 {
   width: 2rem;
 }
@@ -773,6 +777,10 @@ video {
 
 .flex-col {
   flex-direction: column;
+}
+
+.items-end {
+  align-items: flex-end;
 }
 
 .items-center {
@@ -947,6 +955,11 @@ video {
   line-height: 1.5rem;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -995,6 +1008,11 @@ video {
 .text-gray-300 {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
+}
+
+.text-gray-400 {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
 .text-gray-500 {
@@ -2168,6 +2186,135 @@ header .h-menus .h-menu-item:hover .hm-hover-menu {
   font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
+}
+
+.basket-page {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+}
+
+.basket-page .bp-content {
+  flex: 1 1 0%;
+}
+
+.basket-page .bp-content .bpc-product-list {
+  border-radius: 0.75rem;
+  border-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.basket-page .bp-content .bpc-product-list .bpc-product-list-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(243 244 246 / var(--tw-border-opacity));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.basket-page .bp-content .bpc-product-list .bpc-product-list-item .bpc-product-check-image {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.basket-page .bp-content .bpc-product-list .bpc-product-list-item .bpc-product-check-image .bpc-product-image {
+  display: flex;
+  height: 7rem;
+  width: 7rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.basket-page .bp-content .bpc-product-list .bpc-product-list-item .bpc-product-check-image .bpc-product-image img {
+  height: 100%;
+  border-radius: 0.75rem;
+  border-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.basket-page .bp-content .bpc-product-list .bpc-product-list-item .bpc-product-infos {
+  display: flex;
+  height: 100%;
+  height: 7rem;
+  flex: 1 1 0%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.basket-page .bp-content .bpc-product-list .bpc-product-list-item:last-child {
+  border-color: transparent;
+}
+
+.basket-page .bp-summary {
+  width: 220px;
+}
+
+.basket-page .bp-summary .bps_content {
+  top: var(--header-height);
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.basket-page .bp-summary .bp_summary_bill {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 0.75rem;
+  border-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  padding: 0.75rem;
+}
+
+.basket-page .bp-summary .bp_summary_bill li {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.basket-page .bp-summary .bp_summary_bill li.bps_total {
+  border-top-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  padding-top: 0.5rem;
+}
+
+.basket-page .bp-summary .bp_summary_bill li.bps_total .bps_value {
+  --tw-text-opacity: 1;
+  color: rgb(62 208 37 / var(--tw-text-opacity));
+}
+
+.basket-page .bp-summary .bp_summary_bill li .bps_title {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+.basket-page .bp-summary .bp_summary_bill li .bps_value {
+  font-weight: 500;
 }
 
 .category-page {

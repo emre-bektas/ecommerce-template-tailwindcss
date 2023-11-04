@@ -552,6 +552,58 @@ header .h-menus .h-menu-item:hover .hm-hover-menu {
 .main .m-shop-product-list .mspl-item .mspli-main .mspli-lowest-price span {
   @apply flex line-clamp-1 text-xs gap-2 text-red-600 font-medium;
 }
+.basket-page {
+  @apply flex gap-4 relative;
+}
+.basket-page .bp-content {
+  @apply flex-1;
+}
+.basket-page .bp-content .bpc-product-list {
+  @apply border border-gray-200 border-solid rounded-xl shadow;
+}
+.basket-page .bp-content .bpc-product-list .bpc-product-list-item {
+  @apply flex gap-2 items-center px-4 py-3 border-b border-solid border-gray-100;
+}
+.basket-page .bp-content .bpc-product-list .bpc-product-list-item .bpc-product-check-image {
+  @apply flex gap-3 items-center;
+}
+.basket-page .bp-content .bpc-product-list .bpc-product-list-item .bpc-product-check-image .bpc-product-image {
+  @apply h-28 w-28 flex items-center justify-center;
+}
+.basket-page .bp-content .bpc-product-list .bpc-product-list-item .bpc-product-check-image .bpc-product-image img {
+  @apply object-contain h-full border border-solid border-gray-200 rounded-xl;
+}
+.basket-page .bp-content .bpc-product-list .bpc-product-list-item .bpc-product-infos {
+  @apply flex-1 h-full flex flex-col justify-between h-28;
+}
+.basket-page .bp-content .bpc-product-list .bpc-product-list-item:last-child {
+  @apply border-transparent;
+}
+.basket-page .bp-summary {
+  width: 220px;
+}
+.basket-page .bp-summary .bps_content {
+  top: var(--header-height);
+  @apply sticky flex flex-col gap-3 py-2;
+}
+.basket-page .bp-summary .bp_summary_bill {
+  @apply border border-gray-200 border-solid rounded-xl p-3 flex flex-col gap-2;
+}
+.basket-page .bp-summary .bp_summary_bill li {
+  @apply w-full text-xs flex justify-between;
+}
+.basket-page .bp-summary .bp_summary_bill li.bps_total {
+  @apply border-t border-solid border-gray-200 pt-2;
+}
+.basket-page .bp-summary .bp_summary_bill li.bps_total .bps_value {
+  @apply text-primary-500;
+}
+.basket-page .bp-summary .bp_summary_bill li .bps_title {
+  @apply text-gray-500;
+}
+.basket-page .bp-summary .bp_summary_bill li .bps_value {
+  @apply font-medium;
+}
 .category-page {
   @apply flex gap-4 relative;
 }
