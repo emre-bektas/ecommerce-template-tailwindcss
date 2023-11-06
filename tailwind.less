@@ -127,6 +127,20 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
     @apply block;
   }
 }
+.badge_{
+  --badge-background: theme("colors.gray.200");
+  --badge-hover-bg: theme("colors.gray.100");
+  --badge-color: theme("colors.gray.800");
+
+  background: var(--badge-background);
+  color: var(--badge-color);
+
+  &.badge_rose{
+    --badge-background: theme("colors.rose.200");
+    --badge-color: theme("colors.rose.800");
+  }
+  @apply text-xs font-medium py-1 px-2 rounded;
+}
 .btn_ {
     --btn-background: theme("colors.gray.200");
     --btn-hover-bg: theme("colors.gray.100");
@@ -141,6 +155,12 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
     }
     &.btn-icon-between{
       @apply !justify-between;
+    }
+    &.btn_start{
+      @apply !justify-start;
+    }
+    &.btn_left_icon{
+      @apply gap-1;
     }
     &.btn_sm{
       @apply px-3 py-2 text-sm;
@@ -169,7 +189,11 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
     &.btn_transparent {
     --btn-background: transparent;
     --btn-color: theme("colors.gray.800");
-
+        &.btn_active{
+          --btn-background:  theme("colors.gray.200");
+          --btn-hover-bg: theme("colors.gray.200");
+          --btn-color: theme("colors.gray.800");
+        }
         &:hover {
           background: var(--btn-hover-bg);
         }
@@ -208,6 +232,12 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
         }
       }
     }
+}
+.form_input_{
+  @apply flex flex-col gap-1 w-full;
+  label{
+    @apply text-s text-gray-500 px-1 font-medium;
+  }
 }
 .input_{
   @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus-visible:outline-primary-500 focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5;
@@ -305,7 +335,7 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
   display: none;
 }
 .product-rect-content{
-  max-height: 400px;
+  max-height: 420px;
   @apply bg-white border border-solid border-gray-100 px-4 pt-6 pb-0 rounded-xl flex flex-col items-center justify-center w-full h-full gap-1;
   &.procut-rect-image{
     @apply !p-0 overflow-hidden;
@@ -532,6 +562,104 @@ header{
       }
     }
 
+  }
+}
+.account-page{
+  @apply flex gap-4 relative;
+  .ap-als-content{
+    width: 220px;
+    .ap-alsc-wrapper{
+      top: var(--header-height);
+      @apply sticky py-2;
+    }
+
+  }
+  .ap-content{
+    @apply flex-1 py-2;
+    .ap-title{
+      @apply text-xl font-semibold leading-6 text-gray-700 inline-flex items-end gap-1;
+    }
+    .apc-filters{
+      @apply flex gap-3 my-3;
+    }
+    .apc-orders-page{
+      .op-lists{
+        .opl-item{
+          @apply border border-solid border-gray-200 rounded-xl overflow-hidden;
+          .opl-item-header{
+            @apply bg-gray-100 px-3 py-2 flex items-center;
+            .oplh-item{
+              gap:.15rem;
+              @apply flex flex-col w-full;
+              span{
+                @apply text-xs text-gray-500 font-medium;
+              }
+              b{
+                @apply text-xs font-medium text-zinc-800;
+              }
+            }
+          }
+          .opl-item-main{
+            @apply p-2;
+            .opli-product-lists{
+              @apply flex flex-col gap-3;
+              .opli-product-item{
+                @apply border border-solid border-gray-200 rounded-xl p-4 flex justify-between items-center;
+                .opli-pi-infos{
+                  @apply flex gap-2;
+                  .opli-pi-images{
+                    width: 40px;
+                    img{
+                      @apply w-10 h-10 border-2 border-solid border-gray-100 rounded-full object-cover;
+                    }
+                  }
+                }
+                .opli-pi-price{
+                  @apply flex flex-col text-right;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .apc-coupon-page{
+      .apc-cp-lists{
+        @apply flex flex-col gap-2 mt-3;
+        .apc-cp-item{
+          @apply bg-gradient-to-br from-purple-600 to-indigo-600 text-white text-center py-6 rounded-xl shadow-md relative;
+          .apc-cp-item-image{
+            @apply w-36 mx-auto mb-4 rounded-lg;
+          }
+          .apc-cp-item-title{
+            @apply text-2xl font-semibold mb-4;
+          }
+          .apc-cp-item-coupon{
+            @apply flex items-center justify-center space-x-2 mb-6;
+            .apc-cp-item-coupon-code{
+              @apply border-dashed border border-primary-400 text-white px-4 py-2 rounded-xl;
+            }
+          }
+        }
+      }
+    }
+    .apc-setting-page{
+      .apc-sp-content{
+        @apply border rounded-xl border-solid border-gray-200 flex mt-3;
+        .apc-sp-infos-title{
+        @apply text-lg font-medium text-primary-500;
+        }
+        .apc-sp-user-infos{
+          @apply flex-1 p-4 border-r border-solid border-gray-200;
+
+        }
+        .apc-sp-user-password{
+          @apply flex-1 p-4;
+
+        }
+      }
+
+    }
   }
 }
 .basket-page{

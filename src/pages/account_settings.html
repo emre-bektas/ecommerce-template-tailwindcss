@@ -1,0 +1,61 @@
+@@include('../static/header.html')
+<div class="max-w-6xl mx-auto main">
+    <div class="account-page">
+        <div class="ap-als-content">
+            @@include('../static/account-left-sidebar.html')
+        </div>
+        <div class="ap-content">
+            <div class="apc-setting-page">
+                <h1 class="ap-title">Hesap Ayarları</h1>
+                <div class="apc-sp-content ">
+                    <div class="apc-sp-user-infos">
+                        <form action="">
+                            <h3 class="apc-sp-infos-title mb-3">Üyelik Bilgileri</h3>
+                            <div class="flex flex-col gap-3">
+                                <div class="flex gap-3">
+                                    <div class="form_input_">
+                                        <label for="name">Ad</label>
+                                        <input type="text" id="name" class="input_" placeholder="Ad">
+                                    </div>
+                                    <div class="form_input_">
+                                        <label for="surname">Soyad</label>
+                                        <input type="text" id="surname" class="input_" placeholder="Soyad">
+                                    </div>
+                                </div>
+                                <div class="form_input_">
+                                    <label for="email">E-posta Adresi</label>
+                                    <input type="email" id="email" class="input_">
+                                </div>
+                                <button class="btn_ btn_full" type="submit">Güncelle</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="apc-sp-user-password">
+                        <form action="">
+                            <h3 class="apc-sp-infos-title mb-3">Şifre Güncelleme</h3>
+                            <div class="flex flex-col gap-3">
+                                <div class="form_input_">
+                                    <label for="password">Şu Anki şifre</label>
+                                    <input type="text" id="password" class="input_">
+                                </div>
+                                <div class="form_input_">
+                                    <label for="newPassword">Yeni Şifre</label>
+                                    <input type="text" id="newPassword" class="input_">
+                                    <small class="text-xs text-gray-500">Şifreniz en az 7 karakter ve en fazla 64 karakter olmalı, harf ve rakam içermelidir.</small>
+                                </div>
+                                <div class="form_input_">
+                                    <label for="againPassword">Yeni Şifre (Tekrar)</label>
+                                    <input type="text" id="againPassword" class="input_">
+                                </div>
+                                <button class="btn_ btn_full" type="submit">Şifreyi Değiştir</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@@include('../static/footer.html')

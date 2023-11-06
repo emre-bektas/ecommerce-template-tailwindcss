@@ -1,0 +1,27 @@
+@@include('../static/header.html')
+<div class="max-w-6xl mx-auto main">
+    <div class="account-page">
+        <div class="ap-als-content">
+            @@include('../static/account-left-sidebar.html')
+        </div>
+        <div class="ap-content">
+            <div class="apc-orders-page">
+                <h1 class="ap-title">Siparişlerim <span class="badge_">3</span></h1>
+                <div class="apc-filters">
+                    <button class="btn_ btn_primary btn_sm">Tümü</button>
+                    <button class="btn_ btn_transparent btn_sm">Devam Edenler</button>
+                    <button class="btn_ btn_transparent btn_sm">İptaller</button>
+                    <button class="btn_ btn_transparent btn_sm">İadeler</button>
+                    <button class="btn_ btn_transparent btn_sm">Teslim Edilmeyelenler</button>
+                </div>
+                <ul class="flex flex-col gap-2 op-lists">
+                    @@include('../components/orders/orders.html')
+                    @@include('../components/orders/orders.html')
+                    @@include('../components/orders/orders.html')
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@@include('../static/footer.html')
