@@ -1667,11 +1667,12 @@ video {
   --input-border-color: #d1d5db;
 }
 
-.input_:not([type='checkbox']) {
+.input_:not([type='checkbox']):not([type='radio']) {
   background-color: var(--input-background);
   color: var(--input-color);
   border-color: var(--input-border-color);
   display: block;
+  width: 100%;
   border-radius: 0.5rem;
   border-width: 1px;
   padding: 0.625rem;
@@ -1679,18 +1680,18 @@ video {
   line-height: 1.25rem;
 }
 
-.input_:not([type='checkbox']):focus {
+.input_:not([type='checkbox']):not([type='radio']):focus {
   --tw-border-opacity: 1;
   border-color: rgb(62 208 37 / var(--tw-border-opacity));
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(62 208 37 / var(--tw-ring-opacity));
 }
 
-.input_:not([type='checkbox']):focus-visible {
+.input_:not([type='checkbox']):not([type='radio']):focus-visible {
   outline-color: #3ed025;
 }
 
-.input_.input_sm {
+.input_:not([type='checkbox']):not([type='radio']).input_sm {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   padding-top: 0.5rem;
@@ -1698,7 +1699,7 @@ video {
   font-size: 0.813rem;
 }
 
-.input_.input_xs {
+.input_:not([type='checkbox']):not([type='radio']).input_xs {
   border-radius: 0.5rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -1711,17 +1712,20 @@ video {
 .input_[type='checkbox'] {
   width: 1rem;
   height: 1rem;
-  color: dodgerblue;
+  color: var(--input-color);
   vertical-align: middle;
   -webkit-appearance: none;
-  background: none;
   border: 0;
   outline: 0;
   flex-grow: 0;
-  background-color: #FFFFFF;
+  background-color: var(--input-background);
   transition: background 300ms;
   cursor: pointer;
   border-radius: 0.25rem;
+}
+
+.input_[type='checkbox'].input_primary {
+  --input-color: #3ed025;
 }
 
 .input_[type='checkbox']:before {
@@ -1734,7 +1738,7 @@ video {
   border: 0;
   background-color: transparent;
   background-size: contain;
-  box-shadow: inset 0 0 0 1px #CCD3D8;
+  box-shadow: inset 0 0 0 1px var(--input-border-color);
 }
 
 .input_[type='checkbox']:checked {
@@ -1746,6 +1750,47 @@ video {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Cpath d='M15.88 8.29L10 14.17l-1.88-1.88a.996.996 0 1 0-1.41 1.41l2.59 2.59c.39.39 1.02.39 1.41 0L17.3 9.7a.996.996 0 0 0 0-1.41c-.39-.39-1.03-.39-1.42 0z' fill='%23fff'/%3E %3C/svg%3E");
 }
 
+.input_[type='radio'] {
+  width: 1rem;
+  height: 1rem;
+  color: var(--input-color);
+  vertical-align: middle;
+  -webkit-appearance: none;
+  border: 0;
+  outline: 0;
+  flex-grow: 0;
+  background-color: var(--input-background);
+  transition: background 300ms;
+  cursor: pointer;
+  border-radius: 9999px;
+}
+
+.input_[type='radio'].input_primary {
+  --input-color: #3ed025;
+}
+
+.input_[type='radio']:before {
+  content: "";
+  color: transparent;
+  display: block;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  border: 0;
+  background-color: transparent;
+  background-size: contain;
+  box-shadow: inset 0 0 0 1px var(--input-border-color);
+}
+
+.input_[type='radio']:checked {
+  background-color: currentcolor;
+}
+
+.input_[type='radio']:checked:before {
+  box-shadow: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Cpath d='M15.88 8.29L10 14.17l-1.88-1.88a.996.996 0 1 0-1.41 1.41l2.59 2.59c.39.39 1.02.39 1.41 0L17.3 9.7a.996.996 0 0 0 0-1.41c-.39-.39-1.03-.39-1.42 0z' fill='%23fff'/%3E %3C/svg%3E");
+}
+
 .check_input_ {
   display: flex;
   cursor: pointer;
@@ -1753,8 +1798,6 @@ video {
   border-radius: 0.25rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
 }
 
 .check_input_:hover {
@@ -1767,15 +1810,13 @@ video {
   background-color: rgb(75 85 99 / var(--tw-bg-opacity));
 }
 
-.check_input_ input {
-  @appy w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500;
-}
-
 .check_input_ label {
-  margin-left: 0.5rem;
   width: 100%;
   cursor: pointer;
   border-radius: 0.25rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.5rem;
   font-size: 0.813rem;
   font-weight: 500;
   --tw-text-opacity: 1;

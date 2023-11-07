@@ -287,32 +287,34 @@ video {
   --input-color: theme("colors.gray.900");
   --input-border-color: theme("colors.gray.300");
 }
-.input_:not([type='checkbox']) {
+.input_:not([type='checkbox']):not([type='radio']) {
   background-color: var(--input-background);
   color: var(--input-color);
   border-color: var(--input-border-color);
-  @apply border text-sm rounded-lg focus-visible:outline-primary-500 focus:ring-primary-500 focus:border-primary-500 block p-2.5;
+  @apply border w-full text-sm rounded-lg focus-visible:outline-primary-500 focus:ring-primary-500 focus:border-primary-500 block p-2.5;
 }
-.input_.input_sm {
+.input_:not([type='checkbox']):not([type='radio']).input_sm {
   @apply px-3 py-2 text-s;
 }
-.input_.input_xs {
+.input_:not([type='checkbox']):not([type='radio']).input_xs {
   @apply px-2 py-1 text-xs rounded-lg;
 }
 .input_[type='checkbox'] {
   width: 1rem;
   height: 1rem;
-  color: dodgerblue;
+  color: var(--input-color);
   vertical-align: middle;
   -webkit-appearance: none;
-  background: none;
   border: 0;
   outline: 0;
   flex-grow: 0;
-  background-color: #FFFFFF;
+  background-color: var(--input-background);
   transition: background 300ms;
   cursor: pointer;
   @apply rounded;
+}
+.input_[type='checkbox'].input_primary {
+  --input-color: theme("colors.primary.500");
 }
 .input_[type='checkbox']:before {
   content: "";
@@ -324,7 +326,7 @@ video {
   border: 0;
   background-color: transparent;
   background-size: contain;
-  box-shadow: inset 0 0 0 1px #CCD3D8;
+  box-shadow: inset 0 0 0 1px var(--input-border-color);
 }
 .input_[type='checkbox']:checked {
   background-color: currentcolor;
@@ -333,14 +335,47 @@ video {
   box-shadow: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Cpath d='M15.88 8.29L10 14.17l-1.88-1.88a.996.996 0 1 0-1.41 1.41l2.59 2.59c.39.39 1.02.39 1.41 0L17.3 9.7a.996.996 0 0 0 0-1.41c-.39-.39-1.03-.39-1.42 0z' fill='%23fff'/%3E %3C/svg%3E");
 }
-.check_input_ {
-  @apply flex items-center px-2 py-1 cursor-pointer rounded hover:bg-gray-100 dark:hover:bg-gray-600;
+.input_[type='radio'] {
+  width: 1rem;
+  height: 1rem;
+  color: var(--input-color);
+  vertical-align: middle;
+  -webkit-appearance: none;
+  border: 0;
+  outline: 0;
+  flex-grow: 0;
+  background-color: var(--input-background);
+  transition: background 300ms;
+  cursor: pointer;
+  @apply rounded-full;
 }
-.check_input_ input {
-  @appy w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500;
+.input_[type='radio'].input_primary {
+  --input-color: theme("colors.primary.500");
+}
+.input_[type='radio']:before {
+  content: "";
+  color: transparent;
+  display: block;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  border: 0;
+  background-color: transparent;
+  background-size: contain;
+  box-shadow: inset 0 0 0 1px var(--input-border-color);
+}
+.input_[type='radio']:checked {
+  background-color: currentcolor;
+}
+.input_[type='radio']:checked:before {
+  box-shadow: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Cpath d='M15.88 8.29L10 14.17l-1.88-1.88a.996.996 0 1 0-1.41 1.41l2.59 2.59c.39.39 1.02.39 1.41 0L17.3 9.7a.996.996 0 0 0 0-1.41c-.39-.39-1.03-.39-1.42 0z' fill='%23fff'/%3E %3C/svg%3E");
+}
+.check_input_ {
+  @apply flex items-center px-2 cursor-pointer rounded hover:bg-gray-100 dark:hover:bg-gray-600;
 }
 .check_input_ label {
-  @apply w-full ml-2 text-s font-medium text-gray-900 rounded dark:text-gray-300 cursor-pointer;
+  @apply w-full pl-2 py-1 text-s font-medium text-gray-900 rounded dark:text-gray-300 cursor-pointer;
 }
 .check_switch_ {
   --button-width: 3.5em;
