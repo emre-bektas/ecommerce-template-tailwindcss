@@ -1,0 +1,33 @@
+@@include('../static/header.html')
+<div class="max-w-6xl mx-auto main">
+    <div class="auth-page">
+        <div class="ap-content">
+
+            <div class=" space-y-4 md:space-y-6">
+                <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                    Giriş yap
+                </h1>
+                <span class="text-sm text-gray-500">veya <a href="/pages/register.html" class="link-href">hesap oluştur</a>, indirimleri kaçırma!</span>
+                <form class="space-y-3" action="#">
+                    <div class="form_input_">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" class="input_" >
+                    </div>
+                    <div class="form_input_">
+                        <label for="password">Şifre</label>
+                        <input type="password" name="password" id="password" placeholder="••••••••" class="input_">
+                    </div>
+                    <div class="flex items-center justify-end">
+                        <a href="/pages/forget-password.html" class="text-sm link-href">Şifreni mi Unuttun?</a>
+                    </div>
+                    <button class="btn_ btn_primary btn_full" type="submit">Giriş Yap</button>
+                    <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                        Henüz bir hesabınız yok mu? <a href="/pages/register.html" class="link-href">Kayıt Ol</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@@include('../static/footer.html')

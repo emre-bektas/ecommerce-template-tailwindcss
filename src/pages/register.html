@@ -1,0 +1,40 @@
+@@include('../static/header.html')
+<div class="max-w-6xl mx-auto main">
+    <div class="auth-page">
+        <div class="ap-content">
+
+            <div class=" space-y-4 md:space-y-6">
+                <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                    Kayıt ol
+                </h1>
+                <span class="text-sm text-gray-500">veya <a href="/pages/login.html" class="link-href">giriş yap</a>, indirimleri kaçırma!</span>
+                <form class="space-y-3" action="#">
+                    <div class="flex gap-3">
+                        <div class="form_input_">
+                            <label for="name">Ad</label>
+                            <input type="text" name="name" id="name" class="input_" >
+                        </div>
+                        <div class="form_input_">
+                            <label for="surname">Soyad</label>
+                            <input type="text" name="surname" id="surname" class="input_" >
+                        </div>
+                    </div>
+                    <div class="form_input_">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" class="input_" >
+                    </div>
+                    <div class="form_input_">
+                        <label for="password">Şifre</label>
+                        <input type="password" name="password" id="password" placeholder="••••••••" class="input_">
+                    </div>
+                    <button class="btn_ btn_primary btn_full" type="submit">Kayıt Ol</button>
+                    <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                        Eğer hesabınız varsa hemen <a href="/pages/register.html" class="link-href">giriş yapın</a>.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@@include('../static/footer.html')
