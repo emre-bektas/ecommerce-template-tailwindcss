@@ -1,0 +1,50 @@
+@@include('../static/header.html')
+<div class="max-w-6xl mx-auto main">
+    <div class="my-account-page">
+        <div class="my-ap-header">
+            <a href="/" class="btn_ btn_icon">
+                <i class="gg-chevron-left"></i>
+            </a>
+            <div class="flex flex-col my-aph-texts">
+                <h3>DeneyimSoft</h3>
+                <span>info@deneyimsoft.com</span>
+            </div>
+        </div>
+        <div>
+            <ul class="flex flex-col gap-2 mt-1">
+                <li>
+                    <a href="/pages/account_settings.html" class="btn_ btn_start btn_no_hover btn_full btn_left_icon btn_transparent">
+                        <i class="w-7 text-teal-500">@@include('../assets/icons/profile.svg')</i>
+                        Hesap Ayarları
+                    </a>
+                </li>
+                <li>
+                    <a href="/pages/orders.html" class="btn_ btn_start btn_no_hover btn_full btn_transparent btn_left_icon">
+                        <i class="w-7 text-emerald-500">@@include('../assets/icons/box.svg')</i>
+                        Siparişlerim
+                    </a>
+                </li>
+                <li>
+                    <a href="/pages/likes.html" class="btn_ btn_start btn_no_hover btn_full  btn_transparent btn_left_icon">
+                        <i class="w-7 text-red-500">@@include('../assets/icons/hearts.svg')</i>
+                        Beğendiklerim
+                    </a>
+                </li>
+                <li>
+                    <a href="/pages/coupons.html" class="btn_ btn_start btn_no_hover btn_full btn_transparent btn_left_icon">
+                        <i class="w-7 text-indigo-500">@@include('../assets/icons/gift.svg')</i>
+                        Kuponlarım
+                    </a>
+                </li>
+                <li class="pt-2 border-t border-solid border-gray-200">
+                    <button class="btn_ btn_start btn_no_hover btn_full btn_transparent btn_left_icon">
+                        <i class="w-7 text-red-700">@@include('../assets/icons/logout.svg')</i>
+                        Çıkış Yap
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+@@include('../static/footer.html')

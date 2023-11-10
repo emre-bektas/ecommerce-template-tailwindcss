@@ -1,6 +1,7 @@
 @@include('../static/header.html')
 <div class="max-w-6xl mx-auto main">
     <div class="basket-page">
+        <div class="bp-overlay"></div>
         <div class="bp-content">
             <h1 class="text-xl font-medium">Sepetim <span class="text-sm text-gray-400">(3 Ürün)</span></h1>
             <ul class="bpc-product-list mt-3">
@@ -21,7 +22,16 @@
         </div>
         <div class="bp-summary">
             <div class="bps_content">
-                <button class="btn_ btn_primary btn_full">Sepeti Onayla</button>
+                <div class="bps_c_approve">
+                    <div class="bps_ca_total">
+                        <i class="gg-chevron-down-o bps_cat_icon" style="--ggs: 0.8;"></i>
+                        <div class="flex flex-col">
+                            <span class="text-gray-600 font-medium">Toplam</span>
+                            <span class="text-primary-500 ">329,99 TL</span>
+                        </div>
+                    </div>
+                    <button class="btn_ btn_primary btn_full">Sepeti Onayla</button>
+                </div>
                 <ul class="bp_summary_bill">
                     <li>
                         <span class="bps_title">Ürünler</span>
@@ -40,5 +50,14 @@
         </div>
     </div>
 </div>
+<style>
+
+    @media (max-width: 768px) {
+        body{
+            padding-bottom: 80px;
+        }
+    }
+
+</style>
 
 @@include('../static/footer.html')

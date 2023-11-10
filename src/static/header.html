@@ -10,7 +10,7 @@
     <link href="/css/plugins/swiper-bundle.min.css" rel="stylesheet">
 
     <link href="/css/style.css" rel="stylesheet">
-    <link href="https://css.gg/css?={close}|{chevron-right}|{chevron-left}|{chevron-down-o}|{menu-left}|{comment}|{mail}|{phone}|{search}|{user}|{shopping-cart}|{trending-down}|{heart}|{shopping-bag}|{trash-empty}" rel="stylesheet" />
+    <link href="https://css.gg/css?={close}|{chevron-right}|{chevron-left}|{chevron-down-o}|{menu-left}|{comment}|{mail}|{phone}|{search}|{user}|{shopping-cart}|{trending-down}|{heart}|{shopping-bag}|{trash-empty}|{swap-vertical}" rel="stylesheet" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,21 +26,30 @@
 </head>
 <body>
 
-<header class="border-b border-solid border-gray-100 px-3 z-10 bg-white sticky top-0">
-    <div class="w-full max-w-6xl  mx-auto flex items-center justify-between h-[64px]">
-        <a href="/">
-            <img class="h-12" src="/images/logo.png" />
-        </a>
-        <div class="relative flex-1 max-w-2xl">
-            <input type="text"
-                   class="block w-full h-[42px] font-medium pl-4 pr-10 text-sm text-gray-900 outline-none !border border-gray-300 rounded-lg bg-gray-100 focus-visible:ring-primary-500 focus-visible:border-primary-500"
-                   placeholder="Ürün Ara..." required />
-            <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
-                <i class="gg-search text-gray-500"></i>
+<header>
+    <div class="h-content">
+        <div class="hc-logo">
+            <div class="md:hidden hcl-menu-item">
+                <button class="btn_ btn_xs btn_icon btn_transparent open-left-slide-menu" >
+                    <i class="gg-menu-left hcl-menu-trigger" style=""></i>
+                </button>
             </div>
+            <a href="/">
+                <img src="/images/logo.png" />
+            </a>
         </div>
-
-        <div class="flex gap-3 items-center">
+        <div class="hc-search">
+            <form action="/pages/category.html">
+                <input type="text"
+                       class="input_ !pr-10"
+                       name="search"
+                       placeholder="Ürün Ara..." required />
+                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                    <i class="gg-search text-gray-500"></i>
+                </div>
+            </form>
+        </div>
+        <div class="hc-right">
             <div class="dropdown_">
                 <div class="dropdown_trigger">
                     <button class="btn_ btn_sm btn_transparent btn_right_chevron">
@@ -73,10 +82,23 @@
                 <i class="gg-shopping-cart" style="--ggs:.8;"></i>
                 <span class="text-sm font-medium" >Sepetim <b class="text-primary-500">(2)</b></span>
             </a>
-
         </div>
-    </div>
+        <div class="hc-mobile-right">
+            <a href="/pages/basket.html" class="btn_ btn_xs btn_badge_primary  btn_icon">
+                <span class="btn_badge btn_badge_primary">3</span>
+                <i class="gg-shopping-cart" style="--ggs:.8;"></i>
+            </a>
+            <a href="/pages/my-account.html" class="btn_ btn_xs btn_badge_primary  btn_icon">
+                <i class="gg-user" style="--ggs:.8;"></i>
+            </a>
+        </div>
 
+    </div>
+    <div class="h-mobile-search">
+        <input type="text"
+               class="input_"
+               placeholder="Ürün Ara..." required />
+    </div>
     <ul class="h-menus mt-2">
         <li class="h-menu-item">
             <span class="hm-title">Kadın</span>
@@ -105,5 +127,4 @@
 
     </ul>
 </header>
-
-
+@@include("left-slide-menu.html")
