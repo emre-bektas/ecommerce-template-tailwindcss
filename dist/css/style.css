@@ -3474,6 +3474,56 @@ header .h-menus .h-menu-item:hover .hm-hover-menu {
   }
 }
 
+.product-page .pp-info-content .ppi-images {
+  position: relative;
+}
+
+.product-page .pp-info-content .ppi-images .zoom-selector {
+  cursor: crosshair;
+  position: absolute;
+  z-index: 10;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 0.5rem;
+  background-color: rgb(0 0 0 / 0.2);
+}
+
+.product-page .pp-info-content .ppi-images .ppi-zoom-image {
+  position: absolute;
+  top: 0px;
+  left: 100%;
+  z-index: 50;
+  margin-left: 0.75rem;
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  border-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(243 244 246 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.product-page .pp-info-content .ppi-images .ppi-zoom-image img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 50;
+  height: 350px;
+  width: 100%;
+  max-width: none;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .product-page .pp-info-content .ppi-images .ppi-zoom-image img {
+    height: 500px;
+  }
+}
+
 .product-page .pp-info-content .ppi-images [data-swiper-small-thumbs] {
   display: none;
 }
@@ -3843,35 +3893,6 @@ footer .f-content .fc-wrapper .fcw-item img {
 .slide-left ~ .slider-overlay {
   background-color: rgba(0, 0, 0, 0.5);
   visibility: visible;
-}
-
-.zoom-box {
-  position: relative;
-}
-
-.zoom-box img {
-  vertical-align: bottom;
-}
-
-.zoom-box .zoom-selector {
-  position: absolute;
-  background-image: url("/images/selector.png");
-  background-repeat: repeat;
-  display: none;
-  cursor: crosshair;
-}
-
-.zoom-box .viewer-box {
-  position: absolute;
-  border: 1px solid #efedf0;
-  display: none;
-  overflow: hidden;
-}
-
-.zoom-box .viewer-box > img {
-  position: absolute;
-  left: 0;
-  top: 0;
 }
 
 .hover\:text-primary-500:hover {
