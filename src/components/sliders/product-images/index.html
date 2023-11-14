@@ -2,179 +2,22 @@
     <div class="ppi-zoom-image">
         <img src="https://swiperjs.com/demos/images/nature-1.jpg"/>
     </div>
-    <div class="swiper swiper-thumbs" data-swiper-thumbs>
+    <div class="swiper swiper-thumbs swiper-thumbs-zooms" data-swiper-thumbs>
         <div class="zoom-selector"></div>
-        <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-                <img src="/images/product-big.webp"/>
-            </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-2.jpg"/>
-            </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-3.jpg"/>
-            </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-4.jpg"/>
-            </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-5.jpg"/>
-            </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-6.jpg"/>
-            </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-7.jpg"/>
-            </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-8.jpg"/>
-            </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-9.jpg"/>
-            </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-10.jpg"/>
-            </div>
-        </div>
+        @@include("../swiper-wrapper/index.html")
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
     </div>
+    <button class="btn_ mt-2" data-bs-target="#productImageGallery" data-bs-toggle="modal">
+        <i class="gg-image mr-2"></i>
+        Büyük Fotoğraf
+    </button>
     <div class="swiper mt-2 swiper-small-thumbs" data-swiper-small-thumbs thumbsSlider="">
-        <div class="swiper-wrapper ppi-small-images">
-            <div class="swiper-slide ppi-si-item">
-                <img src="https://swiperjs.com/demos/images/nature-1.jpg"/>
-            </div>
-            <div class="swiper-slide ppi-si-item">
-                <img src="https://swiperjs.com/demos/images/nature-2.jpg"/>
-            </div>
-            <div class="swiper-slide ppi-si-item">
-                <img src="https://swiperjs.com/demos/images/nature-3.jpg"/>
-            </div>
-            <div class="swiper-slide ppi-si-item">
-                <img src="https://swiperjs.com/demos/images/nature-4.jpg"/>
-            </div>
-            <div class="swiper-slide ppi-si-item">
-                <img src="https://swiperjs.com/demos/images/nature-5.jpg"/>
-            </div>
-            <div class="swiper-slide ppi-si-item">
-                <img src="https://swiperjs.com/demos/images/nature-6.jpg"/>
-            </div>
-            <div class="swiper-slide ppi-si-item">
-                <img src="https://swiperjs.com/demos/images/nature-7.jpg"/>
-            </div>
-            <div class="swiper-slide ppi-si-item">
-                <img src="https://swiperjs.com/demos/images/nature-8.jpg"/>
-            </div>
-            <div class="swiper-slide ppi-si-item">
-                <img src="https://swiperjs.com/demos/images/nature-9.jpg"/>
-            </div>
-            <div class="swiper-slide ppi-si-item">
-                <img src="https://swiperjs.com/demos/images/nature-10.jpg"/>
-            </div>
-        </div>
+        @@include("../swiper-wrapper/small-index.html")
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
     </div>
 </div>
-<script>
-
-    const selectedZoomImage = "";
-
-    let swiperSmallThumbs = new Swiper(".swiper-small-thumbs", {
-        spaceBetween: 5,
-        slidesPerView: "auto",
-        freeMode: true,
-        watchSlidesProgress: true,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-    });
-
-
-    let swiperThumbs = new Swiper(".swiper-thumbs", {
-        spaceBetween: 4,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        thumbs: {
-            swiper: swiperSmallThumbs,
-        },
-        on : {
-            init: function (e) {
-                const $zoomImage = $(e.el).find(".swiper-slide").eq(e.activeIndex).find("img");
-                const selectedImageSrc = $zoomImage.attr("src");
-                $(".ppi-zoom-image img").attr("src", selectedImageSrc)
-            },
-        }
-    });
-    swiperThumbs.on("slideChange", () => {
-        const $zoomImage = $(swiperThumbs.el).find(".swiper-slide").eq(swiperThumbs.activeIndex).find("img");
-        const selectedImageSrc = $zoomImage.attr("src");
-        $(".ppi-zoom-image img").attr("src", selectedImageSrc)
-    })
-
-    const viewBoxWidth = 400;
-    const viewBoxHeight = 500;
-    const sWidth = 64;
-    const sHeight = 64;
-    const target = $("[data-swiper-thumbs] img")
-    const $zoom = $(".zoom-selector");
-    const $viewerBox = $(".ppi-zoom-image");
-
-    $viewerBox.width(viewBoxWidth).height(viewBoxHeight);
-    $viewerBox.find("img").width(viewBoxWidth * 2).height(viewBoxHeight * 2);
 
 
 
-    $(".swiper-thumbs").on({
-        mousemove: function (e) {
-            let mouseX = e.pageX - $(this).offset().left;
-            let mouseY = e.pageY - $(this).offset().top;
-            let halfSWidth = sWidth / 2, halfSHeight = sHeight / 2;
-
-            let realX, realY;
-
-
-            if (mouseX < halfSWidth) {
-                realX = 0;
-            } else if (mouseX + halfSWidth > target.width()) {
-                realX = target.width() - sWidth;
-            } else {
-                realX = mouseX - halfSWidth;
-            }
-            if (mouseY < halfSHeight) {
-                realY = 0;
-            } else if (mouseY + halfSHeight > target.height()) {
-                realY = target.height() - sHeight;
-            } else {
-                realY = mouseY - halfSHeight;
-            }
-            $zoom.css({
-                left: realX,
-                top: realY
-            })
-
-            var viewerX = realX*($(".ppi-zoom-image>img").width() - $(".ppi-zoom-image").width())/(target.width() - sWidth);
-
-            var viewerY = realY*($(".ppi-zoom-image>img").height() - $(".ppi-zoom-image").height())/(target.height() - sHeight);
-            $(".ppi-zoom-image>img").css({
-                left: -viewerX,
-                top: -viewerY
-            })
-
-        },
-        mouseenter: function(){
-            $zoom.css("display", "block");
-            $(".ppi-zoom-image").css("display", "block");
-        },
-        mouseleave: function(){
-            $zoom.css("display", "none");
-            $(".ppi-zoom-image").css("display", "none");
-        }
-    })
-
-
-</script>

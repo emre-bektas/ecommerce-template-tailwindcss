@@ -26,6 +26,15 @@
   background-color: var(--background);
 }
 .swiper{
+  &.swiper-modal-thumbs{
+    @apply h-full;
+    .swiper-slide{
+      @apply w-full mx-auto;
+      img {
+        @apply w-full h-full object-contain mx-auto;
+      }
+    }
+  }
   .swiper-button-next , .swiper-button-prev{
     background:#fff;
     width: 48px;
@@ -106,27 +115,25 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
   font-size: 100%;
   vertical-align: baseline
 }
-
-.tabs_{
-  @apply  border rounded-xl overflow-hidden border-solid border-gray-200 dark:text-gray-400 dark:border-gray-700;
-  .tabs_list{
-    @apply flex flex-wrap -mb-px text-center text-sm font-medium text-gray-500;
-    .tabs_list_item{
+.b_tabs{
+ @apply  border rounded-xl overflow-hidden border-solid border-gray-200 dark:text-gray-400 dark:border-gray-700;
+  .nav{
+    @apply flex flex-wrap -mb-px text-center text-sm font-medium mb-0;
+    .nav-item{
       @apply mr-2;
-      .tabs_list_item_text{
-        @apply inline-block cursor-pointer px-4 py-3 border-b-2 border-transparent rounded-t-lg border-solid hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300;
-      }
-      &.active{
-        .tabs_list_item_text{
-          @apply text-blue-600 border-gray-100;
+      .nav-link{
+        @apply inline-block cursor-pointer px-4 py-3 border-b-2 !rounded-none text-gray-500 !border-transparent bg-transparent rounded-t-lg border-solid hover:text-gray-600 hover:!border-gray-100;
+        &.active{
+          @apply !text-blue-600 !border-gray-100;
         }
       }
     }
   }
-  .tabs_content{
+  .tab-content{
     @apply p-4;
   }
 }
+
 .alert_{
   --btn-background: theme("colors.gray.100");
   --btn-hover-bg: theme("colors.gray.100");
@@ -1046,10 +1053,10 @@ header{
       @apply relative;
       .zoom-selector{
         cursor: crosshair;
-        @apply absolute w-16 h-16 rounded-lg bg-black/20 z-10;
+        @apply absolute w-16 h-16 hidden rounded-lg bg-black/20 z-10;
       }
       .ppi-zoom-image{
-        @apply absolute top-0 left-full ~"max-w-[400px]" w-full z-50 ml-3 rounded-xl bg-white border border-gray-100 border-solid overflow-hidden;
+        @apply absolute hidden top-0 left-full ~"max-w-[400px]" w-full z-50 ml-3 rounded-xl bg-white border border-gray-100 border-solid overflow-hidden;
         img{
           @apply ~"h-[350px]" ~"md:h-[500px]" w-full object-contain absolute top-0 left-0 z-50 max-w-none;
         }
@@ -1130,6 +1137,15 @@ header{
       }
       .ppi-basket-favorite{
         @apply flex gap-3;
+        .ppi-bf-piece{
+          @apply flex bg-gray-300 rounded-xl ~"py-0.5";
+          input{
+            @apply w-9 text-center outline-none rounded text-sm font-medium;
+          }
+          button{
+            @apply w-6;
+          }
+        }
       }
     }
   }
@@ -1161,7 +1177,13 @@ header{
     }
   }
 }
+.star-yellow{
+  background-image: url('data:image/svg+xml, <svg fill="%23facc14" viewBox="0 0 22 20" xmlns="http://www.w3.org/2000/svg"><path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/></svg>');
+  background-repeat: no-repeat;
+  display: inline-block;
 
+  cursor: pointer;
+}
 .rating {
   direction: rtl;
   font-size: .5em;
@@ -1187,7 +1209,7 @@ header{
     &:hover ~ .star,
     &.selected,
     &.selected ~ .star {
-      background-image: url('data:image/svg+xml, <svg fill="goldenrod" viewBox="0 0 22 20" xmlns="http://www.w3.org/2000/svg"><path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/></svg>');
+      background-image: url('data:image/svg+xml, <svg fill="%23facc14" viewBox="0 0 22 20" xmlns="http://www.w3.org/2000/svg"><path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/></svg>');
     }
   }
 }

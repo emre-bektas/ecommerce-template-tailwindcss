@@ -28,14 +28,33 @@
                     <span class="ppi-df-title">Renk</span>
                     <ul class="ppi-fc-list">
                         <li>
-                            <a href="#" data-btn-ripple><img alt="" src="/images/product-2.jpeg"></a>
+                            <a data-btn-ripple href="#"><img alt="" src="/images/product-2.jpeg"></a>
                         </li>
-                        <li >
-                            <a href="#" class="active" data-btn-ripple> <img alt="" src="/images/product-2.jpeg"></a>
+                        <li>
+                            <a class="active" data-btn-ripple href="#"> <img alt="" src="/images/product-2.jpeg"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ppi-filter-colors">
+                    <span class="ppi-df-title">Boy</span>
+                    <ul class="ppi-fc-list">
+                        <li>
+                            <button class="btn_ btn_sm">32</button>
+                        </li>
+                        <li>
+                            <button class="btn_ btn_sm btn_primary">36</button>
+                        </li>
+                        <li>
+                            <button class="btn_ btn_sm">38</button>
                         </li>
                     </ul>
                 </div>
                 <div class="ppi-basket-favorite">
+                    <div class="ppi-bf-piece" data-piece data-total-product-count="24">
+                        <button data-piece-decrease-button>-</button>
+                        <input maxlength="3" readonly type="text" value="1"/>
+                        <button data-piece-increase-button>+</button>
+                    </div>
                     <button class="btn_ btn_full btn_primary flex-1">Sepete Ekle</button>
                     <button class="btn_ btn_bho btn_icon"><i class="gg-heart"></i></button>
                 </div>
@@ -61,26 +80,158 @@
         </div>
 
         <section class="pp-tabs mt-4">
-            <div class="tabs_">
-                <ul class="tabs_list">
-                    <li class="tabs_list_item active">
-                        <span class="tabs_list_item_text">Ürün Açıklaması</span>
+            <div class="b_tabs">
+                <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button aria-controls="product-description" aria-selected="true" class="nav-link active"
+                                data-bs-target="#product-description" data-bs-toggle="pill" id="product-description-tab"
+                                role="tab"
+                                type="button">Ürün Açıklaması
+                        </button>
                     </li>
-                    <li class="tabs_list_item">
-                        <span class="tabs_list_item_text">Değerlendirmeler</span>
+                    <li class="nav-item" role="presentation">
+                        <button aria-controls="product-reviews" aria-selected="false" class="nav-link"
+                                data-bs-target="#product-reviews" data-bs-toggle="pill" id="product-reviews-tab"
+                                role="tab"
+                                type="button">Değerlendirmeler
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button aria-controls="product-cancel" aria-selected="false" class="nav-link"
+                                data-bs-target="#product-cancel" data-bs-toggle="pill" id="product-cancel-tab"
+                                role="tab"
+                                type="button">İptal ve İade Koşulları
+                        </button>
                     </li>
                 </ul>
-                <div class="tabs_content ">
-                    <ul class="list-disc list-inside text-gray-500 text-sm mt-1">
-                        <li>Kampanya fiyatından satılmak üzere 100 adetten fazla stok sunulmuştur.</li>
-                        <li>İncelemiş olduğunuz ürünün satış fiyatını satıcı belirlemektedir.</li>
-                        <li>Bir ürün, birden fazla satıcı tarafından satılabilir. Birden fazla satıcı tarafından satışa
-                            sunulan ürünlerin satıcıları ürün için belirledikleri fiyata, satıcı puanlarına, teslimat
-                            statülerine, ürünlerdeki promosyonlara, kargonun bedava olup olmamasına ve ürünlerin hızlı
-                            teslimat ile teslim edilip edilememesine, ürünlerin stok ve kategorileri bilgilerine göre
-                            sıralanmaktadır.
-                        </li>
-                    </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div aria-labelledby="product-description-tab" class="tab-pane fade show active"
+                         id="product-description"
+                         role="tabpanel" tabindex="0">
+                        <ul class="list-disc list-inside text-gray-500 text-sm">
+                            <li>Kampanya fiyatından satılmak üzere 100 adetten fazla stok sunulmuştur.</li>
+                            <li>İncelemiş olduğunuz ürünün satış fiyatını satıcı belirlemektedir.</li>
+                            <li>Bir ürün, birden fazla satıcı tarafından satılabilir. Birden fazla satıcı tarafından
+                                satışa
+                                sunulan ürünlerin satıcıları ürün için belirledikleri fiyata, satıcı puanlarına,
+                                teslimat
+                                statülerine, ürünlerdeki promosyonlara, kargonun bedava olup olmamasına ve ürünlerin
+                                hızlı
+                                teslimat ile teslim edilip edilememesine, ürünlerin stok ve kategorileri bilgilerine
+                                göre
+                                sıralanmaktadır.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div aria-labelledby="product-reviews-tab" class="tab-pane fade" id="product-reviews"
+                         role="tabpanel"
+                         tabindex="0">
+                        <div class="my-10 mx-auto max-w-screen-md px-10 py-16">
+                            <div class="flex w-full flex-col">
+                                <div class="flex flex-col sm:flex-row">
+                                    <h1 class="max-w-sm text-3xl font-bold text-blue-900">
+                                        Active Sport Gold 125 Ml
+
+                                    </h1>
+                                    <div class="rounded-xl bg-white py-2 px-4 shadow sm:my-0 sm:ml-auto">
+                                        <div class="flex h-16 items-center text-2xl font-bold text-blue-900">
+
+                                            <span class="star-yellow w-8 h-8"></span>
+                                            4.7
+                                        </div>
+                                        <p class="text-sm text-gray-500">Ortalama Puan</p>
+                                    </div>
+                                </div>
+                                <div class="text-gray-700">
+                                    <p class="font-medium">Yorumlar</p>
+                                    <ul class="mb-6 mt-2 space-y-2">
+                                        <li class="flex items-center text-sm font-medium">
+                                            <span class="w-3">5</span>
+                                            <span class="mr-4 text-yellow-400">
+                                                        <svg class="h-5 w-5" fill="currentColor"
+                                                             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg
+                                                        >
+                                                    </span>
+                                            <div class="mr-4 h-2 w-96 overflow-hidden rounded-full bg-gray-300">
+                                                <div class="h-full w-10/12 bg-yellow-400"></div>
+                                            </div>
+                                            <span class="w-3">56</span>
+                                        </li>
+                                        <li class="flex items-center text-sm font-medium">
+            <span class="w-3">4</span
+            ><span class="mr-4 text-yellow-400"
+                                        ><svg class="h-5 w-5" fill="currentColor"
+                                              viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg
+                                        ></span>
+                                            <div class="mr-4 h-2 w-96 overflow-hidden rounded-full bg-gray-300">
+                                                <div class="h-full w-8/12 bg-yellow-400"></div>
+                                            </div>
+                                            <span class="w-3">12</span>
+                                        </li>
+                                        <li class="flex items-center text-sm font-medium">
+            <span class="w-3">3</span
+            ><span class="mr-4 text-yellow-400"
+                                        ><svg class="h-5 w-5" fill="currentColor"
+                                              viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg
+                                        ></span>
+                                            <div class="mr-4 h-2 w-96 overflow-hidden rounded-full bg-gray-300">
+                                                <div class="h-full w-1/12 bg-yellow-400"></div>
+                                            </div>
+                                            <span class="w-3">4</span>
+                                        </li>
+                                        <li class="flex items-center text-sm font-medium">
+            <span class="w-3">2</span
+            ><span class="mr-4 text-yellow-400"
+                                        ><svg class="h-5 w-5" fill="currentColor"
+                                              viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg
+                                        ></span>
+                                            <div class="mr-4 h-2 w-96 overflow-hidden rounded-full bg-gray-300">
+                                                <div class="h-full w-0 bg-yellow-400"></div>
+                                            </div>
+                                            <span class="w-3">0</span>
+                                        </li>
+                                        <li class="flex items-center text-sm font-medium">
+            <span class="w-3">1</span
+            ><span class="mr-4 text-yellow-400"
+                                        ><svg class="h-5 w-5" fill="currentColor"
+                                              viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg
+                                        ></span>
+                                            <div class="mr-4 h-2 w-96 overflow-hidden rounded-full bg-gray-300">
+                                                <div class="h-full w-1/12 bg-yellow-400"></div>
+                                            </div>
+                                            <span class="w-3">5</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button class="w-36 btn_ btn_primary">
+                                    Değenlendir
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div aria-labelledby="product-cancel-tab" class="tab-pane fade" id="product-cancel" role="tabpanel"
+                         tabindex="0">
+                        <ul class="list-decimal list-inside text-gray-500 text-sm">
+                            <li>Ürünün iade süresi elinize ulaştıktan sonra 15 gündür.</li>
+                            <li>
+                                İadenin kabul edilebilmesi için ürünün;
+                                <ul class="list-disc list-inside ml-3">
+                                    <li>Paketi hasar görmemiş ve kullanılmamış olması</li>
+                                    <li>Tüm aksesuarları ve orijinal kutusu ile beraber iade edilmesi gerekmektedir.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Tek kullanımlık ürünlerin ve hızlı bozulan veya son kullanma tarihi geçme ihtimali olan
+                                ürünlerin iadesi kabul edilmemektedir.
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -95,12 +246,153 @@
         <section class="ms1-section mt-4">
             <div class="mss-header">
                 <h1>Beğenebileceğin Ürünler</h1>
-                <a class="inline-flex items-center" href="#">Tüm Ürünler<i class="gg-chevron-right"
-                                                                           style="--ggs:.7;"></i></a>
+                <a class="inline-flex items-center" href="#">Tüm Ürünler
+                    <i class="gg-chevron-right" style="--ggs:.7;"></i>
+                </a>
             </div>
             @@include('../components/sliders/products-slider/index.html')
         </section>
     </div>
 </div>
+<div aria-hidden="true" aria-labelledby="productImageGallery-all" class="modal fade" id="productImageGallery"
+     tabindex="-1">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content  bg-transparent">
+            <div class="modal-header absolute top-1 right-1 z-10">
+                <button aria-label="Close" class="btn_" data-bs-dismiss="modal" type="button">
+                    <i class="w-6 mr-2">@@include('../assets/icons/close.svg')</i>
+                    Kapat
+                </button>
+            </div>
+            <div class="modal-body bg-transparent h-full">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    const myModal = document.getElementById('productImageGallery')
+    const html = $("[data-swiper-thumbs]").outerHTML();
+    myModal.addEventListener('shown.bs.modal', () => {
+
+        const modalHtml = $(html).addClass("swiper-modal-thumbs").outerHTML();
+
+        $(myModal).find(".modal-body")[0].innerHTML = modalHtml;
+        new Swiper(".swiper-modal-thumbs", {
+            spaceBetween: 0,
+            keyboard: {
+                enabled: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    })
+    myModal.addEventListener('hidden.bs.modal', () => {
+        $(myModal).find(".modal-body")[0].innerHTML = "";
+
+    })
+    let swiperSmallThumbs = new Swiper(".swiper-small-thumbs", {
+        spaceBetween: 5,
+        slidesPerView: "auto",
+        freeMode: true,
+        watchSlidesProgress: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+
+
+    let swiperThumbs = new Swiper(".swiper-thumbs", {
+        spaceBetween: 4,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        thumbs: {
+            swiper: swiperSmallThumbs,
+        },
+        on: {
+            init: function (e) {
+                const $zoomImage = $(e.el).find(".swiper-slide").eq(e.activeIndex).find("img");
+                const selectedImageSrc = $zoomImage.attr("src");
+                $(".ppi-zoom-image img").attr("src", selectedImageSrc)
+            },
+        }
+    });
+    swiperThumbs.on("slideChange", () => {
+        const $zoomImage = $(swiperThumbs.el).find(".swiper-slide").eq(swiperThumbs.activeIndex).find("img");
+        const selectedImageSrc = $zoomImage.attr("src");
+        $(".ppi-zoom-image img").attr("src", selectedImageSrc)
+    })
+
+    const viewBoxWidth = 400;
+    const viewBoxHeight = 500;
+    const sWidth = 64;
+    const sHeight = 64;
+    const target = $("[data-swiper-thumbs] img")
+    const $zoom = $(".zoom-selector");
+    const $viewerBox = $(".ppi-zoom-image");
+
+    $viewerBox.width(viewBoxWidth).height(viewBoxHeight);
+    $viewerBox.find("img").width(viewBoxWidth * 2).height(viewBoxHeight * 2);
+
+
+    $(".swiper-thumbs-zooms").on({
+        mousemove: function (e) {
+            let mouseX = e.pageX - $(this).offset().left;
+            let mouseY = e.pageY - $(this).offset().top;
+            let halfSWidth = sWidth / 2, halfSHeight = sHeight / 2;
+
+            let realX, realY;
+
+
+            if (mouseX < halfSWidth) {
+                realX = 0;
+            } else if (mouseX + halfSWidth > target.width()) {
+                realX = target.width() - sWidth;
+            } else {
+                realX = mouseX - halfSWidth;
+            }
+            if (mouseY < halfSHeight) {
+                realY = 0;
+            } else if (mouseY + halfSHeight > target.height()) {
+                realY = target.height() - sHeight;
+            } else {
+                realY = mouseY - halfSHeight;
+            }
+            $zoom.css({
+                left: realX,
+                top: realY
+            })
+
+            var viewerX = realX * ($(".ppi-zoom-image>img").width() - $(".ppi-zoom-image").width()) / (target.width() - sWidth);
+
+            var viewerY = realY * ($(".ppi-zoom-image>img").height() - $(".ppi-zoom-image").height()) / (target.height() - sHeight);
+            $(".ppi-zoom-image>img").css({
+                left: -viewerX,
+                top: -viewerY
+            })
+
+        },
+        mouseenter: function () {
+            if (window.innerWidth >= 768) {
+                $zoom.css("display", "block");
+                $(".ppi-zoom-image").css("display", "block");
+            }
+
+        },
+        mouseleave: function () {
+            $zoom.css("display", "none");
+            $(".ppi-zoom-image").css("display", "none");
+        }
+    })
+
+
+</script>
 
 @@include('../static/footer.html')

@@ -21,6 +21,15 @@
 .bg-background {
   background-color: var(--background);
 }
+.swiper.swiper-modal-thumbs {
+  @apply h-full;
+}
+.swiper.swiper-modal-thumbs .swiper-slide {
+  @apply w-full mx-auto;
+}
+.swiper.swiper-modal-thumbs .swiper-slide img {
+  @apply w-full h-full object-contain mx-auto;
+}
 .swiper .swiper-button-next,
 .swiper .swiper-button-prev {
   background: #fff;
@@ -168,22 +177,22 @@ video {
   font-size: 100%;
   vertical-align: baseline;
 }
-.tabs_ {
+.b_tabs {
   @apply border rounded-xl overflow-hidden border-solid border-gray-200 dark:text-gray-400 dark:border-gray-700;
 }
-.tabs_ .tabs_list {
-  @apply flex flex-wrap -mb-px text-center text-sm font-medium text-gray-500;
+.b_tabs .nav {
+  @apply flex flex-wrap -mb-px text-center text-sm font-medium mb-0;
 }
-.tabs_ .tabs_list .tabs_list_item {
+.b_tabs .nav .nav-item {
   @apply mr-2;
 }
-.tabs_ .tabs_list .tabs_list_item .tabs_list_item_text {
-  @apply inline-block cursor-pointer px-4 py-3 border-b-2 border-transparent rounded-t-lg border-solid hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300;
+.b_tabs .nav .nav-item .nav-link {
+  @apply inline-block cursor-pointer px-4 py-3 border-b-2 !rounded-none text-gray-500 !border-transparent bg-transparent rounded-t-lg border-solid hover:text-gray-600 hover:!border-gray-100;
 }
-.tabs_ .tabs_list .tabs_list_item.active .tabs_list_item_text {
-  @apply text-blue-600 border-gray-100;
+.b_tabs .nav .nav-item .nav-link.active {
+  @apply !text-blue-600 !border-gray-100;
 }
-.tabs_ .tabs_content {
+.b_tabs .tab-content {
   @apply p-4;
 }
 .alert_ {
@@ -1028,10 +1037,10 @@ header .h-menus .h-menu-item:hover .hm-hover-menu {
 }
 .product-page .pp-info-content .ppi-images .zoom-selector {
   cursor: crosshair;
-  @apply absolute w-16 h-16 rounded-lg bg-black/20 z-10;
+  @apply absolute w-16 h-16 hidden rounded-lg bg-black/20 z-10;
 }
 .product-page .pp-info-content .ppi-images .ppi-zoom-image {
-  @apply absolute top-0 left-full max-w-[400px] w-full z-50 ml-3 rounded-xl bg-white border border-gray-100 border-solid overflow-hidden;
+  @apply absolute hidden top-0 left-full max-w-[400px] w-full z-50 ml-3 rounded-xl bg-white border border-gray-100 border-solid overflow-hidden;
 }
 .product-page .pp-info-content .ppi-images .ppi-zoom-image img {
   @apply h-[350px] md:h-[500px] w-full object-contain absolute top-0 left-0 z-50 max-w-none;
@@ -1098,6 +1107,15 @@ header .h-menus .h-menu-item:hover .hm-hover-menu {
 .product-page .pp-info-content .ppi-infos .ppi-basket-favorite {
   @apply flex gap-3;
 }
+.product-page .pp-info-content .ppi-infos .ppi-basket-favorite .ppi-bf-piece {
+  @apply flex bg-gray-300 rounded-xl py-0.5;
+}
+.product-page .pp-info-content .ppi-infos .ppi-basket-favorite .ppi-bf-piece input {
+  @apply w-9 text-center outline-none rounded text-sm font-medium;
+}
+.product-page .pp-info-content .ppi-infos .ppi-basket-favorite .ppi-bf-piece button {
+  @apply w-6;
+}
 .d-breadcrumb {
   @apply flex;
 }
@@ -1121,6 +1139,12 @@ header .h-menus .h-menu-item:hover .hm-hover-menu {
 }
 .d-breadcrumb .dbc-list .dbc-item .dbc-item-text {
   @apply inline-flex items-center text-s font-medium text-gray-600;
+}
+.star-yellow {
+  background-image: url('data:image/svg+xml, <svg fill="%23facc14" viewBox="0 0 22 20" xmlns="http://www.w3.org/2000/svg"><path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/></svg>');
+  background-repeat: no-repeat;
+  display: inline-block;
+  cursor: pointer;
 }
 .rating {
   direction: rtl;
@@ -1149,7 +1173,7 @@ header .h-menus .h-menu-item:hover .hm-hover-menu {
 .rating .star:hover ~ .star,
 .rating .star.selected,
 .rating .star.selected ~ .star {
-  background-image: url('data:image/svg+xml, <svg fill="goldenrod" viewBox="0 0 22 20" xmlns="http://www.w3.org/2000/svg"><path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/></svg>');
+  background-image: url('data:image/svg+xml, <svg fill="%23facc14" viewBox="0 0 22 20" xmlns="http://www.w3.org/2000/svg"><path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/></svg>');
 }
 footer {
   @apply bg-gray-800 text-white border-t border-solid border-gray-100 mt-3;
