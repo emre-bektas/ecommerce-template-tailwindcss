@@ -433,6 +433,23 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
   }
 
 }
+.textarea_{
+
+  --input-background:  theme("colors.gray.50");
+  --input-color: theme("colors.gray.900");
+  --input-border-color: theme("colors.gray.300");
+
+  background-color: var(--input-background);
+  color: var(--input-color);
+  border-color: var(--input-border-color);
+  @apply border w-full text-sm rounded-lg resize-none focus-visible:outline-primary-500 focus:ring-primary-500 focus:border-primary-500 block p-2.5;
+  &.textarea_sm{
+  @apply px-3 py-2 text-s;
+  }
+  &.textarea_xs{
+  @apply px-2 py-1 text-xs rounded-lg;
+  }
+}
 .check_input_{
   @apply flex items-center px-2 cursor-pointer rounded hover:bg-gray-100 dark:hover:bg-gray-600;
   label{
@@ -969,6 +986,7 @@ header{
       @apply sticky flex flex-col gap-3;
       .bps_c_approve{
         @apply flex items-center gap-3 h-20 px-3 relative z-10;
+        //@apply flex items-center gap-3  relative z-10;
         .bps_ca_total{
           @apply flex items-center gap-1 md:hidden text-sm w-full;
           .bps_cat_icon{
@@ -1149,6 +1167,127 @@ header{
       }
     }
   }
+}
+.checkout-page{
+  @apply flex md:flex-row flex-col relative;
+  .cp-overlay{
+    @apply hidden;
+  }
+  &.cp_mobile_box{
+    @media (max-width: 768px) {
+      .cpm_cat_icon{
+        @apply !rotate-0;
+      }
+      .cp-delivery{
+        @apply !hidden;
+      }
+    }
+    .cp-order-summary{
+      @media (max-width: 768px) {
+        @apply !opacity-100 !bottom-0 z-20 !flex;
+      }
+    }
+    .cp-delivery{
+
+
+    }
+    .cp-overlay{
+      @apply fixed top-0 left-0 bg-black/50 w-full h-full block z-10 md:hidden;
+    }
+
+  }
+  .cp-delivery{
+    @apply flex-1 pb-24 md:pb-0 md:h-screen flex flex-col justify-center items-center overflow-auto;
+    .cpd-content{
+      @apply max-w-2xl mx-auto px-3;
+    }
+    .cpd-logo{
+      @apply w-full;
+    }
+    .cpd-form{
+      @apply w-full;
+    }
+    .cpd-title{
+      @apply text-gray-700 font-medium mb-2;
+    }
+
+  }
+  .cp-mobile-summary{
+  @apply fixed bottom-0 left-0 h-20 w-full bg-white border-t border-solid border-gray-100 z-50 md:hidden;
+    .cpm_c_approve{
+    @apply flex items-center gap-3 h-20 px-3 relative z-10;
+      //@apply flex items-center gap-3  relative z-10;
+      .cpm_ca_total{
+      @apply flex items-center gap-1 md:hidden text-sm w-full;
+        .cpm_cat_icon{
+        @apply rotate-180;
+        }
+      }
+    }
+  }
+  .cp-order-summary{
+    @apply ~"w-full md:w-[300px] lg:w-[350px]" bg-gray-50 sticky md:top-0   flex-col h-screen hidden md:flex pb-20 md:pb-0 opacity-0 md:opacity-100 transition transition-all;
+    .cp-os-total{
+      @apply py-2 md:py-5 text-center flex  flex-col md:gap-3 border-b border-gray-200 border-solid w-full;
+      h3{
+        @apply font-medium md:text-lg text-gray-600;
+      }
+      h1{
+        @apply text-xl md:text-4xl font-bold text-emerald-500;
+      }
+      span{
+        @apply text-s text-gray-500 hidden md:block;
+      }
+    }
+    .cp-os-summary{
+      @apply py-2 md:py-5 flex flex-col flex-1 overflow-auto;
+      .cp-oss-title{
+        @apply text-m text-gray-600 font-medium mb-2 px-3;
+      }
+      .cp-oss-product{
+        @apply flex flex-col gap-1 mt-1 px-3;
+        &.cp-oss-list{
+          @apply mt-0 flex-1 overflow-auto ;
+          .cp-oos-item{
+
+          }
+          .cp-oss-left{
+            span{
+              @apply !text-xs;
+            }
+          }
+        }
+        .cp-oos-item{
+          @apply flex justify-between items-center bg-gray-100 rounded-xl px-3 py-2;
+          &.cp-oss-item-total{
+            @apply bg-transparent;
+            .cp-oss-left{
+
+              span{
+                @apply font-semibold text-base text-gray-900;
+              }
+            }
+            .cp-oos-item-amount{
+              @apply text-gray-900 text-m;
+            }
+          }
+          .cp-oss-left{
+            @apply flex flex-col;
+            h2{
+              @apply font-medium text-gray-900 gap-1 line-clamp-1;;
+            }
+            span{
+              @apply text-sm text-gray-500 line-clamp-1;
+            }
+          }
+          .cp-oos-item-amount{
+            @apply text-s text-gray-500 font-medium;
+          }
+        }
+      }
+    }
+  }
+
 }
 .d-breadcrumb{
   @apply flex;
