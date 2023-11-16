@@ -1355,4 +1355,9 @@ footer .f-content .fc-wrapper .fcw-item img {
   background-color: rgba(0, 0, 0, 0.5);
   visibility: visible;
 }
+@supports (-webkit-touch-callout: none) {
+  .h-screen {
+    height: -webkit-fill-available;
+  }
+}
 /*# sourceMappingURL=tailwind.css.map */

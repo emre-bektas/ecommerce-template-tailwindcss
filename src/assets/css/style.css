@@ -4120,6 +4120,12 @@ header .h-menus .h-menu-item:hover .hm-hover-menu {
   transition-duration: 150ms;
 }
 
+@supports (-webkit-touch-callout: none) {
+  .checkout-page .cp-order-summary {
+    height: -webkit-fill-available;
+  }
+}
+
 @media (min-width: 768px) {
   .checkout-page .cp-order-summary {
     top: 0px;
@@ -4504,6 +4510,12 @@ footer .f-content .fc-wrapper .fcw-item img {
 .slide-left ~ .slider-overlay {
   background-color: rgba(0, 0, 0, 0.5);
   visibility: visible;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .h-screen {
+    height: -webkit-fill-available;
+  }
 }
 
 .hover\:text-primary-500:hover {
