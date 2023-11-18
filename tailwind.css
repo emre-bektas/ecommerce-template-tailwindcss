@@ -816,58 +816,6 @@ header .h-menus .h-menu-item:hover .hm-hover-menu {
 .account-page .ap-content .apc-filters {
   @apply flex flex-wrap gap-3 my-3;
 }
-.account-page .ap-content .apc-orders-page .op-lists .opl-item {
-  @apply border border-solid border-gray-200 rounded-xl overflow-hidden;
-}
-.account-page .ap-content .apc-orders-page .op-lists .opl-item .opl-item-header {
-  @apply bg-gray-100 px-3 py-2 flex items-center gap-2;
-}
-.account-page .ap-content .apc-orders-page .op-lists .opl-item .opl-item-header .oplh-item {
-  gap: 0.15rem;
-  @apply flex-col w-full;
-}
-.account-page .ap-content .apc-orders-page .op-lists .opl-item .opl-item-header .oplh-item:not(.oplh-i-hd) {
-  @apply flex;
-}
-.account-page .ap-content .apc-orders-page .op-lists .opl-item .opl-item-header .oplh-item.oplh-i-hd {
-  @apply hidden md:flex;
-}
-.account-page .ap-content .apc-orders-page .op-lists .opl-item .opl-item-header .oplh-item span {
-  @apply text-xs text-gray-500 font-medium;
-}
-.account-page .ap-content .apc-orders-page .op-lists .opl-item .opl-item-header .oplh-item b {
-  @apply text-xs font-medium text-zinc-800;
-}
-.account-page .ap-content .apc-orders-page .op-lists .opl-item .opl-item-main {
-  @apply p-2;
-}
-.account-page .ap-content .apc-orders-page .op-lists .opl-item .opl-item-main .opli-product-lists {
-  @apply flex flex-col gap-3;
-}
-.account-page .ap-content .apc-orders-page .op-lists .opl-item .opl-item-main .opli-product-lists .opli-product-item {
-  @apply border border-solid border-gray-200 rounded-xl p-4 flex justify-between items-center;
-}
-.account-page .ap-content .apc-orders-page .op-lists .opl-item .opl-item-main .opli-product-lists .opli-product-item .opli-pi-infos {
-  @apply flex items-center sm:flex-row gap-2;
-}
-.account-page .ap-content .apc-orders-page .op-lists .opl-item .opl-item-main .opli-product-lists .opli-product-item .opli-pi-infos .opli-pi-images {
-  width: 40px;
-}
-.account-page .ap-content .apc-orders-page .op-lists .opl-item .opl-item-main .opli-product-lists .opli-product-item .opli-pi-infos .opli-pi-images img {
-  @apply w-10 h-10 border-2 border-solid border-gray-100 rounded-full object-cover;
-}
-.account-page .ap-content .apc-orders-page .op-lists .opl-item .opl-item-main .opli-product-lists .opli-product-item .opli-pi-infos .opli-pi-product {
-  @apply flex flex-col gap-1 flex-1 text-xs;
-}
-.account-page .ap-content .apc-orders-page .op-lists .opl-item .opl-item-main .opli-product-lists .opli-product-item .opli-pi-infos .opli-pi-product .opli-pip-title {
-  @apply text-gray-500 hover:underline line-clamp-1;
-}
-.account-page .ap-content .apc-orders-page .op-lists .opl-item .opl-item-main .opli-product-lists .opli-product-item .opli-pi-infos .opli-pi-product .opli-pip-alt {
-  @apply text-emerald-500 flex md:items-center gap-1 flex-col sm:flex-row;
-}
-.account-page .ap-content .apc-orders-page .op-lists .opl-item .opl-item-main .opli-product-lists .opli-product-item .opli-pi-price {
-  @apply flex flex-col text-right;
-}
 .account-page .ap-content .apc-coupon-page .apc-cp-lists {
   @apply flex flex-col gap-2 mt-3;
 }
@@ -1233,6 +1181,82 @@ header .h-menus .h-menu-item:hover .hm-hover-menu {
 }
 .checkout-page .cp-order-summary .cp-os-summary .cp-oss-product .cp-oos-item .cp-oos-item-amount {
   @apply text-s text-gray-500 font-medium;
+}
+.order-result-page {
+  @apply bg-gray-50 rounded-xl py-5 px-3;
+}
+.order-result-page .orp-message {
+  @apply flex flex-col text-center items-center justify-center border-b border-solid border-gray-100 pb-5 mb-5;
+}
+.order-result-page .orp-infos {
+  @apply flex gap-4 border-b border-solid border-gray-100 pb-5 mb-5;
+}
+.order-result-page .orp-infos .orp-i-item {
+  @apply flex flex-col w-full;
+}
+.order-result-page .orp-infos .orp-i-item h4 {
+  @apply uppercase text-gray-400 font-semibold text-xs mb-3;
+}
+.order-result-page .orp-infos .orp-i-item span {
+  @apply text-sm text-gray-800;
+}
+.op-lists .opl-item {
+  @apply border border-solid border-gray-200 rounded-xl overflow-hidden;
+}
+.op-lists .opl-item.opl-item-not .opl-item-header .oplh-item {
+  @apply w-auto;
+}
+.op-lists .opl-item.opl-item-not .opl-item-header .oplh-item.oplh-i-hd {
+  @apply !flex;
+}
+.op-lists .opl-item .opl-item-header {
+  @apply bg-gray-100 px-3 py-2 flex items-center gap-2;
+}
+.op-lists .opl-item .opl-item-header .oplh-item {
+  gap: 0.15rem;
+  @apply flex-col w-full;
+}
+.op-lists .opl-item .opl-item-header .oplh-item:not(.oplh-i-hd) {
+  @apply flex;
+}
+.op-lists .opl-item .opl-item-header .oplh-item.oplh-i-hd {
+  @apply hidden md:flex;
+}
+.op-lists .opl-item .opl-item-header .oplh-item span {
+  @apply text-xs text-gray-500 font-medium;
+}
+.op-lists .opl-item .opl-item-header .oplh-item b {
+  @apply text-xs font-medium text-zinc-800;
+}
+.op-lists .opl-item .opl-item-main {
+  @apply p-2;
+}
+.op-lists .opl-item .opl-item-main .opli-product-lists {
+  @apply flex flex-col gap-3;
+}
+.op-lists .opl-item .opl-item-main .opli-product-lists .opli-product-item {
+  @apply border border-solid border-gray-200 rounded-xl p-4 flex justify-between items-center;
+}
+.op-lists .opl-item .opl-item-main .opli-product-lists .opli-product-item .opli-pi-infos {
+  @apply flex items-center sm:flex-row gap-2;
+}
+.op-lists .opl-item .opl-item-main .opli-product-lists .opli-product-item .opli-pi-infos .opli-pi-images {
+  width: 40px;
+}
+.op-lists .opl-item .opl-item-main .opli-product-lists .opli-product-item .opli-pi-infos .opli-pi-images img {
+  @apply w-10 h-10 border-2 border-solid border-gray-100 rounded-full object-cover;
+}
+.op-lists .opl-item .opl-item-main .opli-product-lists .opli-product-item .opli-pi-infos .opli-pi-product {
+  @apply flex flex-col gap-1 flex-1 text-xs;
+}
+.op-lists .opl-item .opl-item-main .opli-product-lists .opli-product-item .opli-pi-infos .opli-pi-product .opli-pip-title {
+  @apply text-gray-500 hover:underline line-clamp-1;
+}
+.op-lists .opl-item .opl-item-main .opli-product-lists .opli-product-item .opli-pi-infos .opli-pi-product .opli-pip-alt {
+  @apply text-emerald-500 flex md:items-center gap-1 flex-col sm:flex-row;
+}
+.op-lists .opl-item .opl-item-main .opli-product-lists .opli-product-item .opli-pi-price {
+  @apply flex flex-col text-right;
 }
 .d-breadcrumb {
   @apply flex;

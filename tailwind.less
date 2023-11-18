@@ -811,61 +811,7 @@ header{
       @apply flex flex-wrap gap-3 my-3;
     }
     .apc-orders-page{
-      .op-lists{
-        .opl-item{
-          @apply border border-solid border-gray-200 rounded-xl overflow-hidden;
-          .opl-item-header{
-            @apply bg-gray-100 px-3 py-2 flex items-center gap-2;
-            .oplh-item{
-              gap:.15rem;
-              @apply flex-col w-full;
 
-              &:not(.oplh-i-hd){
-                @apply flex;
-              }
-              &.oplh-i-hd{
-                @apply hidden md:flex;
-              }
-              span{
-                @apply text-xs text-gray-500 font-medium;
-              }
-              b{
-                @apply text-xs font-medium text-zinc-800;
-              }
-            }
-          }
-          .opl-item-main{
-            @apply p-2;
-            .opli-product-lists{
-              @apply flex flex-col gap-3;
-              .opli-product-item{
-                @apply border border-solid border-gray-200 rounded-xl p-4 flex justify-between items-center;
-                .opli-pi-infos{
-                  @apply flex items-center  sm:flex-row gap-2;
-                  .opli-pi-images{
-                    width: 40px;
-                    img{
-                      @apply w-10 h-10 border-2 border-solid border-gray-100 rounded-full object-cover;
-                    }
-                  }
-                  .opli-pi-product{
-                    @apply flex flex-col gap-1 flex-1 text-xs;
-                    .opli-pip-title{
-                      @apply text-gray-500 hover:underline line-clamp-1;
-                    }
-                    .opli-pip-alt{
-                      @apply text-emerald-500 flex md:items-center gap-1 flex-col sm:flex-row;
-                    }
-                  }
-                }
-                .opli-pi-price{
-                  @apply flex flex-col text-right;
-                }
-              }
-            }
-          }
-        }
-      }
     }
     .apc-coupon-page{
       .apc-cp-lists{
@@ -1288,6 +1234,89 @@ header{
     }
   }
 
+}
+.order-result-page{
+  @apply bg-gray-50 rounded-xl py-5 px-3;
+  .orp-message{
+    @apply flex flex-col text-center items-center justify-center border-b border-solid border-gray-100 pb-5 mb-5;
+  }
+  .orp-infos{
+    @apply flex gap-4 border-b border-solid border-gray-100 pb-5 mb-5;
+    .orp-i-item{
+      @apply flex flex-col w-full;
+      h4{
+        @apply uppercase text-gray-400 font-semibold text-xs mb-3;
+      }
+      span{
+        @apply text-sm text-gray-800;
+      }
+    }
+  }
+}
+.op-lists{
+  .opl-item{
+  @apply border border-solid border-gray-200 rounded-xl overflow-hidden;
+    &.opl-item-not{
+      .opl-item-header{
+        .oplh-item{
+          @apply w-auto;
+          &.oplh-i-hd{
+            @apply !flex;
+          }
+        }
+      }
+    }
+    .opl-item-header{
+      @apply bg-gray-100 px-3 py-2 flex items-center gap-2;
+      .oplh-item{
+        gap:.15rem;
+        @apply flex-col w-full;
+
+        &:not(.oplh-i-hd){
+          @apply flex;
+        }
+        &.oplh-i-hd{
+          @apply hidden md:flex;
+        }
+        span{
+          @apply text-xs text-gray-500 font-medium;
+        }
+        b{
+          @apply text-xs font-medium text-zinc-800;
+        }
+      }
+    }
+    .opl-item-main{
+    @apply p-2;
+      .opli-product-lists{
+      @apply flex flex-col gap-3;
+        .opli-product-item{
+        @apply border border-solid border-gray-200 rounded-xl p-4 flex justify-between items-center;
+          .opli-pi-infos{
+          @apply flex items-center  sm:flex-row gap-2;
+            .opli-pi-images{
+              width: 40px;
+              img{
+              @apply w-10 h-10 border-2 border-solid border-gray-100 rounded-full object-cover;
+              }
+            }
+            .opli-pi-product{
+            @apply flex flex-col gap-1 flex-1 text-xs;
+              .opli-pip-title{
+              @apply text-gray-500 hover:underline line-clamp-1;
+              }
+              .opli-pip-alt{
+              @apply text-emerald-500 flex md:items-center gap-1 flex-col sm:flex-row;
+              }
+            }
+          }
+          .opli-pi-price{
+          @apply flex flex-col text-right;
+          }
+        }
+      }
+    }
+  }
 }
 .d-breadcrumb{
   @apply flex;

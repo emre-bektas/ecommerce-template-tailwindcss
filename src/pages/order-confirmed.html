@@ -1,0 +1,37 @@
+@@include('../static/header.html')
+<div class="max-w-4xl mx-auto main">
+    <div class="order-result-page">
+
+        <div class="orp-message ">
+            <div class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center mb-2">
+                <i class="gg-check after:border-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Siparişinizi aldık!</h3>
+            <span class="text-sm text-gray-500">#2939993 numaralı siparişiniz tamamlandı ve gönderime hazır.</span>
+        </div>
+
+        <div class="orp-infos">
+            <div class="orp-i-item">
+                <h4>Gönderi Adresi</h4>
+                <span class="mb-1">Müşteri Adı</span>
+                <span>88799 Wilton Light</span>
+                <span> Krajcikfurt, SD 70410-9563</span>
+            </div>
+            <div class="orp-i-item">
+                <h4>Ödeme Bilgisi</h4>
+                <span>Kredi Kartı</span>
+                <span>TROY</span>
+                <span>**** 4660</span>
+            </div>
+        </div>
+
+        <div class="orp-orders">
+            <ul class="flex flex-col gap-2 op-lists">
+                @@include('../components/orders/orders-not.html')
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+@@include('../static/footer.html')
