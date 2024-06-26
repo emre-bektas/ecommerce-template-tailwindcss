@@ -1,8 +1,7 @@
 <li class="bpc-product-list-item">
   <div class="bpc-product-check-image">
-    <input type="checkbox" class="input_ input_primary">
     <div class="bpc-product-image">
-      <img src="/images/product-1.jpeg" alt="">
+      <img src="/images/product-2.jpg" alt="">
     </div>
   </div>
   <div class="bpc-product-infos">
@@ -11,11 +10,18 @@
         <p class="text-xs md:text-sm text-gray-500 line-clamp-2">ürün açıklaması</p>
       </div>
     <div class="w-full flex items-end justify-between">
-      <div class="flex gap-2">
-        <input type="number" value="1" placeholder="adet" class="input_ input_xs !w-16">
-        <button class="btn_ btn_xs btn_primary btn_icon"><i class="gg-trash-empty" style="--ggs: .7;"></i></button>
+      <div class="flex  gap-2">
+        <div class="ppi-bf-piece h-8" data-piece  data-total-product-count="24">
+          <button data-piece-decrease-button>-</button>
+          <input maxlength="3" readonly type="text" value="1"/>
+          <button data-piece-increase-button>+</button>
+        </div>
       </div>
-      <span class="font-medium text-sm md:text-lg">323,99 TL</span>
+      <div class="bpc-pi-right">
+        <span class="bpc-pi-price">₺323,99</span>
+        <button class="btn_ btn_xs btn_danger  btn_flat btn_icon "><i class="gg-trash-empty" style="--ggs: .7;"></i></button>
+      </div>
+
     </div>
   </div>
 </li>

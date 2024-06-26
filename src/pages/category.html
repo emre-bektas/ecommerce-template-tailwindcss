@@ -2,37 +2,51 @@
 <div class="max-w-6xl mx-auto main">
     @@include('../components/breadcrumb/index.html')
     <div class="category-page">
-        <div class="cp-filter">
-            <div class="cpf-content">
-                <div class="cpf-title">
-                    <span><b>100+</b> ürün gösteriliyor</span>
+
+        <div class="drawer_ drawer_show_md" id="basket_drawer">
+            <div class="drawer_content">
+                <div class="drawer_content_header">
+                    <h3 class="dch_title">Sepetlerim</h3>
+                    <button class="btn_ btn_icon btn_sm" data-drawer-close>
+                        <i data-lucide="x"></i>
+                    </button>
                 </div>
-                <ul class="cpf-filters ">
-                    @@include('../components/menus/left-filters/check-search/index.html')
-                    @@include('../components/menus/left-filters/price-range/index.html')
-                    @@include('../components/menus/left-filters/check-input/index.html')
-                    @@include('../components/menus/left-filters/check-input/index.html')
-                    @@include('../components/menus/left-filters/check-input/index.html')
-                    @@include('../components/menus/left-filters/check-input/index.html')
-                    @@include('../components/menus/left-filters/check-input/index.html')
-                    @@include('../components/menus/left-filters/check-input/index.html')
-                </ul>
+                <div class="drawer_content_body">
+                    <div class="cp-filter">
+                        <div class="cpf-content">
+                            <div class="cpf-title">
+                                <span><b>100+</b> ürün gösteriliyor</span>
+                            </div>
+                            <ul class="cpf-filters ">
+                                @@include('../components/menus/left-filters/check-search/index.html')
+                                @@include('../components/menus/left-filters/price-range/index.html')
+                                @@include('../components/menus/left-filters/check-input/index.html')
+                                @@include('../components/menus/left-filters/check-input/index.html')
+                                @@include('../components/menus/left-filters/check-input/index.html')
+                                @@include('../components/menus/left-filters/check-input/index.html')
+                                @@include('../components/menus/left-filters/check-input/index.html')
+                                @@include('../components/menus/left-filters/check-input/index.html')
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
+
         <div class="cp-mobile-filter">
             <div class="cpmf-buttons">
-                <button class="btn_ btn_full btn_left_icon">
+                <button class="btn_ btn_flat btn_full btn_primary">
                     <i class="w-6 text-primary-500">@@include('../assets/icons/sort-vertical.svg')</i>
                     Sırala
                 </button>
-                <button class="btn_ btn_full  btn_left_icon">
+                <button class="btn_ btn_flat btn_full btn_primary" data-drawer-id="#basket_drawer">
                     <i class="w-6 text-primary-500">@@include('../assets/icons/filter.svg')</i>
                     Filtrele
                 </button>
             </div>
         </div>
         <div class="cp-content">
-
             <div class="m-shop-product-list">
                 @@include('../components/menus/shop-product-cart-2/index.html')
                 @@include('../components/menus/shop-product-cart-2/index.html')
@@ -62,5 +76,7 @@
         </div>
     </div>
 </div>
+
+
 
 @@include('../static/footer.html')

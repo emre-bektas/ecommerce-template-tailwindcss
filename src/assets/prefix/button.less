@@ -1,0 +1,216 @@
+.btn_ {
+
+  --btn-background: theme("colors.default");
+  --btn-light-color: theme("colors.default-800");
+  --btn-hover-bg: theme("colors.default-300");
+  --btn-color: theme("colors.default-800");
+  --btn-hover-color: theme("colors.default-800");
+  --btn-height: theme("height.10");
+  --btn-font-size: theme("fontSize.small");
+  --btn-radius: theme("borderRadius.medium");
+  --btn-badge-size: 1.5em;
+  background: var(--btn-background);
+  color: var(--btn-color);
+  height: var(--btn-height);
+  font-size: var(--btn-font-size);
+  border-radius: var(--btn-radius);
+
+  @apply px-4  inline-flex select-none items-center justify-center transition-all cursor-pointer appearance-none relative whitespace-nowrap gap-2;
+
+  &:disabled , &.btn_disabled{
+  @apply pointer-events-none opacity-60;
+  }
+  &:hover{
+  @apply opacity-hover;
+  }
+
+
+  &.btn_bordered{
+    border-color: var(--btn-background);
+    color: var(--btn-background);
+    background-color: transparent;
+  @apply border-medium border-solid;
+  }
+  &.btn_light{
+    color: var(--btn-light-color);
+    background-color: transparent;
+    &:hover{
+      background-color: var(--btn-hover-bg);
+    }
+  }
+  &.btn_flat{
+    color: var(--btn-background);
+    background-color: var(--btn-hover-bg);
+  }
+  &.btn_ghost{
+    border-color: var(--btn-background);
+    color: var(--btn-background);
+    background-color: transparent;
+    @apply border-solid;
+    &:hover{
+      background-color: var(--btn-background);
+      color: var(--btn-color);
+    }
+  @apply border-medium;
+  }
+  &.btn_shadow{
+  @apply shadow-lg shadow-content1;
+  }
+
+
+  &.btn_no_hover{
+  @apply !px-0;
+    --btn-hover-bg: transparent!important;
+  }
+  &.btn_icon{
+    width: var(--btn-height);
+    @apply aspect-square !px-0 !text-base flex-shrink-0;
+  }
+  &.btn-icon-between{
+  @apply !justify-between;
+  }
+  &.btn_start{
+  @apply !justify-start;
+  }
+  &.btn_lg {
+    --btn-radius: theme("borderRadius.large");
+    --btn-height: theme("height.12");
+    --btn-font-size: theme("fontSize.medium");
+  @apply px-6;
+  }
+  &.btn_sm{
+    --btn-radius: theme("borderRadius.small");
+    --btn-height: theme("height.8");
+    --btn-font-size: theme("fontSize.tiny");
+    @apply px-3;
+    &.btn_right_chevron{
+      &:after{
+        width: 16px;
+        height: 16px;
+        background-size: 1rem;
+      }
+    }
+  }
+  &.btn_xs{
+    --btn-radius: theme("borderRadius.small");
+    --btn-height: theme("height.7");
+    --btn-font-size: theme("fontSize.tiny");
+    --btn-badge-size:1.2em;
+
+    @apply px-2;
+    &.btn_right_chevron{
+      &:after{
+        width: 16px;
+        height: 16px;
+        background-size: 1rem;
+      }
+    }
+  }
+
+  &.btn_blue {
+    --btn-background: theme("colors.blue.600");
+    --btn-hover-bg: theme("colors.blue.700");
+    --btn-color: theme("colors.white");
+  }
+
+  &.btn_primary {
+    --btn-background: theme("colors.primary.600");
+    --btn-light-color: theme("colors.primary.600");
+    --btn-hover-bg: hsl(var(--nexlink-primary) / .2);
+    --btn-color: theme("colors.primary-foreground");
+    --btn-hover-color: theme("colors.white");
+    @apply shadow-primary-400/40;
+  }
+  &.btn_danger {
+    --btn-background: theme("colors.danger");
+    --btn-light-color: theme("colors.danger");
+    --btn-hover-bg: hsl(var(--nexlink-danger) / .2);
+    --btn-color: theme("colors.danger-foreground");
+    --btn-hover-color: theme("colors.white");
+  @apply shadow-danger/40;
+  }
+  &.btn_secondary {
+    --btn-background: theme("colors.secondary");
+    --btn-light-color: theme("colors.secondary");
+    --btn-hover-bg: hsl(var(--nexlink-secondary) / .2);
+    --btn-color: theme("colors.secondary-foreground");
+    --btn-hover-color: theme("colors.white");
+  @apply shadow-secondary/40;
+  }
+  &.btn_warning {
+    --btn-background: theme("colors.warning");
+    --btn-light-color: theme("colors.warning");
+    --btn-hover-bg: hsl(var(--nexlink-warning) / .2);
+    --btn-color: theme("colors.warning-foreground");
+    --btn-hover-color: theme("colors.white");
+  @apply shadow-warning/40;
+  }
+  &.btn_success {
+    --btn-background: theme("colors.success");
+    --btn-light-color: theme("colors.success");
+    --btn-hover-bg: hsl(var(--nexlink-success) / .2);
+    --btn-color: theme("colors.success-foreground");
+    --btn-hover-color: theme("colors.white");
+  @apply shadow-success/40;
+  }
+
+  &.btn_transparent {
+    --btn-background: transparent;
+    --btn-hover-bg: theme("colors.gray.100");
+    --btn-color: theme("colors.gray.800");
+    &.btn_active{
+      --btn-background:  theme("colors.gray.200");
+      --btn-hover-bg: theme("colors.gray.200");
+      --btn-color: theme("colors.gray.800");
+    }
+    &:hover {
+      background: var(--btn-hover-bg);
+    }
+  }
+
+  &.btn_bho {
+  @apply text-primary-600 border-2 bg-transparent border-primary-600 border-solid rounded-full;
+  }
+  &.btn-text-right{
+  @apply text-right justify-end;
+  }
+  &.btn-text-left{
+  @apply text-left justify-start;
+  }
+  &.btn_full{
+  @apply w-full;
+  }
+  &.btn_right_chevron {
+    &:after{
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      margin-left: auto;
+      content: "";
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-size: 1.25rem;
+      transition: transform 0.2s ease-in-out;
+    @apply ml-1;
+    }
+  }
+  &.collapsed{
+    &.btn_right_chevron {
+      &:after{
+      @apply rotate-0;
+      }
+    }
+  }
+  &.btn_badge_primary{
+    --btn-badge-background: theme("colors.primary.500");
+    --btn-badge-color: theme("colors.primary.100");
+  }
+  .btn_badge{
+    background: var(--btn-badge-background);
+    color: var(--btn-badge-color);
+    width: var(--btn-badge-size) ;
+    height: var(--btn-badge-size) ;
+  @apply absolute -right-1 -top-1 text-xxs rounded-xl inline-flex items-center justify-center shadow;
+
+  }
+}

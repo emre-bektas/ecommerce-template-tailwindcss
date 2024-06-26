@@ -26,4 +26,37 @@ $(document).ready(function () {
         $(".checkout-page").removeClass("cp_mobile_box");
     })
 
+
+    /* Drawer */
+
+    function drawerClose(el) {
+        $(el).removeClass("drawer_open");
+        $("body").removeClass("overflow-hidden");
+        $("body").css({
+            paddingRight : "0",
+        })
+    }
+
+    $("[data-drawer-id]").click(function () {
+        const drawerId = $(this).attr("data-drawer-id");
+        $(drawerId).addClass("drawer_open");
+        $("body").addClass("overflow-hidden");
+        $("body").css({
+            paddingRight : "15px",
+        })
+
+    })
+    $("[data-drawer-close]").click(function (e) {
+        const el = $(this).closest(".drawer_");
+        if(el?.length > 0){
+            drawerClose(el);
+        }
+    })
+
+    $(".drawer_").click(function (e) {
+        if (!$(e.target).closest(".drawer_content").length){
+            drawerClose(this);
+        }
+    })
+
 })

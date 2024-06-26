@@ -54,6 +54,7 @@
             </form>
         </div>
         <div class="hc-right">
+
             <div class="dropdown_">
                 <div class="dropdown_trigger">
                     <button class="btn_ btn_sm btn_transparent btn_right_chevron">
@@ -331,13 +332,23 @@
 </nav>
 
     <div class="category-page">
-        <div class="cp-filter">
-            <div class="cpf-content">
-                <div class="cpf-title">
-                    <span><b>100+</b> ürün gösteriliyor</span>
+
+        <div class="drawer_ drawer_show_md" id="basket_drawer">
+            <div class="drawer_content">
+                <div class="drawer_content_header">
+                    <h3 class="dch_title">Sepetlerim</h3>
+                    <button class="btn_ btn_icon btn_sm" data-drawer-close>
+                        <i data-lucide="x"></i>
+                    </button>
                 </div>
-                <ul class="cpf-filters ">
-                    <li class="cpf-item">
+                <div class="drawer_content_body">
+                    <div class="cp-filter">
+                        <div class="cpf-content">
+                            <div class="cpf-title">
+                                <span><b>100+</b> ürün gösteriliyor</span>
+                            </div>
+                            <ul class="cpf-filters ">
+                                <li class="cpf-item">
   <span class="cpfi-title">Marka</span>
   <div class="cpf-search mb-2">
     <input type="text" placeholder="Marka Ara" class="input_ input_xs">
@@ -364,11 +375,11 @@
   </ul>
 </li>
 
-                    <li class="cpf-item">
+                                <li class="cpf-item">
   <span class="cpfi-title">Fiyat Aralığı</span>
   <div class="cpf-price-range">
-    <input type="text" placeholder="En Az" class="input_ input_xs">
-    <input type="text" placeholder="En Fazla" class="input_ input_xs">
+    <input type="number" placeholder="En Az" class="input_ input_xs">
+    <input type="number" placeholder="En Fazla" class="input_ input_xs">
     <button class="btn_ btn_icon btn_xs ">
       <i class="gg-search" style="--ggs:.7;"></i>
     </button>
@@ -395,7 +406,7 @@
   </ul>
 </li>
 
-                    <li class="cpf-item py-3">
+                                <li class="cpf-item py-3">
   <label class="check_switch_ check_switch_sm check_switch_filter">
     <span class="cs_title">İndirimli Ürünler</span>
     <input type="checkbox" value="">
@@ -403,7 +414,7 @@
   </label>
 </li>
 
-                    <li class="cpf-item py-3">
+                                <li class="cpf-item py-3">
   <label class="check_switch_ check_switch_sm check_switch_filter">
     <span class="cs_title">İndirimli Ürünler</span>
     <input type="checkbox" value="">
@@ -411,7 +422,7 @@
   </label>
 </li>
 
-                    <li class="cpf-item py-3">
+                                <li class="cpf-item py-3">
   <label class="check_switch_ check_switch_sm check_switch_filter">
     <span class="cs_title">İndirimli Ürünler</span>
     <input type="checkbox" value="">
@@ -419,7 +430,7 @@
   </label>
 </li>
 
-                    <li class="cpf-item py-3">
+                                <li class="cpf-item py-3">
   <label class="check_switch_ check_switch_sm check_switch_filter">
     <span class="cs_title">İndirimli Ürünler</span>
     <input type="checkbox" value="">
@@ -427,7 +438,7 @@
   </label>
 </li>
 
-                    <li class="cpf-item py-3">
+                                <li class="cpf-item py-3">
   <label class="check_switch_ check_switch_sm check_switch_filter">
     <span class="cs_title">İndirimli Ürünler</span>
     <input type="checkbox" value="">
@@ -435,7 +446,7 @@
   </label>
 </li>
 
-                    <li class="cpf-item py-3">
+                                <li class="cpf-item py-3">
   <label class="check_switch_ check_switch_sm check_switch_filter">
     <span class="cs_title">İndirimli Ürünler</span>
     <input type="checkbox" value="">
@@ -443,12 +454,17 @@
   </label>
 </li>
 
-                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
+
         <div class="cp-mobile-filter">
             <div class="cpmf-buttons">
-                <button class="btn_ btn_full btn_left_icon">
+                <button class="btn_ btn_flat btn_full btn_primary">
                     <i class="w-6 text-primary-500"><svg  viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path d="M20 10.875C20.3013 10.875 20.5733 10.6948 20.6907 10.4173C20.8081 10.1399 20.7482 9.81916 20.5384 9.60289L16.5384 5.47789C16.3972 5.33222 16.2029 5.25 16 5.25C15.7971 5.25 15.6029 5.33222 15.4616 5.47789L11.4616 9.60289C11.2519 9.81916 11.1919 10.1399 11.3093 10.4173C11.4268 10.6948 11.6988 10.875 12 10.875H15.25V18C15.25 18.4142 15.5858 18.75 16 18.75C16.4142 18.75 16.75 18.4142 16.75 18L16.75 10.875H20Z"/>
     <path opacity="0.5" d="M12 13.125C12.3013 13.125 12.5733 13.3052 12.6907 13.5827C12.8081 13.8601 12.7482 14.1808 12.5384 14.3971L8.53844 18.5221C8.39719 18.6678 8.20293 18.75 8.00002 18.75C7.79711 18.75 7.60285 18.6678 7.46159 18.5221L3.46159 14.3971C3.25188 14.1808 3.19192 13.8601 3.30934 13.5827C3.42676 13.3052 3.69877 13.125 4.00002 13.125H7.25002L7.25002 6C7.25002 5.58579 7.5858 5.25 8.00002 5.25C8.41423 5.25 8.75002 5.58579 8.75002 6L8.75002 13.125L12 13.125Z" />
@@ -456,7 +472,7 @@
 </i>
                     Sırala
                 </button>
-                <button class="btn_ btn_full  btn_left_icon">
+                <button class="btn_ btn_flat btn_full btn_primary" data-drawer-id="#basket_drawer">
                     <i class="w-6 text-primary-500">
 <svg  viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path fill-rule="evenodd" clip-rule="evenodd" d="M5 3H19L8.81562 13.1844C8.65593 12.7689 8.39992 12.4122 8.03751 12.0976C7.80967 11.8998 7.49146 11.7206 6.85504 11.3624L3.94202 9.72255C2.99347 9.18858 2.5192 8.9216 2.2596 8.49142C2 8.06124 2 7.54232 2 6.50448V5.81466C2 4.48782 2 3.8244 2.43934 3.4122C2.87868 3 3.58579 3 5 3Z" />
@@ -468,7 +484,6 @@
             </div>
         </div>
         <div class="cp-content">
-
             <div class="m-shop-product-list">
                 <a href="/pages/product.html" class="product-rect-content">
 
@@ -1099,6 +1114,8 @@
     </div>
 </div>
 
+
+
 <footer>
     <div class="f-content">
         <div class="fc-wrapper">
@@ -1166,8 +1183,9 @@
     </div>
 </footer>
 
+<script src="/js/plugins/lucide.min.js"></script>
 <script>
-
+    lucide.createIcons();
 </script>
 
 

@@ -1,0 +1,114 @@
+.btn_ {
+  --btn-background: theme("colors.gray.100");
+  --btn-hover-bg: theme("colors.gray.200");
+  --btn-color: #222;
+  --btn-badge-background: theme("colors.gray.400");
+  --btn-badge-color: theme("colors.gray.100");
+  --btn-height: 2.5em;
+  --btn-badge-size: 1.3em;
+  background: var(--btn-background);
+  color: var(--btn-color);
+  height: var(--btn-height);
+  @apply px-4 rounded-xl inline-flex items-center justify-center transition-all cursor-pointer relative;
+}
+.btn_.btn_no_hover {
+  @apply !px-0;
+  --btn-hover-bg: transparent!important;
+}
+.btn_.btn_icon {
+  width: var(--btn-height);
+  @apply aspect-square !px-0 !text-base;
+}
+.btn_.btn-icon-between {
+  @apply !justify-between;
+}
+.btn_.btn_start {
+  @apply !justify-start;
+}
+.btn_.btn_left_icon {
+  @apply gap-2;
+}
+.btn_.btn_sm {
+  --btn-height: 2.2em;
+  @apply px-3 text-sm;
+}
+.btn_.btn_sm.btn_right_chevron:after {
+  width: 16px;
+  height: 16px;
+  background-size: 1rem;
+}
+.btn_.btn_xs {
+  --btn-height: 1.9em;
+  --btn-badge-size: 1.2em;
+  @apply px-2 text-xs;
+}
+.btn_.btn_xs.btn_right_chevron:after {
+  width: 16px;
+  height: 16px;
+  background-size: 1rem;
+}
+.btn_.btn_primary {
+  --btn-background: theme("colors.primary.600");
+  --btn-hover-bg: theme("colors.primary.700");
+  --btn-color: theme("colors.white");
+}
+.btn_.btn_blue {
+  --btn-background: theme("colors.blue.600");
+  --btn-hover-bg: theme("colors.blue.700");
+  --btn-color: theme("colors.white");
+}
+.btn_.btn_transparent {
+  --btn-background: transparent;
+  --btn-hover-bg: theme("colors.gray.100");
+  --btn-color: theme("colors.gray.800");
+}
+.btn_.btn_transparent.btn_active {
+  --btn-background: theme("colors.gray.200");
+  --btn-hover-bg: theme("colors.gray.200");
+  --btn-color: theme("colors.gray.800");
+}
+.btn_.btn_transparent:hover {
+  background: var(--btn-hover-bg);
+}
+.btn_.btn_bho {
+  @apply text-primary-600 border-2 bg-transparent border-primary-600 border-solid rounded-full;
+}
+.btn_.btn-text-right {
+  @apply text-right justify-end;
+}
+.btn_.btn-text-left {
+  @apply text-left justify-start;
+}
+.btn_.btn_full {
+  @apply w-full;
+}
+.btn_.btn_right_chevron:after {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-left: auto;
+  content: "";
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  transition: transform 0.2s ease-in-out;
+  @apply ml-1;
+}
+.btn_.collapsed.btn_right_chevron:after {
+  @apply rotate-0;
+}
+.btn_.btn_badge_primary {
+  --btn-badge-background: theme("colors.primary.500");
+  --btn-badge-color: theme("colors.primary.100");
+}
+.btn_ .btn_badge {
+  background: var(--btn-badge-background);
+  color: var(--btn-badge-color);
+  width: var(--btn-badge-size);
+  height: var(--btn-badge-size);
+  @apply absolute -right-1 -top-1 text-xxs rounded-xl inline-flex items-center justify-center shadow;
+}
+.btn_:hover {
+  background-color: var(--btn-hover-bg);
+}
+/*# sourceMappingURL=button.css.map */
