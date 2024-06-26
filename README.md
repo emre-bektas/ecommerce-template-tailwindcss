@@ -1,3 +1,5 @@
+## Demo
+[E-Commerce Template Demo](https://commerce-template-eb.netlify.app/)
 
 # Commerce Template
 
