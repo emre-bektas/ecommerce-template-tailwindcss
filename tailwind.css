@@ -11,11 +11,13 @@
   --btn-font-size: theme("fontSize.small");
   --btn-radius: theme("borderRadius.medium");
   --btn-badge-size: 1.5em;
+  --btn-line-height: theme("lineHeight.tight");
   background: var(--btn-background);
   color: var(--btn-color);
   height: var(--btn-height);
   font-size: var(--btn-font-size);
   border-radius: var(--btn-radius);
+  line-height: var(--btn-line-height);
   @apply px-4 inline-flex select-none items-center justify-center transition-all cursor-pointer appearance-none relative whitespace-nowrap gap-2;
 }
 .btn_:disabled,
@@ -74,12 +76,14 @@
   --btn-radius: theme("borderRadius.large");
   --btn-height: theme("height.12");
   --btn-font-size: theme("fontSize.medium");
+  --btn-line-height: theme("lineHeight.normal");
   @apply px-6;
 }
 .btn_.btn_sm {
   --btn-radius: theme("borderRadius.small");
   --btn-height: theme("height.8");
   --btn-font-size: theme("fontSize.tiny");
+  --btn-line-height: theme("lineHeight.none");
   @apply px-3;
 }
 .btn_.btn_sm.btn_right_chevron:after {
@@ -90,8 +94,9 @@
 .btn_.btn_xs {
   --btn-radius: theme("borderRadius.small");
   --btn-height: theme("height.7");
-  --btn-font-size: theme("fontSize.tiny");
+  --btn-font-size: theme("fontSize.xxs");
   --btn-badge-size: 1.2em;
+  --btn-line-height: theme("lineHeight.none");
   @apply px-2;
 }
 .btn_.btn_xs.btn_right_chevron:after {
@@ -171,13 +176,13 @@
 }
 .btn_.btn_right_chevron:after {
   flex-shrink: 0;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   margin-left: auto;
   content: "";
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
-  background-size: 1.25rem;
+  background-size: 1rem;
   transition: transform 0.2s ease-in-out;
   @apply ml-1;
 }
@@ -204,7 +209,7 @@
 }
 .drawer_.drawer_show_md {
   top: var(--header-height);
-  @apply md:sticky md:h-dvh md:w-auto md:visible py-2;
+  @apply md:sticky md:h-dvh md:w-auto md:visible py-2 md:z-0;
 }
 .drawer_.drawer_show_md .drawer_content {
   @apply md:sticky md:transform-none;

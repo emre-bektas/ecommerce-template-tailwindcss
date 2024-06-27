@@ -1591,11 +1591,13 @@ video {
   --btn-font-size: var(--nexlink-font-size-small);
   --btn-radius: var(--nexlink-radius-medium);
   --btn-badge-size: 1.5em;
+  --btn-line-height: 1.25;
   background: var(--btn-background);
   color: var(--btn-color);
   height: var(--btn-height);
   font-size: var(--btn-font-size);
   border-radius: var(--btn-radius);
+  line-height: var(--btn-line-height);
   position: relative;
   display: inline-flex;
   cursor: pointer;
@@ -1697,6 +1699,7 @@ video {
   --btn-radius: var(--nexlink-radius-large);
   --btn-height: 3rem;
   --btn-font-size: var(--nexlink-font-size-medium);
+  --btn-line-height: 1.5;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
@@ -1705,6 +1708,7 @@ video {
   --btn-radius: var(--nexlink-radius-small);
   --btn-height: 2rem;
   --btn-font-size: var(--nexlink-font-size-tiny);
+  --btn-line-height: 1;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
@@ -1718,8 +1722,9 @@ video {
 .btn_.btn_xs {
   --btn-radius: var(--nexlink-radius-small);
   --btn-height: 1.75rem;
-  --btn-font-size: var(--nexlink-font-size-tiny);
+  --btn-font-size: 0.68rem;
   --btn-badge-size: 1.2em;
+  --btn-line-height: 1;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
@@ -1829,13 +1834,13 @@ video {
 
 .btn_.btn_right_chevron:after {
   flex-shrink: 0;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   margin-left: auto;
   content: "";
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
-  background-size: 1.25rem;
+  background-size: 1rem;
   transition: transform 0.2s ease-in-out;
   margin-left: 0.25rem;
 }
@@ -1895,6 +1900,7 @@ video {
   .drawer_.drawer_show_md {
     visibility: visible;
     position: sticky;
+    z-index: 0;
     height: 100dvh;
     width: auto;
   }
