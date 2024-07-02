@@ -5,6 +5,13 @@
 //@import "/src/assets/prefix/ui";
 @import "/src/assets/prefix/button";
 @import "/src/assets/prefix/drawer";
+@import "/src/assets/prefix/tabs";
+@import "/src/assets/prefix/bottom-sheets";
+@import "/src/assets/prefix/card";
+
+//@import -> page
+@import "/src/assets/prefix/checkout";
+
 
 
 @min768: ~"screen(md)";
@@ -16,6 +23,10 @@
   --divider: #dcdcdc;
   --overlay: #888;
   --header-height:0px;
+}
+
+body{
+  @apply overflow-y-scroll;
 }
 
 
@@ -988,7 +999,7 @@ header{
   }
 }
 .checkout-page{
-  @apply flex md:flex-row flex-col relative;
+  @apply flex md:flex-row flex-col max-w-6xl mx-auto relative;
   .cp-overlay{
     @apply hidden;
   }
@@ -1016,15 +1027,28 @@ header{
 
   }
   .cp-delivery{
-    @apply flex-1 pb-24 md:pb-0 md:h-screen flex flex-col justify-center items-center overflow-auto;
+    @apply flex-1 pb-24  md:pb-0 md:h-screen flex flex-col items-center overflow-auto;
     .cpd-content{
-      @apply max-w-2xl mx-auto px-3;
+      @apply  w-full md:py-5 md:px-12;
     }
     .cpd-logo{
       @apply w-full;
+      .cpd-logo-content{
+        @apply flex justify-between items-center flex-col-reverse md:flex-row bg-white md:h-32 py-6 md:py-0 mb-3;
+        .cpd-logo-link{
+          @apply block h-16;
+        }
+      }
     }
     .cpd-form{
-      @apply w-full;
+      @apply w-full max-w-2xl px-3 md:px-0;
+      .tabs_{
+        @apply w-full;
+        .tab_content{
+          @apply w-full px-0 py-6;
+        }
+      }
+
     }
     .cpd-title{
       @apply text-gray-700 font-medium mb-2;
@@ -1045,7 +1069,10 @@ header{
     }
   }
   .cp-order-summary{
-    @apply ~"w-full md:w-[300px] lg:w-[350px]" bg-gray-50 sticky md:top-0   flex-col h-screen hidden md:flex pb-20 md:pb-0 opacity-0 md:opacity-100 transition transition-all;
+    @apply ~"w-full md:w-[300px] lg:w-[350px] md:h-[calc(100vh-2rem)]" h-screen sticky md:top-4  pb-20 md:pb-0 opacity-0 md:opacity-100 transition-all;
+    .cpos_content{
+      @apply rounded-t-large rounded-b-none md:rounded-b-large card_ p-0 h-full w-full flex flex-col;
+    }
     .cp-os-total{
       @apply py-2 md:py-5 text-center flex  flex-col md:gap-3 border-b border-gray-200 border-solid w-full;
       h3{
@@ -1059,12 +1086,12 @@ header{
       }
     }
     .cp-os-summary{
-      @apply py-2 md:py-5 flex flex-col flex-1 overflow-auto;
+      @apply  flex flex-col flex-1 overflow-auto;
       .cp-oss-title{
-        @apply text-m text-gray-600 font-medium mb-2 px-3;
+        @apply text-m text-gray-600 font-medium px-3 py-2;
       }
       .cp-oss-product{
-        @apply flex flex-col gap-1 mt-1 px-3 border-t border-solid border-default-200 pt-3;
+        @apply flex flex-col gap-1 mt-1 px-3 border-t border-solid border-default-200 py-3;
         &.cp-oss-list{
           @apply mt-0 flex-1 overflow-auto ;
           .cp-oos-item{
@@ -1077,23 +1104,23 @@ header{
           }
         }
         .cp-oos-item{
-          @apply flex justify-between items-center bg-gray-100 rounded-xl px-3 py-2;
+          @apply flex justify-between items-center card_ p-3;
           &.cp-oss-item-total{
             @apply bg-transparent;
             .cp-oss-left{
 
               span{
-                @apply font-semibold text-base text-gray-900;
+                @apply font-semibold text-sm text-gray-900;
               }
             }
             .cp-oos-item-amount{
-              @apply text-gray-900 text-m;
+              @apply text-gray-900 text-sm;
             }
           }
           .cp-oss-left{
             @apply flex flex-col;
             h2{
-              @apply font-medium text-gray-900 gap-1 line-clamp-1;;
+              @apply font-medium text-m text-gray-900 gap-1 line-clamp-1;;
             }
             span{
               @apply text-sm text-gray-500 line-clamp-1;
@@ -1109,7 +1136,7 @@ header{
 
 }
 .order-result-page{
-  @apply bg-gray-50 rounded-xl py-5 px-3;
+  @apply card_;
   .orp-message{
     @apply flex flex-col text-center items-center justify-center border-b border-solid border-gray-100 pb-5 mb-5;
   }
@@ -1337,3 +1364,5 @@ footer{
     }
   }
 }
+
+

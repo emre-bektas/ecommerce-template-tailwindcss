@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
 <title>E Ticaret</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link href="/css/bootstrap.css" rel="stylesheet">
 
@@ -29,7 +29,6 @@
 
 </head>
 <body>
-
 <header>
     <div class="h-content">
         <div class="hc-logo">
@@ -106,24 +105,24 @@
     </div>
     <ul class="h-menus mt-2">
         <li class="h-menu-item">
-            <span class="hm-title">Kadın</span>
+            <span class="hm-title">Promosyon ürünler</span>
             <div class="hm-hover-menu">
     <div class="">
-        <h3>Giyim</h3>
+        <h3>Promosyon ürünler</h3>
         <ul class="flex flex-col gap-1 mt-2">
             <li><a href="/pages/category.html">Pantolon</a></li>
             <li><a href="/pages/category.html">Şort</a></li>
         </ul>
     </div>
     <div class="">
-        <h3>Ayakkabı</h3>
+        <h3>Hediyelik ürünler</h3>
         <ul class="flex flex-col gap-1 mt-2">
             <li><a href="/pages/category.html">Günlük Ayakkabı</a></li>
             <li><a href="/pages/category.html">Klasik Ayakkabı</a></li>
         </ul>
     </div>
     <div class="">
-        <h3>Kozmetik</h3>
+        <h3>Kurumsal ürünler</h3>
         <ul class="flex flex-col gap-1 mt-2">
             <li><a href="/pages/category.html">Parfüm</a></li>
             <li><a href="/pages/category.html">Krem</a></li>
@@ -141,24 +140,24 @@
 
         </li>
         <li class="h-menu-item">
-            <span class="hm-title">Erkek</span>
+            <span class="hm-title">Hediyelik ürünler</span>
             <div class="hm-hover-menu">
     <div class="">
-        <h3>Giyim</h3>
+        <h3>Promosyon ürünler</h3>
         <ul class="flex flex-col gap-1 mt-2">
             <li><a href="/pages/category.html">Pantolon</a></li>
             <li><a href="/pages/category.html">Şort</a></li>
         </ul>
     </div>
     <div class="">
-        <h3>Ayakkabı</h3>
+        <h3>Hediyelik ürünler</h3>
         <ul class="flex flex-col gap-1 mt-2">
             <li><a href="/pages/category.html">Günlük Ayakkabı</a></li>
             <li><a href="/pages/category.html">Klasik Ayakkabı</a></li>
         </ul>
     </div>
     <div class="">
-        <h3>Kozmetik</h3>
+        <h3>Kurumsal ürünler</h3>
         <ul class="flex flex-col gap-1 mt-2">
             <li><a href="/pages/category.html">Parfüm</a></li>
             <li><a href="/pages/category.html">Krem</a></li>
@@ -176,24 +175,24 @@
 
         </li>
         <li class="h-menu-item">
-            <span class="hm-title">Çocuk</span>
+            <span class="hm-title">Kırtasiye</span>
             <div class="hm-hover-menu">
     <div class="">
-        <h3>Giyim</h3>
+        <h3>Promosyon ürünler</h3>
         <ul class="flex flex-col gap-1 mt-2">
             <li><a href="/pages/category.html">Pantolon</a></li>
             <li><a href="/pages/category.html">Şort</a></li>
         </ul>
     </div>
     <div class="">
-        <h3>Ayakkabı</h3>
+        <h3>Hediyelik ürünler</h3>
         <ul class="flex flex-col gap-1 mt-2">
             <li><a href="/pages/category.html">Günlük Ayakkabı</a></li>
             <li><a href="/pages/category.html">Klasik Ayakkabı</a></li>
         </ul>
     </div>
     <div class="">
-        <h3>Kozmetik</h3>
+        <h3>Kurumsal ürünler</h3>
         <ul class="flex flex-col gap-1 mt-2">
             <li><a href="/pages/category.html">Parfüm</a></li>
             <li><a href="/pages/category.html">Krem</a></li>
@@ -212,13 +211,13 @@
         </li>
         <li class="h-menu-item">
             <a href="#">
-                Flash Ürünler
+                Oyuncak
                 <span class="bg-rose-100 text-rose-800 text-xs font-medium px-1 py-0.5 rounded">Yeni</span>
             </a>
         </li>
         <li class="h-menu-item">
             <a href="#">
-                Çok Satanlar
+                Koleksiyon ürünler
                 <span class="bg-rose-100 text-rose-800 text-xs font-medium px-1 py-0.5 rounded">Yeni</span>
             </a>
         </li>
@@ -306,29 +305,46 @@
 
 
 
+
 <div class="herousel-content">
     <div class="hc-wrapper">
-        <ul class="hc-list-menu">
-            <li class="active">
-                <span>Marka Günleri</span>
-            </li>
-            <li>
-                <span>Elektronik</span>
-            </li>
-        </ul>
-        <div class="hcw-content">
-            <div class="hcwc-title">
-                <span class="text-2xl">Efsane indirimlerle</span>
-                <span class="text-3xl font-medium mt-2">şimdi al, şubatta ödemeye başla</span>
-                <button class="btn_ btn_primary mt-4">Acele Et Kaçırma</button>
+        <div class="tabs_">
+            <div class="tab_list tl_center tl_light tl_white tl_rounded_full">
+                <button class="tab_item active" data-tab="#tab1">Marka Günleri</button>
+                <button class="tab_item" data-tab="#tab2">Elektronik</button>
             </div>
-            <div class="hcwc-image">
-                <img src="/images/banner.jpeg" alt="">
+            <div class="tab_content">
+                <div id="tab1" class="tab_ active">
+                    <div class="hcw-content">
+                        <div class="hcwc-title">
+                            <span class="text-2xl">Efsane indirimlerle</span>
+                            <span class="text-3xl font-medium mt-2">şimdi al, şubatta ödemeye başla</span>
+                            <button class="btn_ btn_primary mt-4">Acele Et Kaçırma</button>
+                        </div>
+                        <div class="hcwc-image">
+                            <img src="/images/banner.jpeg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div id="tab2" class="tab_">
+                    <div class="hcw-content">
+                        <div class="hcwc-title">
+                            <span class="text-2xl">Efsane indirimlerle</span>
+                            <span class="text-3xl font-medium mt-2">şimdi al, şubatta ödemeye başla</span>
+                            <button class="btn_ btn_primary mt-4">Acele Et Kaçırma</button>
+                        </div>
+                        <div class="hcwc-image">
+                            <img src="/images/banner.jpeg" alt="">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 <div class="max-w-6xl mx-auto main">
+
     <div class="m-stories swiper" data-slider-stories>
     <div class="swiper-wrapper">
         <div class="swiper-slide">

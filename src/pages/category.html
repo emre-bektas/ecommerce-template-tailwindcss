@@ -32,11 +32,9 @@
                 </div>
             </div>
         </div>
-
-
         <div class="cp-mobile-filter">
             <div class="cpmf-buttons">
-                <button class="btn_ btn_flat btn_full btn_primary">
+                <button class="btn_ btn_flat btn_full btn_primary" data-bottom-sheet="#sortProduct">
                     <i class="w-6 text-primary-500">@@include('../assets/icons/sort-vertical.svg')</i>
                     Sırala
                 </button>
@@ -73,6 +71,35 @@
                 @@include('../components/menus/shop-product-cart-2/index.html')
                 @@include('../components/menus/shop-product-cart-2/index.html')
             </div>
+        </div>
+    </div>
+
+    <div id="sortProduct" class="bottom_sheet_">
+        <div class="bs_content">
+            <div class="bs_header" id="bottomSheetHeader">
+                <h3 class="bsh_title" data-bottom-sheet-header-title>Sıralama</h3>
+                <button class="btn_ btn_icon btn_sm" data-bottom-sheet-close><i data-lucide="x"></i></button>
+            </div>
+            <div class="bs_body">
+                <ul class="bsb_menu">
+                    <li class="bsb_selected" data-bottom-sheet-selected="suggest">
+                        <span>Önerilen</span>
+                    </li>
+                    <li data-bottom-sheet-selected="highest-price">
+                        <span>En Yüksek Fiyat</span>
+                    </li>
+                </ul>
+            </div>
+            <script>
+                $("[data-bottom-sheet-selected]").click(function () {
+                    const selectedId = $(this).attr("data-bottom-sheet-selected");
+                    $("[data-bottom-sheet-selected]").removeClass("bsb_selected");
+                    if (selectedId){
+                        $(this).addClass("bsb_selected");
+                        bottomSheetClose()
+                    }
+                })
+            </script>
         </div>
     </div>
 </div>

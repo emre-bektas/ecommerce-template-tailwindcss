@@ -1,0 +1,28 @@
+.Sa_delivery {
+  @apply flex flex-col gap-5;
+}
+.Sa_delivery .Sad_item .Sad_title {
+  @apply text-xl font-semibold;
+}
+.Sa_delivery .Sad_item .Sad_item_list {
+  @apply flex flex-col gap-3 mt-2;
+}
+.Sa_delivery .Sad_item .Sad_item_list .Sadi_content {
+  @apply flex gap-1 cursor-pointer card_;
+}
+.Sa_delivery .Sad_item .Sad_item_list .Sadi_content .Sadi_input {
+  @apply flex items-center h-5;
+}
+.Sa_delivery .Sad_item .Sad_item_list .Sadi_content .Sadi_input input {
+  @apply w-5 h-5;
+}
+.Sa_delivery .Sad_item .Sad_item_list .Sadi_content .Sadi_label {
+  @apply ms-2 text-sm;
+}
+.Sa_delivery .Sad_item .Sad_item_list .Sadi_content .Sadi_label span {
+  @apply font-semibold text-gray-700;
+}
+.Sa_delivery .Sad_item .Sad_item_list .Sadi_content .Sadi_label p {
+  @apply text-xs font-normal text-gray-500 line-clamp-1;
+}
+/*# sourceMappingURL=checkout.css.map */
