@@ -403,7 +403,7 @@
   @apply text-xl font-semibold;
 }
 .Sa_delivery .Sad_item .Sad_item_list {
-  @apply grid grid-cols-2 gap-3 mt-2;
+  @apply grid sm:grid-cols-2 gap-3 mt-2;
 }
 .Sa_delivery .Sad_item .Sad_item_list .Sadi_content {
   @apply flex gap-1 cursor-pointer card_ items-center;
@@ -1449,7 +1449,7 @@ header .h-menus .h-menu-item:hover .hm-hover-menu {
   @apply rotate-180;
 }
 .checkout-page .cp-order-summary {
-  @apply w-full md:w-[300px] lg:w-[350px] md:h-[calc(100vh-2rem)] h-screen sticky md:top-4  pb-20 md:pb-0 opacity-0 md:opacity-100 transition-all;
+  @apply w-full md:w-[300px] lg:w-[350px] md:h-[calc(100vh-2rem)] h-screen sticky md:top-4 hidden md:flex  pb-20 md:pb-0 opacity-0 md:opacity-100 transition-all;
 }
 .checkout-page .cp-order-summary .cpos_content {
   @apply rounded-t-large rounded-b-none md:rounded-b-large card_ p-0 h-full w-full flex flex-col;
