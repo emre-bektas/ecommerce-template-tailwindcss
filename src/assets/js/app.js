@@ -21,13 +21,9 @@ $(document).ready(function () {
             $(this).css('transform', 'scale(1)');
         })
 
-    $(".dropdown_ .dropdown_trigger").click(function () {
-        const dropEl = $(this).closest(".dropdown_")
-        $(this).toggleClass("dt-active");
 
-        dropEl.find(".dropdown_content").toggleClass("dc-active");
 
-    })
+
 
     const swiper = new Swiper("[data-slider-products]", {
         slidesPerView: "auto",

@@ -116,7 +116,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button class="btn_ btn_full mt-3 btn_primary" type="submit">Şiparişi Onayla</button>
+                                    <button class="btn_ btn_full btn_lg mt-3 btn_primary" type="submit">Siparişi Onayla</button>
                                 </form>
                             </div>
                         </div>
@@ -126,123 +126,136 @@
 
             </div>
         </div>
-
     </div>
-    <div class="cp-mobile-summary">
+
+    <div class="cp-mobile-summary" data-bottom-sheet="#orderSummary">
         <div class="cpm_c_approve">
             <div class="cpm_ca_total">
                 <i class="gg-chevron-down-o cpm_cat_icon" style="--ggs: 0.8;"></i>
                 <div class="flex flex-col">
                     <span class="text-gray-600 font-medium">Ödenecek Tutar</span>
-                    <span class="text-emerald-500 text-m font-medium">₺300,00</span>
+                    <span class="text-primary-500 text-m font-medium">₺300,00</span>
                 </div>
             </div>
-            <a href="/pages/checkout.html" class="btn_ btn_primary flex-shrink-0">Şiparişi Onayla</a>
+            <a href="/pages/checkout.html" class="btn_ btn_lg btn_primary flex-shrink-0">Şiparişi Onayla</a>
         </div>
     </div>
-    <div class="cp-order-summary">
-        <div class="cpos_content">
-            <div class="cp-os-total">
-                <h3>Ödenecek Tutar</h3>
-                <h1>₺300,00</h1>
-                <span>Güvenli Ödeme</span>
+
+
+    <div id="orderSummary" data-bottom-sheet-snippet="[0.85]" class="bottom_sheet_ bottom_sheet_show_md">
+        <div class="bs_content">
+            <div class="bs_header" id="bottomSheetHeader">
+                <div class="bsh_title_wrapper"></div>
+                <button class="btn_ btn_icon btn_sm" data-bottom-sheet-close><i data-lucide="x"></i></button>
             </div>
-            <div class="cp-os-summary ">
-                <h2 class="cp-oss-title">Şipariş Özeti</h2>
-                <ul class="cp-oss-product cp-oss-list ">
-                    <li class="cp-oos-item">
-                        <div class="cp-oss-left">
-                            <h2>Ürün Adı wefoewh foıeh ıoerhjgı oerh gıoeh</h2>
-                            <span>Renk:Mavi</span>
+            <div class="bs_body">
+                <div class="cp-order-summary">
+                    <div class="cpos_content">
+                        <div class="cp-os-total">
+                            <h3>Ödenecek Tutar</h3>
+                            <h1>₺300,00</h1>
+                            <span>Güvenli Ödeme</span>
                         </div>
-                        <span class="cp-oos-item-amount">₺150,00</span>
-                    </li>
-                    <li class="cp-oos-item">
-                        <div class="cp-oss-left">
-                            <h2>Ürün Adı</h2>
-                            <span>Renk:Mavi</span>
-                        </div>
-                        <span class="cp-oos-item-amount">₺150,00</span>
-                    </li>
-                    <li class="cp-oos-item">
-                        <div class="cp-oss-left">
-                            <h2>Ürün Adı</h2>
-                            <span>Renk:Mavi</span>
-                        </div>
-                        <span class="cp-oos-item-amount">₺150,00</span>
-                    </li>
-                    <li class="cp-oos-item">
-                        <div class="cp-oss-left">
-                            <h2>Ürün Adı</h2>
-                            <span>Renk:Mavi</span>
-                        </div>
-                        <span class="cp-oos-item-amount">₺150,00</span>
-                    </li>
-                    <li class="cp-oos-item">
-                        <div class="cp-oss-left">
-                            <h2>Ürün Adı</h2>
-                            <span>Renk:Mavi</span>
-                        </div>
-                        <span class="cp-oos-item-amount">₺150,00</span>
-                    </li>
-                    <li class="cp-oos-item">
-                        <div class="cp-oss-left">
-                            <h2>Ürün Adı</h2>
-                            <span>Renk:Mavi</span>
-                        </div>
-                        <span class="cp-oos-item-amount">₺150,00</span>
-                    </li>
-                    <li class="cp-oos-item">
-                        <div class="cp-oss-left">
-                            <h2>Ürün Adı</h2>
-                            <span>Renk:Mavi</span>
-                        </div>
-                        <span class="cp-oos-item-amount">₺150,00</span>
-                    </li>
-                    <li class="cp-oos-item">
-                        <div class="cp-oss-left">
-                            <h2>Ürün Adı</h2>
-                            <span>Renk:Mavi</span>
-                        </div>
-                        <span class="cp-oos-item-amount">₺150,00</span>
-                    </li>
-                    <li class="cp-oos-item">
-                        <div class="cp-oss-left">
-                            <h2>Ürün Adı</h2>
-                            <span>Renk:Mavi</span>
-                        </div>
-                        <span class="cp-oos-item-amount">₺150,00</span>
-                    </li>
-                    <li class="cp-oos-item">
-                        <div class="cp-oss-left">
-                            <h2>Ürün Adı</h2>
-                            <span>Renk:Mavi</span>
-                        </div>
-                        <span class="cp-oos-item-amount">₺150,00</span>
-                    </li>
+                        <div class="cp-os-summary ">
+                            <h2 class="cp-oss-title">Şipariş Özeti</h2>
+                            <ul class="cp-oss-product cp-oss-list ">
+                                <li class="cp-oos-item">
+                                    <div class="cp-oss-left">
+                                        <h2>Ürün Adı wefoewh foıeh ıoerhjgı oerh gıoeh</h2>
+                                        <span>Renk:Mavi</span>
+                                    </div>
+                                    <span class="cp-oos-item-amount">₺150,00</span>
+                                </li>
+                                <li class="cp-oos-item">
+                                    <div class="cp-oss-left">
+                                        <h2>Ürün Adı</h2>
+                                        <span>Renk:Mavi</span>
+                                    </div>
+                                    <span class="cp-oos-item-amount">₺150,00</span>
+                                </li>
+                                <li class="cp-oos-item">
+                                    <div class="cp-oss-left">
+                                        <h2>Ürün Adı</h2>
+                                        <span>Renk:Mavi</span>
+                                    </div>
+                                    <span class="cp-oos-item-amount">₺150,00</span>
+                                </li>
+                                <li class="cp-oos-item">
+                                    <div class="cp-oss-left">
+                                        <h2>Ürün Adı</h2>
+                                        <span>Renk:Mavi</span>
+                                    </div>
+                                    <span class="cp-oos-item-amount">₺150,00</span>
+                                </li>
+                                <li class="cp-oos-item">
+                                    <div class="cp-oss-left">
+                                        <h2>Ürün Adı</h2>
+                                        <span>Renk:Mavi</span>
+                                    </div>
+                                    <span class="cp-oos-item-amount">₺150,00</span>
+                                </li>
+                                <li class="cp-oos-item">
+                                    <div class="cp-oss-left">
+                                        <h2>Ürün Adı</h2>
+                                        <span>Renk:Mavi</span>
+                                    </div>
+                                    <span class="cp-oos-item-amount">₺150,00</span>
+                                </li>
+                                <li class="cp-oos-item">
+                                    <div class="cp-oss-left">
+                                        <h2>Ürün Adı</h2>
+                                        <span>Renk:Mavi</span>
+                                    </div>
+                                    <span class="cp-oos-item-amount">₺150,00</span>
+                                </li>
+                                <li class="cp-oos-item">
+                                    <div class="cp-oss-left">
+                                        <h2>Ürün Adı</h2>
+                                        <span>Renk:Mavi</span>
+                                    </div>
+                                    <span class="cp-oos-item-amount">₺150,00</span>
+                                </li>
+                                <li class="cp-oos-item">
+                                    <div class="cp-oss-left">
+                                        <h2>Ürün Adı</h2>
+                                        <span>Renk:Mavi</span>
+                                    </div>
+                                    <span class="cp-oos-item-amount">₺150,00</span>
+                                </li>
+                                <li class="cp-oos-item">
+                                    <div class="cp-oss-left">
+                                        <h2>Ürün Adı</h2>
+                                        <span>Renk:Mavi</span>
+                                    </div>
+                                    <span class="cp-oos-item-amount">₺150,00</span>
+                                </li>
 
-                </ul>
-                <ul class="cp-oss-product">
-                    <li class="cp-oos-item">
-                        <div class="cp-oss-left">
-                            <span>Ara Toplam</span>
-                        </div>
-                        <span class="cp-oos-item-amount">₺300,00</span>
-                    </li>
-                    <li class="cp-oos-item">
-                        <div class="cp-oss-left">
-                            <span>Kargo</span>
-                        </div>
-                        <span class="cp-oos-item-amount">Ücretsiz</span>
-                    </li>
-                    <li class="cp-oos-item cp-oss-item-total">
-                        <div class="cp-oss-left">
-                            <span>Toplam</span>
-                        </div>
-                        <span class="cp-oos-item-amount">₺300,00</span>
-                    </li>
-                </ul>
+                            </ul>
+                            <ul class="cp-oss-product">
+                                <li class="cp-oos-item">
+                                    <div class="cp-oss-left">
+                                        <span>Ara Toplam</span>
+                                    </div>
+                                    <span class="cp-oos-item-amount">₺300,00</span>
+                                </li>
+                                <li class="cp-oos-item">
+                                    <div class="cp-oss-left">
+                                        <span>Kargo</span>
+                                    </div>
+                                    <span class="cp-oos-item-amount">Ücretsiz</span>
+                                </li>
+                                <li class="cp-oos-item cp-oss-item-total">
+                                    <div class="cp-oss-left">
+                                        <span>Toplam</span>
+                                    </div>
+                                    <span class="cp-oos-item-amount">₺300,00</span>
+                                </li>
+                            </ul>
 
+
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>

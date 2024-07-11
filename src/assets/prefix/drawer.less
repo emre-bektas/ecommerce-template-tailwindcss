@@ -2,14 +2,13 @@
   z-index: 99999;
   visibility: hidden;
   --max-width:500px;
-  --max--width:-500px;
+  --negative-max-width: calc(-1 * var(--max-width));
   @apply fixed top-0 w-full h-dvh overflow-hidden flex transition-all;
-
   &.drawer_show_md{
     top: var(--header-height);
-    @apply md:sticky md:h-dvh md:w-auto md:visible py-2 md:z-0;
+    @apply ~"md:max-h-[calc(100dvh-var(--header-height))] max-md:top-0 md:h-full" md:sticky md:w-auto md:visible md:py-2 md:z-0 md:overflow-visible;
     .drawer_content{
-      @apply md:sticky md:transform-none ;
+      @apply md:sticky md:transform-none md:overflow-visible;
       .drawer_content_header{
         @apply md:hidden;
       }
@@ -21,6 +20,7 @@
       @apply md:content-none;
     }
   }
+
   &:not(.drawer_right){
     @apply left-0;
     .drawer_content{
@@ -44,14 +44,14 @@
     }
   }
   .drawer_content{
-    -webkit-transform: translateX(var(--max--width));
-    -ms-transform: translateX(var(--max--width));
-    transform: translateX(var(--max--width));
+    -webkit-transform: translateX(var(--negative-max-width));
+    -ms-transform: translateX(var(--negative-max-width));
+    transform: translateX(var(--negative-max-width));
 
     max-width: var(--max-width);
-  @apply bg-white w-full absolute top-0 overflow-auto left-0 z-10 h-full transition-all;
+    @apply bg-white w-full absolute top-0 overflow-auto left-0 z-10 h-full transition-all;
     .drawer_content_header{
-    @apply py-3 border-b border-solid border-gray-100 px-5 flex items-center justify-between sticky top-0 bg-white;
+    @apply py-3 border-b border-solid border-gray-100 px-5 flex items-center justify-between sticky top-0 ;
       .dch_title{
       @apply text-xl font-semibold text-default-700;
       }

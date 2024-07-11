@@ -8,11 +8,12 @@
 
 </head>
 <body>
+
 <header>
     <div class="h-content">
         <div class="hc-logo">
             <div class="md:hidden hcl-menu-item">
-                <button class="btn_ btn_xs btn_icon btn_transparent open-left-slide-menu" >
+                <button class="btn_ btn_xs btn_icon btn_transparent" data-drawer-id="#home_menu" >
                     <i class="gg-menu-left hcl-menu-trigger" style=""></i>
                 </button>
             </div>
@@ -23,21 +24,52 @@
         <div class="hc-search">
             <form action="/pages/category.html">
                 <input type="text"
-                       class="input_ !pr-10"
+                       class="input_ input_header_search !pr-10"
                        name="search"
+                       autocomplete="off"
                        placeholder="Ürün Ara..." required />
-                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                <button type="submit" class="absolute inset-y-0 right-4 flex items-center">
                     <i class="gg-search text-gray-500"></i>
-                </div>
+                </button>
             </form>
+            <div class="hcs-suggestions">
+                <div class="hcs-content">
+                    <h3 class="hcs-title">Son Aramalar</h3>
+                    <div class="hcs-body">
+                       <div class="hcsb-items">
+                           <a href="#" class="hcs-badge-item">Logolu Kalem Seti</a>
+                           <a href="#" class="hcs-badge-item">isim yazılı kalem</a>
+                           <a href="#" class="hcs-badge-item">kalem seti</a>
+                           <a href="#" class="hcs-badge-item">yapışkanlı not kağıdı</a>
+                           <a href="#" class="hcs-badge-item">oyuncak araba koleksiyonu</a>
+                           <a href="#" class="hcs-badge-item">Logolu Kalem Seti</a>
+                           <a href="#" class="hcs-badge-item">isim yazılı kalem</a>
+                           <a href="#" class="hcs-badge-item">kalem seti</a>
+                           <a href="#" class="hcs-badge-item">yapışkanlı not kağıdı</a>
+                           <a href="#" class="hcs-badge-item">oyuncak araba koleksiyonu</a>
+                       </div>
+                    </div>
+                </div>
+                <div class="hcs-content">
+                    <h3 class="hcs-title">İlgili Sonuçlar</h3>
+                    <div class="hcs-body">
+                        <div class="hcs-related-items">
+                            <a href="#" class="hcs-item">Logolu Kalem Seti</a>
+                            <a href="#" class="hcs-item">isim yazılı kalem</a>
+                            <a href="#" class="hcs-item">kalem seti</a>
+                            <a href="#" class="hcs-item">yapışkanlı not kağıdı</a>
+                            <a href="#" class="hcs-item">oyuncak araba koleksiyonu</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="hc-right">
-
             <div class="dropdown_">
                 <div class="dropdown_trigger">
                     <button class="btn_ btn_transparent btn_right_chevron">
-                        <i class="gg-user mr-1" style="--ggs:.8;"></i>
-                        Giriş Yap
+                        <i class="gg-user" style="--ggs:.8;"></i>
+                        Kullanıcı
                     </button>
                 </div>
                 <div class="dropdown_content">
@@ -77,12 +109,7 @@
         </div>
 
     </div>
-    <div class="h-mobile-search">
-        <input type="text"
-               class="input_"
-               placeholder="Ürün Ara..." required />
-    </div>
-    <ul class="h-menus mt-2">
+    <ul class="h-menus">
         <li class="h-menu-item">
             <span class="hm-title">Promosyon ürünler</span>
             @@include('../components/menus/header-hover-menu/index.html')
@@ -110,4 +137,6 @@
 
     </ul>
 </header>
+
+
 @@include("left-slide-menu.html")

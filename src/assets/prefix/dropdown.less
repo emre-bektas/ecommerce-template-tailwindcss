@@ -1,0 +1,56 @@
+.dropdown_{
+@apply relative inline-flex;
+  &.dropdown_static_full{
+  @apply !static;
+    .dropdown_content{
+    @apply w-full;
+    }
+  }
+  &.d-active{
+    .btn_{
+      transform: scale(0.95);
+      @apply opacity-hover;
+      &.btn_transparent{
+        --btn-background: var(--btn-hover-bg);
+      }
+      &.btn_right_chevron {
+        &:after{
+          @apply rotate-180;
+        }
+      }
+    }
+
+    .dropdown_content{
+    @apply block;
+    }
+  }
+  &:not(.d-active){
+    &:hover{
+      //background: rgba(0,0,0,.1);
+    }
+  }
+  .dropdown_trigger{
+    @apply inline-flex cursor-pointer transition;
+
+    *{
+      @apply pointer-events-none;
+    }
+
+  }
+  .dropdown_content{
+    z-index:999;
+  @apply absolute hidden top-full left-0  z-10 divide-y divide-gray-100 shadow min-w-44 card_ p-2;
+    &.dropdown_content_right{
+    @apply right-0 left-auto;
+    }
+    .dc_items_list{
+    @apply text-sm text-gray-700 ;
+      .dc_item{
+        a{
+        @apply block px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white;
+        }
+      }
+
+    }
+  }
+}

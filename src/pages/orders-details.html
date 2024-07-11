@@ -1,0 +1,55 @@
+@@include('../static/header.html')
+<div class="max-w-6xl mx-auto main">
+    <div class="account-page">
+        <div class="ap-als-content">
+            @@include('../static/account-left-sidebar.html')
+        </div>
+        <div class="ap-content">
+            <div class="apc-orders-details">
+                <div class="apc-od-top">
+                    <a href="/pages/orders.html" class="btn_ btn_xs">
+                        <i data-lucide="chevron-left" class="w-5" stroke-width="1.5"></i>
+                        Tüm Siparişlere Dön
+                    </a>
+                </div>
+                <div class="apc-od-header">
+                    <h2 class="apc-od-title">Sipariş Detayı</h2>
+                    <div class="apc-od-header-list">
+                        <div class="apc-od-header-list-item">
+                            <span class="apc-od-header-title">Sipariş No</span>
+                            <span class="apc-od-header-desc">92233424234</span>
+                        </div>
+                        <div class="apc-od-header-list-item">
+                            <span class="apc-od-header-title">Sipariş Tarihi</span>
+                            <span class="apc-od-header-desc">9 Mayıs 2022 - 15:18</span>
+                        </div>
+                        <div class="apc-od-header-list-item">
+                            <span class="apc-od-header-title">Sipariş Özeti</span>
+                            <span class="apc-od-header-desc">10 Ürün</span>
+                        </div>
+                        <div class="apc-od-header-list-item">
+                            <span class="apc-od-header-title">Toplam Tutar</span>
+                            <span class="apc-od-header-price">399,99 TL</span>
+                        </div>
+                        <div class="apc-od-header-list-item">
+                            <span class="apc-od-header-title">Sipariş Durumu</span>
+                            <span class="apc-od-header-desc">
+                                <span class="order-status-check"><i data-lucide="check"></i> Teslim Edildi</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="odi-lists">
+                    @@include('../components/orders/orders-details-item.html')
+                    @@include('../components/orders/orders-details-item.html')
+                    @@include('../components/orders/orders-details-item.html')
+                    @@include('../components/orders/orders-details-item.html')
+                    @@include('../components/orders/orders-details-item.html')
+                    @@include('../components/orders/orders-details-item.html')
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@@include('../static/footer.html')

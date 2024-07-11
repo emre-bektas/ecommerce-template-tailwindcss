@@ -6,37 +6,9 @@ let minHeight = 0;
 let animationDuration = 300;
 let snapPoints = [0.5, 0.75, 0.9];
 
-function bottomSheetClose() {
 
-    $(".bottom_sheet_ .bs_content").animate({
-        bottom: '-100%',
-        height: '0'
-    }, animationDuration, function() {
-        $(".bottom_sheet_ .bs_content").css({
-            bottom: '',
-        })
-        //$(".bottom_sheet_").removeClass("bottom_sheet_show");
-
-    });
-    $('.bottom_sheet_').css('--opacity-bg', 1);
-    $(".bottom_sheet_").removeClass("bottom_sheet_open");
-    $("body").removeClass("overflow-hidden");
-    $("body").css({
-        paddingRight : "0",
-    })
-
-    isDragging = false;
-
-
-}
-function bottomSheetOpen(sheetId) {
-
-    var windowHeight = $(window).height();
-    var snapHeight = windowHeight * snapPoints[0];
-
-    $(sheetId).addClass("bottom_sheet_open");
+function adjustBodyPadding() {
     $("body").addClass("overflow-hidden");
-
     var isMobile = /Mobi|Android/i.test(navigator.userAgent);
     var hasScrollbar = $(document).height() > $(window).height();
 
@@ -49,11 +21,106 @@ function bottomSheetOpen(sheetId) {
             paddingRight: "",
         });
     }
+}
+function resetBodyStyles() {
+    $("body").removeClass("overflow-hidden");
+    $("body").css({
+        paddingRight: "0",
+    });
+}
 
+
+function bottomSheetClose() {
+
+    $(".bottom_sheet_ .bs_content").animate({
+        bottom: '-100%',
+        height: '0'
+    }, animationDuration, function() {
+        $(".bottom_sheet_ .bs_content").css({
+            bottom: '',
+        })
+        $(".bottom_sheet_").removeClass("bottom_sheet_show");
+
+    });
+    $('.bottom_sheet_').css('--opacity-bg', 0);
+    $(".bottom_sheet_").removeClass("bottom_sheet_open");
+    resetBodyStyles();
+
+    isDragging = false;
+
+
+}
+function bottomSheetOpen(sheetId) {
+
+    var windowHeight = $(window).height();
+    let snippetAttr = $(sheetId).data("bottom-sheet-snippet")
+
+
+    if (typeof snippetAttr === "object" && snippetAttr){
+        snapPoints = snippetAttr;
+    }
+
+
+    var snapHeight = windowHeight * snapPoints[0];
+
+    $(sheetId).addClass("bottom_sheet_open").addClass("bottom_sheet_show");
+
+
+    adjustBodyPadding();
+
+    $('.bottom_sheet_').css('--opacity-bg', 1);
     $('.bottom_sheet_ .bs_content').animate({
         height: snapHeight + 'px'
-    }, animationDuration);
+    }, animationDuration)
 }
+
+
+
+(function ($) {
+    $.fn.dropdownHandler = function (options) {
+        // Varsayılan ayarlar ve kullanıcı tarafından geçilen ayarların birleştirilmesi
+        var settings = $.extend({
+            mainClass: ".dropdown_",
+            triggerClass: ".dropdown_trigger",
+            contentClass: ".dropdown_content",
+            removeClass: "d-active"
+        }, options);
+
+        // Olay dinleyicisini ekleme
+        this.on("click", function (event) {
+            handleClick(event, settings.mainClass, settings.triggerClass, settings.contentClass, settings.removeClass);
+        });
+
+
+        // Olay işleyicisi
+        function handleClick(event, mainClass, triggerClass, contentClass, removeClass) {
+            var closeDropdowns = true;
+            var triggers = $(mainClass + " " + triggerClass);
+
+
+
+            triggers.each(function (index, trigger) {
+                var dropdown = $(trigger).siblings(contentClass);
+                const dropClosest = $(contentClass).closest(mainClass);
+
+                if ($(dropdown).is(event.target) || $(dropdown).has(event.target).length || dropClosest?.length > 0 || trigger === event.target) {
+                    closeDropdowns = false;
+                    return false;
+                }
+            });
+
+            if (closeDropdowns) {
+                $(mainClass).removeClass(removeClass);
+            } else {
+                console.log(triggers.not($(event.target).closest(mainClass).find(triggerClass)).closest(mainClass));
+                triggers.not($(event.target).closest(mainClass).find(triggerClass)).closest(mainClass).removeClass(removeClass);
+            }
+        }
+
+        return this; // Zincirleme çağrıları desteklemek için
+    };
+}(jQuery));
+
 
 $(document).ready(function () {
 
@@ -66,6 +133,14 @@ $(document).ready(function () {
         })
 
 
+    $(".hc-search .input_header_search").focus(() => {
+        $(".hc-search").addClass("hcs-show");
+    })
+
+    $(".close-search-result-show").click(function () {
+        $(".hc-search").removeClass("hcs-show");
+    })
+
     $('.phone_tr').mask('0 (000) 000 0000' , {
         placeholder : "0 (555) 555 5555",
     });
@@ -76,31 +151,40 @@ $(document).ready(function () {
     $('.cvv').mask('000');
 
 
-    $(".cpm_ca_total").click(function () {
+    /*$(".cpm_ca_total").click(function () {
         $(".checkout-page").toggleClass("cp_mobile_box");
     })
     $(".cp-overlay").click(function () {
         $(".checkout-page").removeClass("cp_mobile_box");
-    })
+    })*/
+
+    $(".dropdown_ .dropdown_trigger").click(function () {
+        const dropEl = $(this).closest(".dropdown_");
+        $(dropEl).toggleClass("d-active");
+    });
+
+
+
+    $(document).dropdownHandler();
+    $(document).dropdownHandler({
+        mainClass: ".hc-search",
+        triggerClass: ".input_header_search",
+        contentClass: ".hcs-suggestions",
+        removeClass: "hcs-show"
+    });
 
 
     /* Drawer */
 
     function drawerClose(el) {
         $(el).removeClass("drawer_open");
-        $("body").removeClass("overflow-hidden");
-        $("body").css({
-            paddingRight : "0",
-        })
+        resetBodyStyles();
     }
 
     $("[data-drawer-id]").click(function () {
         const drawerId = $(this).attr("data-drawer-id");
         $(drawerId).addClass("drawer_open");
-        $("body").addClass("overflow-hidden");
-        $("body").css({
-            paddingRight : "15px",
-        })
+        adjustBodyPadding();
 
     })
     $("[data-drawer-close]").click(function (e) {
@@ -205,11 +289,6 @@ $(document).ready(function () {
         });
 
 
-        $('.bottom_sheet_ .bs_content').animate({
-            height: snapHeight + 'px'
-        }, animationDuration);
-
-        $('.bottom_sheet_').css('--opacity-bg', 1);
 
         let clientY = e.clientY || e.originalEvent.changedTouches[0].clientY;
         let deltaY = clientY - startClientY;
@@ -221,6 +300,13 @@ $(document).ready(function () {
         }else{
             if (currentHeight < 100){
                 bottomSheetClose();
+            }else{
+                $('.bottom_sheet_ .bs_content').animate({
+                    height: snapHeight + 'px'
+                }, animationDuration);
+
+                $('.bottom_sheet_').css('--opacity-bg', 1);
+
             }
         }
     });

@@ -29,11 +29,12 @@
 
 </head>
 <body>
+
 <header>
     <div class="h-content">
         <div class="hc-logo">
             <div class="md:hidden hcl-menu-item">
-                <button class="btn_ btn_xs btn_icon btn_transparent open-left-slide-menu" >
+                <button class="btn_ btn_xs btn_icon btn_transparent" data-drawer-id="#home_menu" >
                     <i class="gg-menu-left hcl-menu-trigger" style=""></i>
                 </button>
             </div>
@@ -44,21 +45,52 @@
         <div class="hc-search">
             <form action="/pages/category.html">
                 <input type="text"
-                       class="input_ !pr-10"
+                       class="input_ input_header_search !pr-10"
                        name="search"
+                       autocomplete="off"
                        placeholder="Ürün Ara..." required />
-                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                <button type="submit" class="absolute inset-y-0 right-4 flex items-center">
                     <i class="gg-search text-gray-500"></i>
-                </div>
+                </button>
             </form>
+            <div class="hcs-suggestions">
+                <div class="hcs-content">
+                    <h3 class="hcs-title">Son Aramalar</h3>
+                    <div class="hcs-body">
+                       <div class="hcsb-items">
+                           <a href="#" class="hcs-badge-item">Logolu Kalem Seti</a>
+                           <a href="#" class="hcs-badge-item">isim yazılı kalem</a>
+                           <a href="#" class="hcs-badge-item">kalem seti</a>
+                           <a href="#" class="hcs-badge-item">yapışkanlı not kağıdı</a>
+                           <a href="#" class="hcs-badge-item">oyuncak araba koleksiyonu</a>
+                           <a href="#" class="hcs-badge-item">Logolu Kalem Seti</a>
+                           <a href="#" class="hcs-badge-item">isim yazılı kalem</a>
+                           <a href="#" class="hcs-badge-item">kalem seti</a>
+                           <a href="#" class="hcs-badge-item">yapışkanlı not kağıdı</a>
+                           <a href="#" class="hcs-badge-item">oyuncak araba koleksiyonu</a>
+                       </div>
+                    </div>
+                </div>
+                <div class="hcs-content">
+                    <h3 class="hcs-title">İlgili Sonuçlar</h3>
+                    <div class="hcs-body">
+                        <div class="hcs-related-items">
+                            <a href="#" class="hcs-item">Logolu Kalem Seti</a>
+                            <a href="#" class="hcs-item">isim yazılı kalem</a>
+                            <a href="#" class="hcs-item">kalem seti</a>
+                            <a href="#" class="hcs-item">yapışkanlı not kağıdı</a>
+                            <a href="#" class="hcs-item">oyuncak araba koleksiyonu</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="hc-right">
-
             <div class="dropdown_">
                 <div class="dropdown_trigger">
                     <button class="btn_ btn_transparent btn_right_chevron">
-                        <i class="gg-user mr-1" style="--ggs:.8;"></i>
-                        Giriş Yap
+                        <i class="gg-user" style="--ggs:.8;"></i>
+                        Kullanıcı
                     </button>
                 </div>
                 <div class="dropdown_content">
@@ -98,12 +130,7 @@
         </div>
 
     </div>
-    <div class="h-mobile-search">
-        <input type="text"
-               class="input_"
-               placeholder="Ürün Ara..." required />
-    </div>
-    <ul class="h-menus mt-2">
+    <ul class="h-menus">
         <li class="h-menu-item">
             <span class="hm-title">Promosyon ürünler</span>
             <div class="hm-hover-menu">
@@ -224,32 +251,35 @@
 
     </ul>
 </header>
-<div class="slide-menu">
-    <div class="flex justify-between items-center py-2 px-3">
-        <a href="/">
-            <img class="h-8 object-contain" src="/images/logo.png" />
-        </a>
-        <button type="button" data-btn-ripple
-                class="slide-close-button  w-8 h-8 flex items-center justify-center bg-gray-600/10 rounded-xl">
-            <i class="gg-close text-gray-800" style=" --ggs: 1;"></i>
-        </button>
-    </div>
-    <div class="flex flex-col px-2 mt-1">
-        <ul class="flex flex-col gap-2 ">
-            <li>
-                <a href="/pages/account_settings.html" class="btn_ btn_start btn_full btn_sm btn_left_icon btn_transparent">
-                    <i class="w-6 text-teal-500"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+
+
+<div class="drawer_" id="home_menu" style="--max-width:315px;">
+    <div class="drawer_content">
+        <div class="drawer_content_header">
+            <a href="/">
+                <img class="h-8 object-contain" src="/images/logo.png" />
+            </a>
+            <button class="btn_ btn_icon btn_sm" data-drawer-close>
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        <div class="drawer_content_body p-0">
+            <div class="flex flex-col px-2 mt-1">
+                <ul class="flex flex-col gap-2 ">
+                    <li>
+                        <a href="/pages/account_settings.html" class="btn_ btn_start btn_full btn_sm btn_left_icon btn_transparent">
+                            <i class="w-6 text-teal-500"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path opacity="0.4" d="M12 22.01C17.5228 22.01 22 17.5329 22 12.01C22 6.48716 17.5228 2.01001 12 2.01001C6.47715 2.01001 2 6.48716 2 12.01C2 17.5329 6.47715 22.01 12 22.01Z" />
     <path d="M12 6.93994C9.93 6.93994 8.25 8.61994 8.25 10.6899C8.25 12.7199 9.84 14.3699 11.95 14.4299C11.98 14.4299 12.02 14.4299 12.04 14.4299C12.06 14.4299 12.09 14.4299 12.11 14.4299C12.12 14.4299 12.13 14.4299 12.13 14.4299C14.15 14.3599 15.74 12.7199 15.75 10.6899C15.75 8.61994 14.07 6.93994 12 6.93994Z" />
     <path d="M18.7807 19.36C17.0007 21 14.6207 22.01 12.0007 22.01C9.3807 22.01 7.0007 21 5.2207 19.36C5.4607 18.45 6.1107 17.62 7.0607 16.98C9.7907 15.16 14.2307 15.16 16.9407 16.98C17.9007 17.62 18.5407 18.45 18.7807 19.36Z" />
 </svg>
 </i>
-                    Hesap Ayarları
-                </a>
-            </li>
-            <li>
-                <a href="/pages/orders.html" class="btn_ btn_start btn_full btn_sm btn_transparent btn_left_icon">
-                    <i class="w-6 text-emerald-500"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            Hesap Ayarları
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/pages/orders.html" class="btn_ btn_start btn_full btn_sm btn_transparent btn_left_icon">
+                            <i class="w-6 text-emerald-500"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M15.5777 3.38197L17.5777 4.43152C19.7294 5.56066 20.8052 6.12523 21.4026 7.13974C22 8.15425 22 9.41667 22 11.9415V12.0585C22 14.5833 22 15.8458 21.4026 16.8603C20.8052 17.8748 19.7294 18.4393 17.5777 19.5685L15.5777 20.618C13.8221 21.5393 12.9443 22 12 22C11.0557 22 10.1779 21.5393 8.42229 20.618L6.42229 19.5685C4.27063 18.4393 3.19479 17.8748 2.5974 16.8603C2 15.8458 2 14.5833 2 12.0585V11.9415C2 9.41667 2 8.15425 2.5974 7.13974C3.19479 6.12523 4.27063 5.56066 6.42229 4.43152L8.42229 3.38197C10.1779 2.46066 11.0557 2 12 2C12.9443 2 13.8221 2.46066 15.5777 3.38197Z"
           stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
     <path opacity="0.5"
@@ -257,33 +287,33 @@
           stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
 </svg>
 </i>
-                    Siparişlerim
-                </a>
-            </li>
-            <li>
-                <a href="/pages/likes.html" class="btn_ btn_start btn_full btn_sm btn_transparent btn_left_icon">
-                    <i class="w-6 text-red-500"><svg  viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            Siparişlerim
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/pages/likes.html" class="btn_ btn_start btn_full btn_sm btn_transparent btn_left_icon">
+                            <i class="w-6 text-red-500"><svg  viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path opacity="0.5" d="M2 9.1371C2 14 6.01943 16.5914 8.96173 18.9109C10 19.7294 11 20.5 12 20.5C13 20.5 14 19.7294 15.0383 18.9109C17.9806 16.5914 22 14 22 9.1371C22 4.27416 16.4998 0.825464 12 5.50063C7.50016 0.825464 2 4.27416 2 9.1371Z" />
     <path d="M16.5 13.2871C14.0251 10.5713 11 12.5746 11 15.3995C11 17.9583 12.814 19.4344 14.3584 20.6912L14.4018 20.7265C14.5474 20.8449 14.6903 20.9615 14.829 21.0769C15.4 21.5523 15.95 22 16.5 22C17.05 22 17.6 21.5523 18.171 21.0769C19.7893 19.7296 22 18.2243 22 15.3995C22 14.4715 21.6735 13.6321 21.1474 13.0197C20.0718 11.7677 18.1619 11.4635 16.5 13.2871Z"/>
 </svg>
 </i>
-                    Beğendiklerim
-                </a>
-            </li>
-            <li>
-                <a href="/pages/coupons.html" class="btn_ btn_start btn_full btn_sm btn_transparent btn_left_icon">
-                    <i class="w-6 text-indigo-500">
+                            Beğendiklerim
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/pages/coupons.html" class="btn_ btn_start btn_full btn_sm btn_transparent btn_left_icon">
+                            <i class="w-6 text-indigo-500">
 <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path opacity="0.5" d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z" />
     <path fill-rule="evenodd" clip-rule="evenodd" d="M6.91381 11.25H2.00024C2 11.4932 2 11.7431 2 12C2 12.2569 2 12.5068 2.00024 12.75H9.98737C10.0033 12.7502 10.0193 12.7503 10.0354 12.7503H10.163C9.82428 14.1835 8.53669 15.25 7 15.25C6.58579 15.25 6.25 15.5858 6.25 16C6.25 16.4142 6.58579 16.75 7 16.75C8.86003 16.75 10.4704 15.6809 11.25 14.1236V21.9998C11.4932 22 11.7431 22 12 22C12.2569 22 12.5068 22 12.75 21.9998V14.1236C13.5296 15.6809 15.14 16.75 17 16.75C17.4142 16.75 17.75 16.4142 17.75 16C17.75 15.5858 17.4142 15.25 17 15.25C15.4633 15.25 14.1757 14.1835 13.837 12.7503H13.9649C13.9809 12.7503 13.9969 12.7502 14.0129 12.75H21.9998C22 12.5068 22 12.2569 22 12C22 11.7431 22 11.4932 21.9998 11.25H17.0865C17.4373 10.8117 17.6995 10.2947 17.8425 9.7228C18.3807 7.56979 16.4305 5.61958 14.2775 6.15783C13.7055 6.30083 13.1884 6.56307 12.75 6.91404V2.00024C12.5068 2 12.2569 2 12 2C11.7431 2 11.4932 2 11.25 2.00024V6.91381C10.8117 6.56295 10.2947 6.3008 9.7228 6.15783C7.56979 5.61958 5.61958 7.56979 6.15783 9.7228C6.3008 10.2947 6.56296 10.8117 6.91381 11.25ZM11.25 11.25H9.99743C8.86764 11.233 7.88786 10.4582 7.61305 9.359C7.34943 8.30455 8.30455 7.34943 9.359 7.61305C10.4582 7.88785 11.233 8.86763 11.25 9.99741V11.25ZM14.0029 11.25H12.7503V10.0354L12.7502 10.0056C12.7636 8.87236 13.5394 7.88852 14.6413 7.61305C15.6957 7.34943 16.6509 8.30455 16.3872 9.359C16.1124 10.4582 15.1326 11.233 14.0029 11.25Z" />
 </svg>
 </i>
-                    Kuponlarım
-                </a>
-            </li>
-            <li class="pt-2 border-t border-solid border-gray-200">
-                <button class="btn_ btn_start btn_sm btn_full btn_transparent btn_left_icon">
-                    <i class="w-6 text-red-700"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            Kuponlarım
+                        </a>
+                    </li>
+                    <li class="pt-2 border-t border-solid border-gray-200">
+                        <button class="btn_ btn_start btn_sm btn_full btn_transparent btn_left_icon">
+                            <i class="w-6 text-red-700"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path opacity="0.5"
           d="M15.9998 2L14.9998 2C12.1714 2 10.7576 2.00023 9.87891 2.87891C9.00023 3.75759 9.00023 5.1718 9.00023 8.00023L9.00023 16.0002C9.00023 18.8287 9.00023 20.2429 9.87891 21.1215C10.7574 22 12.1706 22 14.9976 22L14.9998 22L15.9998 22C18.8282 22 20.2424 22 21.1211 21.1213C21.9998 20.2426 21.9998 18.8284 21.9998 16L21.9998 8L21.9998 7.99998C21.9998 5.17157 21.9998 3.75736 21.1211 2.87868C20.2424 2 18.8282 2 15.9998 2Z"
           />
@@ -292,15 +322,15 @@
           />
 </svg>
 </i>
-                    Çıkış Yap
-                </button>
-            </li>
-        </ul>
+                            Çıkış Yap
+                        </button>
+                    </li>
+                </ul>
 
+            </div>
+        </div>
     </div>
-
 </div>
-<div class="slider-overlay"></div>
 
 
 <div class="max-w-6xl mx-auto main">
@@ -315,7 +345,7 @@
       <div class="dbc-item-content">
         <i class="gg-chevron-right" style="--ggs: .7;"> </i>
         <a href="#" class="dbc-item-text">
-          Kategori
+          Hediyelik Ürünler
         </a>
       </div>
     </li>
@@ -323,7 +353,7 @@
       <div class="dbc-item-content">
         <i class="gg-chevron-right" style="--ggs: .7;"> </i>
         <span href="#" class="dbc-item-text">
-          Parfüm
+          Kişiye Özel Kupa
         </span>
       </div>
     </li>
@@ -331,7 +361,6 @@
 </nav>
 
     <div class="category-page">
-
         <div class="drawer_ drawer_show_md" id="basket_drawer">
             <div class="drawer_content">
                 <div class="drawer_content_header">
@@ -413,46 +442,6 @@
   </label>
 </li>
 
-                                <li class="cpf-item py-3">
-  <label class="check_switch_ check_switch_sm check_switch_filter">
-    <span class="cs_title">İndirimli Ürünler</span>
-    <input type="checkbox" value="">
-    <div class="cs_slider"></div>
-  </label>
-</li>
-
-                                <li class="cpf-item py-3">
-  <label class="check_switch_ check_switch_sm check_switch_filter">
-    <span class="cs_title">İndirimli Ürünler</span>
-    <input type="checkbox" value="">
-    <div class="cs_slider"></div>
-  </label>
-</li>
-
-                                <li class="cpf-item py-3">
-  <label class="check_switch_ check_switch_sm check_switch_filter">
-    <span class="cs_title">İndirimli Ürünler</span>
-    <input type="checkbox" value="">
-    <div class="cs_slider"></div>
-  </label>
-</li>
-
-                                <li class="cpf-item py-3">
-  <label class="check_switch_ check_switch_sm check_switch_filter">
-    <span class="cs_title">İndirimli Ürünler</span>
-    <input type="checkbox" value="">
-    <div class="cs_slider"></div>
-  </label>
-</li>
-
-                                <li class="cpf-item py-3">
-  <label class="check_switch_ check_switch_sm check_switch_filter">
-    <span class="cs_title">İndirimli Ürünler</span>
-    <input type="checkbox" value="">
-    <div class="cs_slider"></div>
-  </label>
-</li>
-
                             </ul>
                         </div>
                     </div>
@@ -485,10 +474,10 @@
                 <a href="/pages/product.html" class="product-rect-content">
 
     <div class="prc-title">
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias autem dolore dolorem, dolores earum, esse ipsam minima molestiae, officiis quidem sequi similique tenetur. Consequuntur culpa dolores eaque iste quo!</span>
+        <span>Kişiye özel Kupa Bardak baskı hizmeti Joly Dijital, dijital baskı çözümleri, reklam ve promosyon</span>
     </div>
     <div class="prc-image">
-        <img src="/images/product-1.jpeg" alt="">
+        <img src="/images/product1.jpg" alt="">
     </div>
     <div class="flex items-center leading-3 justify-center mb-1">
 
@@ -511,10 +500,10 @@
                 <a href="/pages/product.html" class="product-rect-content">
 
     <div class="prc-title">
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias autem dolore dolorem, dolores earum, esse ipsam minima molestiae, officiis quidem sequi similique tenetur. Consequuntur culpa dolores eaque iste quo!</span>
+        <span>Kişiye özel Kupa Bardak baskı hizmeti Joly Dijital, dijital baskı çözümleri, reklam ve promosyon</span>
     </div>
     <div class="prc-image">
-        <img src="/images/product-1.jpeg" alt="">
+        <img src="/images/product1.jpg" alt="">
     </div>
     <div class="flex items-center leading-3 justify-center mb-1">
 
@@ -537,10 +526,10 @@
                 <a href="/pages/product.html" class="product-rect-content">
 
     <div class="prc-title">
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias autem dolore dolorem, dolores earum, esse ipsam minima molestiae, officiis quidem sequi similique tenetur. Consequuntur culpa dolores eaque iste quo!</span>
+        <span>Kişiye özel Kupa Bardak baskı hizmeti Joly Dijital, dijital baskı çözümleri, reklam ve promosyon</span>
     </div>
     <div class="prc-image">
-        <img src="/images/product-1.jpeg" alt="">
+        <img src="/images/product1.jpg" alt="">
     </div>
     <div class="flex items-center leading-3 justify-center mb-1">
 
@@ -563,10 +552,10 @@
                 <a href="/pages/product.html" class="product-rect-content">
 
     <div class="prc-title">
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias autem dolore dolorem, dolores earum, esse ipsam minima molestiae, officiis quidem sequi similique tenetur. Consequuntur culpa dolores eaque iste quo!</span>
+        <span>Kişiye özel Kupa Bardak baskı hizmeti Joly Dijital, dijital baskı çözümleri, reklam ve promosyon</span>
     </div>
     <div class="prc-image">
-        <img src="/images/product-1.jpeg" alt="">
+        <img src="/images/product1.jpg" alt="">
     </div>
     <div class="flex items-center leading-3 justify-center mb-1">
 
@@ -589,10 +578,10 @@
                 <a href="/pages/product.html" class="product-rect-content">
 
     <div class="prc-title">
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias autem dolore dolorem, dolores earum, esse ipsam minima molestiae, officiis quidem sequi similique tenetur. Consequuntur culpa dolores eaque iste quo!</span>
+        <span>Kişiye özel Kupa Bardak baskı hizmeti Joly Dijital, dijital baskı çözümleri, reklam ve promosyon</span>
     </div>
     <div class="prc-image">
-        <img src="/images/product-1.jpeg" alt="">
+        <img src="/images/product1.jpg" alt="">
     </div>
     <div class="flex items-center leading-3 justify-center mb-1">
 
@@ -615,10 +604,10 @@
                 <a href="/pages/product.html" class="product-rect-content">
 
     <div class="prc-title">
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias autem dolore dolorem, dolores earum, esse ipsam minima molestiae, officiis quidem sequi similique tenetur. Consequuntur culpa dolores eaque iste quo!</span>
+        <span>Kişiye özel Kupa Bardak baskı hizmeti Joly Dijital, dijital baskı çözümleri, reklam ve promosyon</span>
     </div>
     <div class="prc-image">
-        <img src="/images/product-1.jpeg" alt="">
+        <img src="/images/product1.jpg" alt="">
     </div>
     <div class="flex items-center leading-3 justify-center mb-1">
 
@@ -641,10 +630,10 @@
                 <a href="/pages/product.html" class="product-rect-content">
 
     <div class="prc-title">
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias autem dolore dolorem, dolores earum, esse ipsam minima molestiae, officiis quidem sequi similique tenetur. Consequuntur culpa dolores eaque iste quo!</span>
+        <span>Kişiye özel Kupa Bardak baskı hizmeti Joly Dijital, dijital baskı çözümleri, reklam ve promosyon</span>
     </div>
     <div class="prc-image">
-        <img src="/images/product-1.jpeg" alt="">
+        <img src="/images/product1.jpg" alt="">
     </div>
     <div class="flex items-center leading-3 justify-center mb-1">
 
@@ -667,10 +656,10 @@
                 <a href="/pages/product.html" class="product-rect-content">
 
     <div class="prc-title">
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias autem dolore dolorem, dolores earum, esse ipsam minima molestiae, officiis quidem sequi similique tenetur. Consequuntur culpa dolores eaque iste quo!</span>
+        <span>Kişiye özel Kupa Bardak baskı hizmeti Joly Dijital, dijital baskı çözümleri, reklam ve promosyon</span>
     </div>
     <div class="prc-image">
-        <img src="/images/product-1.jpeg" alt="">
+        <img src="/images/product1.jpg" alt="">
     </div>
     <div class="flex items-center leading-3 justify-center mb-1">
 
@@ -693,10 +682,10 @@
                 <a href="/pages/product.html" class="product-rect-content">
 
     <div class="prc-title">
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias autem dolore dolorem, dolores earum, esse ipsam minima molestiae, officiis quidem sequi similique tenetur. Consequuntur culpa dolores eaque iste quo!</span>
+        <span>Kişiye özel Kupa Bardak baskı hizmeti Joly Dijital, dijital baskı çözümleri, reklam ve promosyon</span>
     </div>
     <div class="prc-image">
-        <img src="/images/product-1.jpeg" alt="">
+        <img src="/images/product1.jpg" alt="">
     </div>
     <div class="flex items-center leading-3 justify-center mb-1">
 
@@ -719,10 +708,10 @@
                 <a href="/pages/product.html" class="product-rect-content">
 
     <div class="prc-title">
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias autem dolore dolorem, dolores earum, esse ipsam minima molestiae, officiis quidem sequi similique tenetur. Consequuntur culpa dolores eaque iste quo!</span>
+        <span>Kişiye özel Kupa Bardak baskı hizmeti Joly Dijital, dijital baskı çözümleri, reklam ve promosyon</span>
     </div>
     <div class="prc-image">
-        <img src="/images/product-1.jpeg" alt="">
+        <img src="/images/product1.jpg" alt="">
     </div>
     <div class="flex items-center leading-3 justify-center mb-1">
 
@@ -745,10 +734,10 @@
                 <a href="/pages/product.html" class="product-rect-content">
 
     <div class="prc-title">
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias autem dolore dolorem, dolores earum, esse ipsam minima molestiae, officiis quidem sequi similique tenetur. Consequuntur culpa dolores eaque iste quo!</span>
+        <span>Kişiye özel Kupa Bardak baskı hizmeti Joly Dijital, dijital baskı çözümleri, reklam ve promosyon</span>
     </div>
     <div class="prc-image">
-        <img src="/images/product-1.jpeg" alt="">
+        <img src="/images/product1.jpg" alt="">
     </div>
     <div class="flex items-center leading-3 justify-center mb-1">
 
@@ -771,10 +760,10 @@
                 <a href="/pages/product.html" class="product-rect-content">
 
     <div class="prc-title">
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias autem dolore dolorem, dolores earum, esse ipsam minima molestiae, officiis quidem sequi similique tenetur. Consequuntur culpa dolores eaque iste quo!</span>
+        <span>Kişiye özel Kupa Bardak baskı hizmeti Joly Dijital, dijital baskı çözümleri, reklam ve promosyon</span>
     </div>
     <div class="prc-image">
-        <img src="/images/product-1.jpeg" alt="">
+        <img src="/images/product1.jpg" alt="">
     </div>
     <div class="flex items-center leading-3 justify-center mb-1">
 
@@ -797,10 +786,10 @@
                 <a href="/pages/product.html" class="product-rect-content">
 
     <div class="prc-title">
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias autem dolore dolorem, dolores earum, esse ipsam minima molestiae, officiis quidem sequi similique tenetur. Consequuntur culpa dolores eaque iste quo!</span>
+        <span>Kişiye özel Kupa Bardak baskı hizmeti Joly Dijital, dijital baskı çözümleri, reklam ve promosyon</span>
     </div>
     <div class="prc-image">
-        <img src="/images/product-1.jpeg" alt="">
+        <img src="/images/product1.jpg" alt="">
     </div>
     <div class="flex items-center leading-3 justify-center mb-1">
 
@@ -823,10 +812,10 @@
                 <a href="/pages/product.html" class="product-rect-content">
 
     <div class="prc-title">
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias autem dolore dolorem, dolores earum, esse ipsam minima molestiae, officiis quidem sequi similique tenetur. Consequuntur culpa dolores eaque iste quo!</span>
+        <span>Kişiye özel Kupa Bardak baskı hizmeti Joly Dijital, dijital baskı çözümleri, reklam ve promosyon</span>
     </div>
     <div class="prc-image">
-        <img src="/images/product-1.jpeg" alt="">
+        <img src="/images/product1.jpg" alt="">
     </div>
     <div class="flex items-center leading-3 justify-center mb-1">
 
@@ -849,10 +838,10 @@
                 <a href="/pages/product.html" class="product-rect-content">
 
     <div class="prc-title">
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias autem dolore dolorem, dolores earum, esse ipsam minima molestiae, officiis quidem sequi similique tenetur. Consequuntur culpa dolores eaque iste quo!</span>
+        <span>Kişiye özel Kupa Bardak baskı hizmeti Joly Dijital, dijital baskı çözümleri, reklam ve promosyon</span>
     </div>
     <div class="prc-image">
-        <img src="/images/product-1.jpeg" alt="">
+        <img src="/images/product1.jpg" alt="">
     </div>
     <div class="flex items-center leading-3 justify-center mb-1">
 
@@ -875,10 +864,10 @@
                 <a href="/pages/product.html" class="product-rect-content">
 
     <div class="prc-title">
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias autem dolore dolorem, dolores earum, esse ipsam minima molestiae, officiis quidem sequi similique tenetur. Consequuntur culpa dolores eaque iste quo!</span>
+        <span>Kişiye özel Kupa Bardak baskı hizmeti Joly Dijital, dijital baskı çözümleri, reklam ve promosyon</span>
     </div>
     <div class="prc-image">
-        <img src="/images/product-1.jpeg" alt="">
+        <img src="/images/product1.jpg" alt="">
     </div>
     <div class="flex items-center leading-3 justify-center mb-1">
 
@@ -901,10 +890,10 @@
                 <a href="/pages/product.html" class="product-rect-content">
 
     <div class="prc-title">
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias autem dolore dolorem, dolores earum, esse ipsam minima molestiae, officiis quidem sequi similique tenetur. Consequuntur culpa dolores eaque iste quo!</span>
+        <span>Kişiye özel Kupa Bardak baskı hizmeti Joly Dijital, dijital baskı çözümleri, reklam ve promosyon</span>
     </div>
     <div class="prc-image">
-        <img src="/images/product-1.jpeg" alt="">
+        <img src="/images/product1.jpg" alt="">
     </div>
     <div class="flex items-center leading-3 justify-center mb-1">
 
@@ -927,10 +916,10 @@
                 <a href="/pages/product.html" class="product-rect-content">
 
     <div class="prc-title">
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias autem dolore dolorem, dolores earum, esse ipsam minima molestiae, officiis quidem sequi similique tenetur. Consequuntur culpa dolores eaque iste quo!</span>
+        <span>Kişiye özel Kupa Bardak baskı hizmeti Joly Dijital, dijital baskı çözümleri, reklam ve promosyon</span>
     </div>
     <div class="prc-image">
-        <img src="/images/product-1.jpeg" alt="">
+        <img src="/images/product1.jpg" alt="">
     </div>
     <div class="flex items-center leading-3 justify-center mb-1">
 
@@ -953,10 +942,10 @@
                 <a href="/pages/product.html" class="product-rect-content">
 
     <div class="prc-title">
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias autem dolore dolorem, dolores earum, esse ipsam minima molestiae, officiis quidem sequi similique tenetur. Consequuntur culpa dolores eaque iste quo!</span>
+        <span>Kişiye özel Kupa Bardak baskı hizmeti Joly Dijital, dijital baskı çözümleri, reklam ve promosyon</span>
     </div>
     <div class="prc-image">
-        <img src="/images/product-1.jpeg" alt="">
+        <img src="/images/product1.jpg" alt="">
     </div>
     <div class="flex items-center leading-3 justify-center mb-1">
 
@@ -979,10 +968,10 @@
                 <a href="/pages/product.html" class="product-rect-content">
 
     <div class="prc-title">
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias autem dolore dolorem, dolores earum, esse ipsam minima molestiae, officiis quidem sequi similique tenetur. Consequuntur culpa dolores eaque iste quo!</span>
+        <span>Kişiye özel Kupa Bardak baskı hizmeti Joly Dijital, dijital baskı çözümleri, reklam ve promosyon</span>
     </div>
     <div class="prc-image">
-        <img src="/images/product-1.jpeg" alt="">
+        <img src="/images/product1.jpg" alt="">
     </div>
     <div class="flex items-center leading-3 justify-center mb-1">
 
@@ -1005,10 +994,10 @@
                 <a href="/pages/product.html" class="product-rect-content">
 
     <div class="prc-title">
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias autem dolore dolorem, dolores earum, esse ipsam minima molestiae, officiis quidem sequi similique tenetur. Consequuntur culpa dolores eaque iste quo!</span>
+        <span>Kişiye özel Kupa Bardak baskı hizmeti Joly Dijital, dijital baskı çözümleri, reklam ve promosyon</span>
     </div>
     <div class="prc-image">
-        <img src="/images/product-1.jpeg" alt="">
+        <img src="/images/product1.jpg" alt="">
     </div>
     <div class="flex items-center leading-3 justify-center mb-1">
 
@@ -1031,10 +1020,10 @@
                 <a href="/pages/product.html" class="product-rect-content">
 
     <div class="prc-title">
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias autem dolore dolorem, dolores earum, esse ipsam minima molestiae, officiis quidem sequi similique tenetur. Consequuntur culpa dolores eaque iste quo!</span>
+        <span>Kişiye özel Kupa Bardak baskı hizmeti Joly Dijital, dijital baskı çözümleri, reklam ve promosyon</span>
     </div>
     <div class="prc-image">
-        <img src="/images/product-1.jpeg" alt="">
+        <img src="/images/product1.jpg" alt="">
     </div>
     <div class="flex items-center leading-3 justify-center mb-1">
 
@@ -1057,10 +1046,10 @@
                 <a href="/pages/product.html" class="product-rect-content">
 
     <div class="prc-title">
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias autem dolore dolorem, dolores earum, esse ipsam minima molestiae, officiis quidem sequi similique tenetur. Consequuntur culpa dolores eaque iste quo!</span>
+        <span>Kişiye özel Kupa Bardak baskı hizmeti Joly Dijital, dijital baskı çözümleri, reklam ve promosyon</span>
     </div>
     <div class="prc-image">
-        <img src="/images/product-1.jpeg" alt="">
+        <img src="/images/product1.jpg" alt="">
     </div>
     <div class="flex items-center leading-3 justify-center mb-1">
 
@@ -1083,10 +1072,10 @@
                 <a href="/pages/product.html" class="product-rect-content">
 
     <div class="prc-title">
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias autem dolore dolorem, dolores earum, esse ipsam minima molestiae, officiis quidem sequi similique tenetur. Consequuntur culpa dolores eaque iste quo!</span>
+        <span>Kişiye özel Kupa Bardak baskı hizmeti Joly Dijital, dijital baskı çözümleri, reklam ve promosyon</span>
     </div>
     <div class="prc-image">
-        <img src="/images/product-1.jpeg" alt="">
+        <img src="/images/product1.jpg" alt="">
     </div>
     <div class="flex items-center leading-3 justify-center mb-1">
 
@@ -1142,69 +1131,30 @@
 
 
 
-<footer>
-    <div class="f-content">
-        <div class="fc-wrapper">
-            <div class="fcw-item">
-                <img class="h-12 mb-6" src="/images/logo.png" />
-                <ul class="text-gray-300 font-medium">
-                    <li class="mb-4">
-                        <a href="#" class=" hover:underline">Hakkımızda</a>
-                    </li>
-                    <li class="mb-4">
-                        <a href="#" class="hover:underline">Kariyer</a>
-                    </li>
-                    <li class="mb-4">
-                        <a href="#" class="hover:underline">İletişim</a>
-                    </li>
-                    <li class="mb-4">
-                        <a href="#" class="hover:underline">Blog</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div>
-                <h2 class="mb-6 text-sm font-semibold text-white uppercase">Kampanyalar</h2>
-                <ul class="text-gray-300 font-medium">
-                    <li class="mb-4">
-                        <a href="#" class="hover:underline">Aktif Kampanyalar</a>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h2 class="mb-6 text-sm font-semibold text-white uppercase">Sosyal Medya</h2>
-                <ul class="text-gray-300 font-medium">
-                    <li class="mb-4">
-                        <a href="#" class="hover:underline">Facebook</a>
-                    </li>
-                    <li class="mb-4">
-                        <a href="#" class="hover:underline">Instagram</a>
-                    </li>
-                    <li class="mb-4">
-                        <a href="#" class="hover:underline">X</a>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h2 class="mb-6 text-sm font-semibold text-white uppercase">Yardım</h2>
-                <ul class="text-gray-300 font-medium">
-                    <li class="mb-4">
-                        <a href="#" class="hover:underline">Sıkça Sorulan Sorular</a>
-                    </li>
-                    <li class="mb-4">
-                        <a href="#" class="hover:underline">Nasıl İade Edebilirim</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+<footer class="text-gray-500 bg-white px-4 py-5 max-w-6xl mx-auto md:px-8">
+    <div class="max-w-lg sm:mx-auto sm:text-center">
+        <img src="/images/logo.png" class="w-32 sm:mx-auto" />
+        <p class="leading-relaxed mt-2 text-[15px]">
+            Matbaa ve ozalit işlerinizde profesyonel çözümler sunan firmamız, geniş ürün yelpazesi ve yüksek kaliteli hizmet anlayışı ile sizlere hizmet vermektedir. Müşteri memnuniyetini ön planda tutarak, her türlü baskı ve ozalit ihtiyaçlarınıza uygun çözümler sunuyoruz.
+        </p>
     </div>
-    <div class="bg-gray-900 py-2">
-        <div class="max-w-6xl mx-auto flex items-center justify-between flex-col md:flex-row gap-1 md:gap-0">
-            <span class="text-sm  font-semibold">©2023 DeneyimSoft.-Her Hakkı Saklıdır.</span>
-            <div class="flex gap-2 text-xs md:text-sm">
-                <a href="#" class="hover:underline">Çerez Politikası </a>
-                <a href="#" class="hover:underline">KVK ve Gizlilik Politikası</a>
-            </div>
+    <ul class="items-center justify-center mt-8 space-y-5 sm:flex sm:space-x-4 sm:space-y-0">
+        <li class=" hover:text-gray-800"><a href=#>Hakkımızda</a></li>
+        <li class=" hover:text-gray-800"><a href=#>Blog</a></li>
+        <li class=" hover:text-gray-800"><a href=#>Yardım</a></li>
+    </ul>
+    <div class="mt-8 items-center justify-between sm:flex">
+        <div class="mt-4 sm:mt-0">
+            &copy; 2024 JolyFox Tüm Hakları Saklıdır.
+        </div>
+        <div class="mt-6 sm:mt-0">
+            <ul class="flex items-center space-x-4">
+                <li class="w-8 h-8 border rounded-full flex items-center justify-center">
+                    <a href="#" class="block">
+                        <i data-lucide="instagram" stroke-width="1.6" width="100%" height="100%"></i>
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 </footer>

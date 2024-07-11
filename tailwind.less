@@ -8,6 +8,7 @@
 @import "/src/assets/prefix/tabs";
 @import "/src/assets/prefix/bottom-sheets";
 @import "/src/assets/prefix/card";
+@import "/src/assets/prefix/dropdown";
 
 //@import -> page
 @import "/src/assets/prefix/checkout";
@@ -22,7 +23,7 @@
   --foreground: #000;
   --divider: #dcdcdc;
   --overlay: #888;
-  --header-height:0px;
+  --header-height:113px;
 }
 
 body{
@@ -83,10 +84,13 @@ body{
   }
 }
 [data-slider-products]{
+  .swiper-wrapper{
+    @apply py-2;
+  }
   .swiper-slide{
     width: 190px;
-
     @apply  ~"md:w-[300px]" h-auto;
+
   }
 }
 
@@ -174,37 +178,6 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
   }
 
 
-}
-.dropdown_{
-  @apply relative;
-  .dropdown_trigger{
-    @apply inline-block;
-    &.dt-active{
-      .btn_{
-        --btn-background: theme("colors.gray.100");
-        &.btn_right_chevron {
-          &:after{
-          @apply rotate-180;
-          }
-        }
-      }
-    }
-  }
-  .dropdown_content{
-    @apply absolute hidden top-full left-0  z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44;
-    .dc_items_list{
-      @apply py-2 text-sm text-gray-700 ;
-      .dc_item{
-        a{
-          @apply block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white;
-        }
-      }
-
-    }
-  }
-  .dc-active{
-    @apply block;
-  }
 }
 .badge_{
   --badge-background: theme("colors.gray.200");
@@ -422,11 +395,11 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
   display: none;
 }
 .product-rect-content{
-  @apply bg-white border border-solid border-gray-100 px-4 py-6 rounded-xl flex flex-col items-center justify-center w-full h-full gap-1;
-  &.procut-rect-image{
-    @apply !p-0 overflow-hidden w-full h-full;
+  @apply card_ px-4 py-6 flex flex-col items-center justify-center w-full h-full gap-1;
+  &.product-rect-image{
+    @apply !p-0 overflow-hidden w-full h-full ;
     img{
-      @apply w-full h-full object-cover;
+      @apply w-full h-full object-cover ;
     }
   }
   .prc-title{
@@ -438,7 +411,7 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
   .prc-image{
     @apply aspect-square my-2 md:my-4;
     img{
-      @apply w-full h-full object-contain;
+      @apply w-full h-full object-contain rounded-medium shadow-small;
     }
   }
   .prc-price{
@@ -455,7 +428,7 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
     }
   }
   &:hover{
-    @apply shadow-sm;
+    @apply opacity-90;
   }
 }
 .link-href{
@@ -463,9 +436,10 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
 }
 
 header{
-  @apply border-b border-solid border-gray-100 px-3 bg-white relative;
+  z-index: 999;
+  @apply border-b border-solid border-gray-100 px-3 bg-white md:sticky top-0;
   .h-content{
-    @apply ~"md:h-[64px]" w-full max-w-6xl gap-3  mx-auto flex items-center justify-between py-2 md:py-0 ;
+    @apply ~"md:h-[64px]" w-full max-w-6xl gap-3  mx-auto grid grid-cols-2 md:flex items-center justify-between py-2 md:py-0 ;
     .hc-logo{
       @apply flex items-center gap-2;
       .hcl-menu-item{
@@ -480,23 +454,62 @@ header{
       }
     }
     .hc-search{
-      @apply relative flex-1 max-w-2xl hidden md:block;
+      @apply relative flex-1 md:max-w-2xl max-md:w-full max-md:order-last max-md:col-span-2;
+      &.hcs-show{
+        .hcs-suggestions{
+          @apply block;
+        }
+      }
+      .input_{
+        @apply border-2;
+        &:focus, &:focus-within{
+          @apply !rounded-b-none  outline-none ;
+          &~.hcs-suggestions{
+            //@apply block opacity-100;
+          }
+
+        }
+      }
+      .hcs-suggestions{
+        @apply ~"z-[100]" absolute top-full card_ border-2 border-primary-500 border-solid -mt-1 rounded-t-none w-full min-h-32 hidden;
+        .hcs-content{
+          .hcs-title{
+            @apply text-neutral-900 font-semibold text-lg;
+          }
+          .hcs-body{
+            @apply py-2;
+            .hcs-related-items{
+              @apply flex  flex-col gap-2;
+              .hcs-item{
+                @apply ~"py-2.5" block w-full  px-3 rounded-xl text-base;
+                &:hover{
+                  @apply bg-gray-200/40;
+                }
+              }
+            }
+            .hcsb-items{
+              @apply flex flex-wrap gap-2;
+              .hcs-badge-item{
+                @apply btn_ btn_sm;
+              }
+
+            }
+          }
+        }
+      }
     }
 
     .hc-right{
       @apply gap-3 items-center hidden md:flex;
     }
     .hc-mobile-right{
-    @apply block md:hidden space-x-1;
+      @apply flex md:hidden  gap-1 justify-end;
     }
   }
-  .h-mobile-search{
-  @apply block md:hidden;
-  }
   .h-menus{
-    @apply max-w-6xl mx-auto relative md:overflow-visible overflow-x-auto overflow-y-hidden whitespace-nowrap md:whitespace-normal ;
+    @apply max-w-6xl h-12 flex items-center mx-auto relative md:overflow-visible overflow-x-auto overflow-y-hidden whitespace-nowrap md:whitespace-normal ;
     .h-menu-item{
-      @apply border-b-2 cursor-default border-solid transition transition-colors px-2  border-transparent px-2 py-2 inline-block;
+      @apply border-b-2 cursor-default border-solid transition-colors  border-transparent px-2 py-2 inline-block;
       .hm-title{
         @apply font-medium;
       }
@@ -579,9 +592,9 @@ header{
   .m-stories{
     @apply w-full;
     .m-stories-item{
-      @apply inline-flex flex-col text-s gap-1 items-center justify-center transition transition-colors font-medium;
+      @apply inline-flex flex-col text-s gap-1 items-center justify-center transition font-medium;
       img{
-        @apply w-14 h-14 rounded-full;
+        @apply w-16 h-16 rounded-full;
       }
       span{
       }
@@ -680,13 +693,35 @@ header{
   }
 }
 .account-page{
-  @apply flex gap-4 relative;
+  @apply flex max-md:flex-col gap-4 relative;
+  .ap-mobile-header{
+    @apply md:hidden w-full;
+    .apm_header_content{
+      @apply card_ flex items-center p-3 gap-2 w-full;
+      .my-aph-texts{
+        @apply flex flex-col;
+        h3{
+        @apply font-medium text-gray-600;
+        }
+        span{
+        @apply text-s text-gray-500;
+        }
+      }
+    }
+  }
   .ap-als-content{
-    width: 220px;
-    @apply hidden md:block;
+    @apply ~"md:w-[250px]" h-full w-full flex;
     .ap-alsc-wrapper{
-      top: var(--header-height);
-      @apply sticky py-2;
+      @apply md:card_ md:p-3 w-full;
+      .ap_alsc_user{
+        @apply flex items-center space-x-2 border-b border-solid border-gray-100 pb-2 mb-2 h-12;
+        img{
+          @apply w-10 h-10 rounded-full;
+        }
+        span{
+          @apply font-medium text-gray-900 line-clamp-1;
+        }
+      }
     }
 
   }
@@ -698,9 +733,35 @@ header{
     .apc-filters{
       @apply flex flex-wrap gap-3 my-3;
     }
-    .apc-orders-page{
-
+    .apc-orders-details{
+      .apc-od-top{
+      }
+      .apc-od-header{
+        @apply card_ my-2 flex items-center justify-between max-lg:flex-col gap-4;
+        .apc-od-title{
+        @apply text-base font-semibold text-gray-950;
+        }
+        .apc-od-header-list{
+          @apply flex gap-4 items-center max-lg:flex-wrap max-lg:justify-center;
+          .apc-od-header-list-item{
+            @apply flex flex-col text-center gap-1;
+            .apc-od-header-title{
+              @apply text-xs text-gray-800 font-medium;
+            }
+            .apc-od-header-price{
+              @apply text-primary-500 font-medium;
+            }
+            .apc-od-header-desc{
+              @apply text-gray-500;
+            }
+            .apc-od-header-desc , .apc-od-header-price{
+              @apply text-xs flex items-center justify-center gap-1;
+            }
+          }
+        }
+      }
     }
+
     .apc-coupon-page{
       .apc-cp-lists{
         @apply flex flex-col gap-2 mt-3;
@@ -743,7 +804,7 @@ header{
 .auth-page{
   @apply flex flex-col items-center justify-center mx-auto max-w-md w-full lg:py-0;
   .ap-content{
-    @apply w-full bg-white rounded-lg shadow p-6;
+    @apply w-full card_ p-6;
     .apc-logo{
       @apply flex items-center justify-center mb-6;
       img{
@@ -867,10 +928,9 @@ header{
     }
   }
   .cp-filter{
-
-    @apply ~"md:w-[220px]" h-full w-full;
+    @apply ~"md:w-[220px]" h-full w-full flex;
     .cpf-content{
-      @apply border border-solid border-gray-100 h-full flex flex-col overflow-y-auto rounded-xl;
+      @apply border border-solid border-gray-100 h-full flex flex-col overflow-y-auto rounded-xl flex-1 overflow-hidden;
       .cpf-title{
         @apply px-3 py-3 border-b border-solid border-gray-100;
         span{
@@ -998,11 +1058,17 @@ header{
     }
   }
 }
+#orderSummary{
+  .bs_body{
+    @apply flex;
+  }
+}
 .checkout-page{
   @apply flex md:flex-row flex-col max-w-6xl mx-auto relative;
   .cp-overlay{
     @apply hidden;
   }
+
   &.cp_mobile_box{
     @media (max-width: 768px) {
       .cpm_cat_icon{
@@ -1014,7 +1080,7 @@ header{
     }
     .cp-order-summary{
       @media (max-width: 768px) {
-        @apply !opacity-100 !bottom-0 z-20 !flex;
+
       }
     }
     .cp-delivery{
@@ -1069,9 +1135,9 @@ header{
     }
   }
   .cp-order-summary{
-    @apply ~"w-full md:w-[300px] lg:w-[350px] md:h-[calc(100vh-2rem)]" h-screen sticky md:top-4 hidden md:flex  pb-20 md:pb-0 opacity-0 md:opacity-100 transition-all;
+    @apply ~"w-full md:w-[300px] lg:w-[350px] md:h-[calc(100vh-2rem)]" flex-1 sticky md:top-4 flex transition-all;
     .cpos_content{
-      @apply rounded-t-large rounded-b-none md:rounded-b-large card_ p-0 h-full w-full flex flex-col;
+      @apply rounded-large card_ p-0 h-full w-full flex flex-col;
     }
     .cp-os-total{
       @apply py-2 md:py-5 text-center flex  flex-col md:gap-3 border-b border-gray-200 border-solid w-full;
@@ -1108,7 +1174,6 @@ header{
           &.cp-oss-item-total{
             @apply bg-transparent;
             .cp-oss-left{
-
               span{
                 @apply font-semibold text-sm text-gray-900;
               }
@@ -1153,71 +1218,7 @@ header{
     }
   }
 }
-.op-lists{
-  .opl-item{
-  @apply border border-solid border-gray-200 rounded-xl overflow-hidden;
-    &.opl-item-not{
-      .opl-item-header{
-        .oplh-item{
-          @apply w-auto;
-          &.oplh-i-hd{
-            @apply !flex;
-          }
-        }
-      }
-    }
-    .opl-item-header{
-      @apply bg-gray-100 px-3 py-2 flex items-center gap-2;
-      .oplh-item{
-        gap:.15rem;
-        @apply flex-col w-full;
 
-        &:not(.oplh-i-hd){
-          @apply flex;
-        }
-        &.oplh-i-hd{
-          @apply hidden md:flex;
-        }
-        span{
-          @apply text-xs text-gray-500 font-medium;
-        }
-        b{
-          @apply text-xs font-medium text-zinc-800;
-        }
-      }
-    }
-    .opl-item-main{
-    @apply p-2;
-      .opli-product-lists{
-      @apply flex flex-col gap-3;
-        .opli-product-item{
-        @apply border border-solid border-gray-200 rounded-xl p-4 flex justify-between items-center;
-          .opli-pi-infos{
-          @apply flex items-center  sm:flex-row gap-2;
-            .opli-pi-images{
-              width: 40px;
-              img{
-              @apply w-10 h-10 border-2 border-solid border-gray-100 rounded-full object-cover;
-              }
-            }
-            .opli-pi-product{
-            @apply flex flex-col gap-1 flex-1 text-xs;
-              .opli-pip-title{
-              @apply text-gray-500 hover:underline line-clamp-1;
-              }
-              .opli-pip-alt{
-              @apply text-emerald-500 flex md:items-center gap-1 flex-col sm:flex-row;
-              }
-            }
-          }
-          .opli-pi-price{
-          @apply flex flex-col text-right;
-          }
-        }
-      }
-    }
-  }
-}
 .d-breadcrumb{
   @apply flex;
   .dbc-list{
@@ -1281,88 +1282,127 @@ header{
     }
   }
 }
-footer{
-  @apply bg-gray-800 text-white border-t border-solid border-gray-100 mt-3 ;
-  .f-content{
-    @apply px-3 md:px-0;
-    .fc-wrapper{
-      @apply grid grid-cols-1 px-3 sm:grid-cols-2 gap-8 max-w-6xl mx-auto  py-6 lg:py-8 md:!grid-cols-4 text-center md:text-left;
-      .fcw-item{
-        img{
-          @apply mx-auto md:mx-0;
+@layer components{
+  .v-card{
+  @apply shadow-sm border border-solid border-default-100 bg-white p-5;
+  }
+  .ppi-bf-piece{
+  @apply flex items-center rounded-xl ~"py-0.5 bg-primary-400/20";
+
+    input{
+    @apply ~"bg-primary-400/20" w-9 h-full text-primary-600 text-center outline-none rounded text-sm font-medium ;
+    }
+    button{
+    @apply w-6 h-full text-primary-600;
+    }
+  }
+}
+@layer components {
+  .odi-lists{
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-4 card_;
+    .opli-product-item{
+    @apply card_ p-2  flex justify-between items-center w-full;
+      .opli-pi-infos{
+      @apply flex sm:flex-row gap-2 w-full;
+        .opli-pi-images{
+          img{
+            @apply w-24 h-32 border border-solid border-gray-100 rounded-xl object-cover;
+          }
+        }
+        .opli-pi-product{
+          @apply flex flex-col justify-between gap-1 flex-1 text-xs;
+          .opli-pip-title{
+            @apply flex flex-col ~"gap-0.5";
+            h4{
+              @apply text-base text-gray-800 line-clamp-2 font-medium;
+            }
+            p{
+              @apply text-xs text-gray-500 line-clamp-1;
+            }
+            span{
+              @apply text-primary-500 font-medium text-sm;
+            }
+          }
+        }
+      }
+    }
+  }
+  .op-lists{
+  @apply flex flex-col gap-4;
+    .opl-item{
+    @apply card_ p-0 overflow-hidden;
+      &.opl-item-not{
+        .opl-item-header{
+          .oplh-item{
+          @apply w-auto;
+            &.oplh-i-hd{
+            @apply !flex;
+            }
+          }
+        }
+      }
+      .opl-item-header{
+      @apply bg-gray-100 px-4 py-3 flex items-center gap-2;
+        .oplh-item{
+          gap:.15rem;
+        @apply flex-col w-full;
+
+          &:not(.oplh-i-hd){
+          @apply flex;
+          }
+          &.oplh-i-hd{
+          @apply hidden md:flex;
+          }
+          span{
+          @apply text-xs text-gray-500 font-medium;
+          }
+          b{
+          @apply text-xs font-medium text-zinc-800;
+          }
+        }
+      }
+      .opl-item-main{
+      @apply px-2 py-2;
+        .opli-product-lists{
+        @apply flex flex-col gap-3;
+          .opli-product-item{
+          @apply card_ px-4 py-2 flex justify-between items-center;
+            .opli-pi-infos{
+            @apply flex items-center  sm:flex-row gap-2;
+              .opli-pi-images{
+                width: 40px;
+                img{
+                @apply w-10 h-10 border-2 border-solid border-gray-100 rounded-full object-cover;
+                }
+              }
+              .opli-pi-product{
+              @apply flex flex-col gap-1 flex-1 text-xs;
+                .opli-pip-title{
+                @apply text-gray-500 hover:underline line-clamp-1;
+                }
+                .opli-pip-alt{
+                @apply text-emerald-500 flex md:items-center gap-1 flex-col sm:flex-row;
+                }
+              }
+            }
+            .opli-pi-price{
+            @apply flex flex-col text-right;
+            }
+          }
         }
       }
     }
   }
 }
 
-
-
-.slide-menu {
-  position: fixed;
-  -webkit-transform: translateX(-315px);
-  -ms-transform: translateX(-315px);
-  transform: translateX(-315px);
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  will-change: transform;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-  -webkit-transition-timing-function: cubic-bezier(.4,0,.2,1);
-  transition-timing-function: cubic-bezier(.4,0,.2,1);
-  -webkit-transition-property: -webkit-transform;
-  transition-property: transform;
-  background: #fff;
-  top:0;
-  bottom: 0;
-  color: #333;
-  z-index: 9999;
-  width: 280px;
-  -webkit-box-shadow: 3px 0px 7px 0px rgba(0,0,0,0.25);
-  -moz-box-shadow: 3px 0px 7px 0px rgba(0,0,0,0.25);
-  box-shadow: 3px 0px 7px 0px rgba(0,0,0,0.25);
-  &.slide-left {
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0);
-    z-index: 99999;
-  }
-}
-
-.slider-overlay {
-  background-color: transparent;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  visibility: hidden;
-  -webkit-transition-property: background-color;
-  transition-property: background-color;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-  -webkit-transition-timing-function: cubic-bezier(.4,0,.2,1);
-  transition-timing-function: cubic-bezier(.4,0,.2,1);
-  z-index: 99;
-}
-.slide-left~.slider-overlay {
-  background-color: rgba(0,0,0,.5);
-  visibility: visible;
-}
-@layer components{
-  .v-card{
-    @apply shadow-sm border border-solid border-default-100 bg-white p-5;
-  }
-  .ppi-bf-piece{
-    @apply flex items-center rounded-xl ~"py-0.5 bg-primary-400/20";
-
-    input{
-      @apply ~"bg-primary-400/20" w-9 h-full text-primary-600 text-center outline-none rounded text-sm font-medium ;
-    }
-    button{
-      @apply w-6 h-full text-primary-600;
+@layer components {
+  .order-status-check{
+    @apply flex gap-1 items-center text-success-600 text-xxs;
+    svg{
+    @apply w-3 h-3 rounded-full;
+      &[data-lucide='check']{
+        @apply ~"p-0.5" text-success-600  bg-success-200;
+      }
     }
   }
 }
-
-
